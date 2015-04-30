@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="b566928f-616a-4bee-ba5a-961eb6902ba3" name="Model">
@@ -15,16 +15,10 @@
                     <referencedTypeMoniker Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" LastKnownName="string" />
                   </type_NamedElement>
                 </property>
-                <property Id="ef8e87e5-42af-42e5-a75c-f6b4707f9138" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="ef8e87e5-42af-42e5-a75c-f6b4707f9138" name="EmployeeId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="92d7103c-a5cf-490f-a9af-f635f1114032" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
-                  </type_NamedElement>
-                </property>
-                <property Id="7efa22d4-f718-402d-8bc3-c8c0f78fbcfb" name="Location" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="efe4ce3e-b5e2-41ca-9cfa-4b17cd42a53b" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" LastKnownName="string" />
+                    <referencedTypeMoniker Id="f29e1b7a-769b-4667-9e30-5f6f8c962bdf" LastKnownName="int" />
                   </type_NamedElement>
                 </property>
                 <property Id="83d52f45-d07e-430e-9637-7d994bf52e12" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -33,8 +27,56 @@
                     <referencedTypeMoniker Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" LastKnownName="string" />
                   </type_NamedElement>
                 </property>
-                <property Id="4307ccd7-49d1-41b7-858c-c79ab0496273" name="SalaryId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="4307ccd7-49d1-41b7-858c-c79ab0496273" name="Salary_" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="a0d983cf-36e1-4aca-a870-306e6e137d74" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="23c00826-16d0-4b51-b2f6-7ad5668c5da8" LastKnownName="int" />
+                  </type_NamedElement>
+                </property>
+                <property Id="8f9b8dbf-1def-4594-822d-eea70bf6f0a9" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3ad176fd-f283-45d2-b6ad-074bb5d35a7b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" LastKnownName="string" />
+                  </type_NamedElement>
+                </property>
+                <property Id="19b6e57f-10d1-40f3-97fc-9d3cdb8fdea5" name="LastLogin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ce027571-93de-496f-8725-f280abaef5b2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ee461d13-52c6-49fd-a086-7045719d5872" LastKnownName="datetime" />
+                  </type_NamedElement>
+                </property>
+                <property Id="26eee37f-0435-408b-a353-33bbf1a02267" name="LastLogout" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ded7c973-a711-4142-8d34-be6dcc24d571" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ee461d13-52c6-49fd-a086-7045719d5872" LastKnownName="datetime" />
+                  </type_NamedElement>
+                </property>
+                <property Id="0ffdda53-6ac5-4238-b8e6-5d1568b92363" name="StdHours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="125b5ada-cacd-4627-bf60-dc678ea16c32" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ac597ef4-eb1b-4db1-8482-9d1987bf927e" LastKnownName="timespan" />
+                  </type_NamedElement>
+                </property>
+                <property Id="cbb35383-b2d2-4d66-be43-61c8ec4f39ab" name="WatchHours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1ee4986a-89a6-49e9-800f-37f9efbc8c2c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0badec9-689a-44d3-927f-289ba873aecf" LastKnownName="time" />
+                  </type_NamedElement>
+                </property>
+                <property Id="075176e0-df20-48e5-87eb-1b09363ad8cc" name="VacationDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cab11d06-de98-443c-a29f-62b1128fb9e9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
+                  </type_NamedElement>
+                </property>
+                <property Id="e937e553-b326-4392-9594-27e4eb4ecb7b" name="SickDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="da25497e-769c-48c8-9e4b-181eada37ec1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
+                  </type_NamedElement>
+                </property>
+                <property Id="03295456-dc79-45af-9406-d6bbecb9db26" name="WorkedDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0ce449bb-21c8-43d0-a990-5917538263c2" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
                   </type_NamedElement>
@@ -512,6 +554,31 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="f29e1b7a-769b-4667-9e30-5f6f8c962bdf" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ee461d13-52c6-49fd-a086-7045719d5872" name="datetime" isAbstract="false" isLeaf="false" cachedFullName="datetime">
+        <elementDefinition Id="52dfadb9-39aa-4201-b7a5-3ccc2b8be65c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e0badec9-689a-44d3-927f-289ba873aecf" name="time" isAbstract="false" isLeaf="false" cachedFullName="time">
+        <elementDefinition Id="e839b7a1-58e1-4bba-b9e5-387cd956943c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ac597ef4-eb1b-4db1-8482-9d1987bf927e" name="timespan" isAbstract="false" isLeaf="false" cachedFullName="timespan">
+        <elementDefinition Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="23c00826-16d0-4b51-b2f6-7ad5668c5da8" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" name="ModelingProject">
     <elementDefinition Id="36e04b60-98d4-4ba2-95ea-da3661aa3d7e" />

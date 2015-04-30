@@ -8,6 +8,53 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="152"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Visibility="Visible" x:Name="MainCanvas" Background="White" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <TextBlock Canvas.Left="270" TextWrapping="Wrap" Text="                            Welcome!&#x0a;Insert worker-id in one of the above boxes." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="224" Height="110" Width="797"/>
+            <Image HorizontalAlignment="Left" Height="74" Margin="513,501,0,0" Grid.Row="1" VerticalAlignment="Top" Width="297" Source="Assets/DANXlogo.jpg"/>
+            <Canvas Height="100" Canvas.Left="448" Canvas.Top="315" Width="100"/>
+        </Canvas>
+        <Canvas Visibility="Collapsed" x:Name="StandardLoginCanvas" Background="White" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <TextBlock Canvas.Left="496" TextWrapping="Wrap" Text="Welcome Daniel!" FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="126" Height="57" Width="322"/>
+            <Rectangle Fill="Black" Height="112" Canvas.Left="294" Stroke="Black" Canvas.Top="243" Width="818"/>
+            <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+        </Canvas>
+        <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Background="White" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <TextBlock Canvas.Left="466" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="22" Height="57" Width="322"/>
+            <Canvas x:Name="PastRegDatabase">
+                <Rectangle Visibility="Visible"  Fill="Black" Height="112" Canvas.Left="294" Stroke="Black" Canvas.Top="243" Width="818"/>
+                <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+            </Canvas>
+            </Canvas>
 
+            <Canvas  Background="Gray" Height="79" Canvas.Left="1035" Width="331">
+                <AppBarButton IsCompact="True" Icon="Setting" Label="AppBarButton" Canvas.Top="4" Canvas.Left="165"/>
+                <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="77" Canvas.Top="4"/>
+                <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4">
+                    <AppBarButton.Resources>
+                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
+                            <MenuFlyoutItem Text="Workerlist">
+
+                            </MenuFlyoutItem>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Database 2"/>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Database 3"/>
+
+
+                        </MenuFlyout>
+                    </AppBarButton.Resources>
+                    <AppBarButton.Flyout>
+                        <StaticResource ResourceKey="FlyoutBase1"/>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+            </Canvas>
+            <Canvas x:Name="WorkerListDB" Visibility="Collapsed">
+                <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
+                <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+            </Canvas>
     </Grid>
 </Page>
