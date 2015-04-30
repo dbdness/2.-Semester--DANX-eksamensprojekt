@@ -8,5 +8,6 @@ namespace DanxExamProject.Model
 {
     class Employee
     {
+        public int EmployeeId { get; set; }
     }
 }
