@@ -12,8 +12,7 @@ namespace DanxAPI
         [Key]
         public int EmployeeId { get; set; }
 
-        [Column("Salary#")]
-        public int? Salary_ { get; set; }
+        public int? SalaryNumber { get; set; }
 
         [StringLength(50)]
         public string Manager { get; set; }
@@ -37,5 +36,7 @@ namespace DanxAPI
         public int? SickDays { get; set; }
 
         public int? WorkedDays { get; set; }
+
+        public bool? IsAdmin { get; set; }
     }
 }

@@ -56,7 +56,8 @@ namespace DanxExamProject.Persistency
                 client.BaseAddress = new Uri(ServerUri);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
+                
+            
                 try
                 {
                     var response = client.PutAsJsonAsync("api/mainEmployees/" + employee.EmployeeId, employee).Result;

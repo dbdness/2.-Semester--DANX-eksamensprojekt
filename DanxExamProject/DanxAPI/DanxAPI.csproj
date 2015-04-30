@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{195B0D33-7664-49C2-8F92-D11ECFEC89DB}</ProjectGuid>
+    <ProjectGuid>{7CD1CE1F-3248-432A-A280-3EC8E89DA03D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -202,7 +202,7 @@
     <Compile Include="Controllers\LoggedInEmployeesController.cs" />
     <Compile Include="Controllers\MainEmployeesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DanxDbContext.cs" />
+    <Compile Include="EmployeeDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,9 +298,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>45056</DevelopmentServerPort>
+          <DevelopmentServerPort>2550</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1338/</IISUrl>
+          <IISUrl>http://localhost:2000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

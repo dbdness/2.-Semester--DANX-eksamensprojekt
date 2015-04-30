@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DanxExamProject.Model
 {
-    class StandardEmp
+    class StandardEmp: Employee
     {
+        public StandardEmp()
+        {
+            IsAdmin = false;
+        }
     }
 }
