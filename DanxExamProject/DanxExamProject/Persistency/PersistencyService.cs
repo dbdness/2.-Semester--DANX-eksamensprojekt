@@ -12,9 +12,13 @@ namespace DanxExamProject.Persistency
 {
     class PersistencyService
     {
-        private const string ServerUri = "http://localhost:1337";
+        private const string ServerUri = "http://localhost:1338";
 
-        public static void GetData(ObservableCollection<Employee> collection)
+        /// <summary>
+        /// Gets the list of employees.
+        /// </summary>
+        /// <param name="collection"></param>
+        public async static void GetDataAsync(ObservableCollection<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -25,7 +29,7 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/employees").Result;
+                    var response = await client.GetAsync("api/mainEmployees");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -40,6 +44,10 @@ namespace DanxExamProject.Persistency
             }
         }
 
+        /// <summary>
+        /// Changes the login- and logout time for the employee.
+        /// </summary>
+        /// <param name="employee"></param>
         public static void PutData(Employee employee)
         {
             var handler = new HttpClientHandler();
@@ -51,7 +59,7 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = client.PutAsJsonAsync("api/employees/" + employee.EmployeeId, employee).Result;
+                    var response = client.PutAsJsonAsync("api/mainEmployees/" + employee.EmployeeId, employee).Result;
                 }
                 catch (HttpRequestException)
                 {
@@ -60,6 +68,10 @@ namespace DanxExamProject.Persistency
             }
         }
 
+        /// <summary>
+        /// Changes the login-time for the logged in Employee
+        /// </summary>
+        /// <param name="employee"></param>
         public static void PutDataForLoggedin(Employee employee)
         {
             var handler = new HttpClientHandler();
@@ -84,7 +96,7 @@ namespace DanxExamProject.Persistency
         /// Get the list of logged in employees.
         /// </summary>
         /// <param name="collection"></param>
-        public static void GetData(List<Employee> collection)
+        public async static void GetDataAsync(List<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -95,7 +107,7 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/loggedInEmployees").Result;
+                    var response = await client.GetAsync("api/loggedInEmployees");
 
                     if (response.IsSuccessStatusCode)
                     {

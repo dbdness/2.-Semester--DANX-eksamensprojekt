@@ -124,15 +124,27 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "DanxExamProject.MainPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[9];
+            _typeNameTable[0] = "DanxExamProject.ViewModel.MainViewModel";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>";
+            _typeNameTable[3] = "System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>";
+            _typeNameTable[4] = "DanxExamProject.Model.Employee";
+            _typeNameTable[5] = "Int32";
+            _typeNameTable[6] = "DanxExamProject.MainPage";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::DanxExamProject.MainPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[9];
+            _typeTable[0] = typeof(global::DanxExamProject.ViewModel.MainViewModel);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>);
+            _typeTable[4] = typeof(global::DanxExamProject.Model.Employee);
+            _typeTable[5] = typeof(global::System.Int32);
+            _typeTable[6] = typeof(global::DanxExamProject.MainPage);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -167,7 +179,23 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::DanxExamProject.MainPage(); }
+        private object Activate_0_MainViewModel() { return new global::DanxExamProject.ViewModel.MainViewModel(); }
+        private object Activate_2_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_3_Collection() { return new global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_4_Employee() { return new global::DanxExamProject.Model.Employee(); }
+        private object Activate_6_MainPage() { return new global::DanxExamProject.MainPage(); }
+        private void VectorAdd_2_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
+            var newItem = (global::DanxExamProject.Model.Employee)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_3_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
+            var newItem = (global::DanxExamProject.Model.Employee)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -179,18 +207,56 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  DanxExamProject.MainPage
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+            case 0:   //  DanxExamProject.ViewModel.MainViewModel
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_MainViewModel;
+                userType.AddMemberName("EmployeesInDb");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>"));
+                userType.CollectionAdd = VectorAdd_2_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 3:   //  System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_3_Collection;
+                userType.CollectionAdd = VectorAdd_3_Collection;
+                xamlType = userType;
+                break;
+
+            case 4:   //  DanxExamProject.Model.Employee
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_4_Employee;
+                userType.AddMemberName("EmployeeId");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Int32
+                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  DanxExamProject.MainPage
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -198,11 +264,47 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         }
 
 
+        private object get_0_MainViewModel_EmployeesInDb(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.EmployeesInDb;
+        }
+        private void set_0_MainViewModel_EmployeesInDb(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.EmployeesInDb = (global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>)Value;
+        }
+        private object get_1_Employee_EmployeeId(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.EmployeeId;
+        }
+        private void set_1_Employee_EmployeeId(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.EmployeeId = (global::System.Int32)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "DanxExamProject.ViewModel.MainViewModel.EmployeesInDb":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "EmployeesInDb", "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>");
+                xamlMember.Getter = get_0_MainViewModel_EmployeesInDb;
+                xamlMember.Setter = set_0_MainViewModel_EmployeesInDb;
+                break;
+            case "DanxExamProject.Model.Employee.EmployeeId":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "EmployeeId", "Int32");
+                xamlMember.Getter = get_1_Employee_EmployeeId;
+                xamlMember.Setter = set_1_Employee_EmployeeId;
+                break;
+            }
             return xamlMember;
         }
     }
