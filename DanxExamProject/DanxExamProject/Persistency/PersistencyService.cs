@@ -9,5 +9,7 @@ namespace DanxExamProject.Persistency
     class PersistencyService
     {
         private const string ServerUri = "http://localhost:1337";
+
+        
     }
 }
