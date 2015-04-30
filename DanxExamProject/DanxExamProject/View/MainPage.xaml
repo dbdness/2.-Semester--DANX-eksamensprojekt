@@ -28,7 +28,6 @@
                 <Rectangle Visibility="Visible"  Fill="Black" Height="112" Canvas.Left="294" Stroke="Black" Canvas.Top="243" Width="818"/>
                 <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             </Canvas>
-            </Canvas>
 
             <Canvas  Background="Gray" Height="79" Canvas.Left="1035" Width="331">
                 <AppBarButton IsCompact="True" Icon="Setting" Label="AppBarButton" Canvas.Top="4" Canvas.Left="165"/>
@@ -36,7 +35,7 @@
                 <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4">
                     <AppBarButton.Resources>
                         <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
-                            <MenuFlyoutItem Text="Workerlist">
+                            <MenuFlyoutItem Text="Workerlist" Click="MenuFlyoutItem_Click">
 
                             </MenuFlyoutItem>
                             <MenuFlyoutSeparator/>
@@ -56,5 +55,14 @@
                 <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
                 <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             </Canvas>
+
+        </Canvas>
+
+        <Canvas Grid.Row="0" Background="Gray" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1366">
+            <TextBox x:Name="LoginBox" Canvas.Left="125" TextWrapping="Wrap" Text="" Canvas.Top="73" Height="31" Width="65" AcceptsReturn="False" KeyDown="LoginBox_KeyDown"/>
+            <TextBlock Canvas.Left="125" TextWrapping="Wrap" Text="Login/logout" FontSize="20" FontWeight="SemiBold" Canvas.Top="34" Height="26" Width="122"/>
+            <TextBlock Canvas.Left="1132" TextWrapping="Wrap" Text="Manage" FontSize="20" FontWeight="SemiBold" Canvas.Top="34" Height="26" Width="122"/>
+            <TextBox x:Name="ManageBox" AcceptsReturn="False" Canvas.Left="1132" TextWrapping="Wrap" Text="" Canvas.Top="68" Height="31" Width="65" KeyDown="ManageBox_KeyDown"/>
+        </Canvas>
     </Grid>
 </Page>

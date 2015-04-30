@@ -119,8 +119,8 @@
     <Compile Include="Model\StandardEmp.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="View\DanxMainView.xaml.cs">
-      <DependentUpon>DanxMainView.xaml</DependentUpon>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,7 +141,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\DanxMainView.xaml">
+    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

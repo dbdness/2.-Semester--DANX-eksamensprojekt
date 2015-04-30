@@ -81,6 +81,12 @@
                     <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
                   </type_NamedElement>
                 </property>
+                <property Id="9ff1ac4b-02c4-4f1d-8cf2-81dc932c5ddc" name="IsAdmin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a9d914e9-696e-4ace-8fce-1208bfa0cb61" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6e6a3599-dfbc-437d-bad0-30f9d4b45d90" LastKnownName="bool" />
+                  </type_NamedElement>
+                </property>
               </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
@@ -577,6 +583,11 @@
     <packageHasNamedElement>
       <referencedType Id="23c00826-16d0-4b51-b2f6-7ad5668c5da8" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6e6a3599-dfbc-437d-bad0-30f9d4b45d90" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="7818fb33-fc72-47ab-81bd-c069aa6889b7" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

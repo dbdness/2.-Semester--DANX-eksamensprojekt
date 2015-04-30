@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-30T11:46:16.835</Modified>
+      <Modified>2015-04-30T12:45:24.907</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-04-30T11:55:27.625</Modified>
+      <Modified>2015-04-30T12:45:24.177</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -52,17 +52,17 @@
       <PackagePath>App.xbf</PackagePath>
       <Modified>2015-04-30T11:46:15.706</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
-      <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-04-30T11:55:27.417</Modified>
+    <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\MainPage.xbf">
+      <PackagePath>View\MainPage.xbf</PackagePath>
+      <Modified>2015-04-30T12:45:23.977</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-04-30T11:55:27.366</Modified>
+      <Modified>2015-04-30T12:45:23.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-30T11:46:16.253</Modified>
+      <Modified>2015-04-30T12:45:24.447</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

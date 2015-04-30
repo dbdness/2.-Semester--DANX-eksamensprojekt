@@ -228,6 +228,24 @@
                 LastKnownLocation="Package_1109.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="a9d914e9-696e-4ace-8fce-1208bfa0cb61"
+            name="IsAdmin"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7818fb33-fc72-47ab-81bd-c069aa6889b7"
+                LastKnownName="bool"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>

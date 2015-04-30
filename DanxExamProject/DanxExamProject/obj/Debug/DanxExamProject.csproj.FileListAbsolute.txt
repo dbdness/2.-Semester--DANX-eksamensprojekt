@@ -31,7 +31,6 @@ C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamPro
 C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.xaml
 C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.xbf
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\App.xbf
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.pdb
@@ -40,13 +39,9 @@ C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProj
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.build.appxrecipe
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\App.g.i.cs
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\App.g.cs
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.g.i.cs
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.g.cs
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\XamlTypeInfo.g.cs
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\App.xaml
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.xaml
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\App.xbf
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\DanxMainView.xbf
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\XamlSaveStateFile.xml
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\DanxExamProject.exe
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\DanxExamProject.pdb
@@ -62,3 +57,8 @@ C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProj
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\ProjectArchitectures.txt
+C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\MainPage.g.i.cs
+C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\MainPage.g.cs
+C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\MainPage.xbf
+C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\MainPage.xaml
+C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\MainPage.xbf
