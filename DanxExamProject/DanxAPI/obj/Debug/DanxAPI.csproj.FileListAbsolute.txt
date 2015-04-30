@@ -121,6 +121,5 @@ C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProj
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\bin\System.Web.Http.Owin.xml
-C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.csprojResolveAssemblyReference.cache
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.dll
 C:\Users\Andreas\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.pdb
