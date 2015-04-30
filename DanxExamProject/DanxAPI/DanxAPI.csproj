@@ -160,7 +160,7 @@
     <Compile Include="Controllers\LoggedInEmployeesController.cs" />
     <Compile Include="Controllers\MainEmployeesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DanxDbContext.cs" />
+    <Compile Include="EmployeeDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

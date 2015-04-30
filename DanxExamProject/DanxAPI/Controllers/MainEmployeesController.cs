@@ -14,7 +14,7 @@ namespace DanxAPI.Controllers
 {
     public class MainEmployeesController : ApiController
     {
-        private DanxDbContext db = new DanxDbContext();
+        private EmployeeDbContext db = new EmployeeDbContext();
 
         // GET: api/MainEmployees
         public IQueryable<MainEmployee> GetMainEmployees()

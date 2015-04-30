@@ -5,12 +5,11 @@ namespace DanxAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DanxDbContext : DbContext
+    public partial class EmployeeDbContext : DbContext
     {
-        public DanxDbContext()
-            : base("name=DanxDbContext")
+        public EmployeeDbContext()
+            : base("name=EmployeeDbContext")
         {
-            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<LoggedInEmployee> LoggedInEmployees { get; set; }
