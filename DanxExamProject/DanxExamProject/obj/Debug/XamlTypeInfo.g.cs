@@ -192,6 +192,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private object Activate_0_MainViewModel() { return new global::DanxExamProject.ViewModel.MainViewModel(); }
         private object Activate_2_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>(); }
         private object Activate_3_Collection() { return new global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_4_Employee() { return new global::DanxExamProject.Model.Employee(); }
         private object Activate_11_MainPage() { return new global::DanxExamProject.MainPage(); }
         private void VectorAdd_2_ObservableCollection(object instance, object item)
         {
@@ -244,6 +245,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
 
             case 4:   //  DanxExamProject.Model.Employee
                 userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_4_Employee;
                 userType.AddMemberName("EmployeeId");
                 userType.AddMemberName("SalaryNumber");
                 userType.AddMemberName("Name");

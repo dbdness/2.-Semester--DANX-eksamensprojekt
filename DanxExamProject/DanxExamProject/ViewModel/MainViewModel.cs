@@ -17,15 +17,10 @@ namespace DanxExamProject.ViewModel
         {
             EmployeesInDb = new ObservableCollection<Employee>();
 
-            var admin = new AdminOne();
-            var stdEmp = new StandardEmp();
-            
-
-            EmployeesInDb.Add(admin);
-            EmployeesInDb.Add(stdEmp);
+            PersistencyService.GetDataAsync(EmployeesInDb);
 
 
-           
+
             //PersistencyService.GetDataAsync(EmployeesInDb);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,13 +13,13 @@ namespace DanxExamProject.Persistency
 {
     class PersistencyService
     {
-        private const string ServerUri = "http://localhost:1338";
+        private const string ServerUri = "http://localhost:2000";
 
         /// <summary>
         /// Gets the list of employees.
         /// </summary>
         /// <param name="collection"></param>
-        public async static void GetDataAsync(ObservableCollection<Employee> collection)
+        public static void GetDataAsync(ObservableCollection<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -29,12 +30,13 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = await client.GetAsync("api/mainEmployees");
+                    var response = client.GetAsync("api/mainEmployees").Result;
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var dbData = response.Content.ReadAsAsync<IEnumerable<Employee>>().Result;
-                        foreach (var d in dbData) collection.Add(d);
+                        //Add employees to collection. Cannot read as abstract class Employee.
+                        
+                        
                     }
                 }
                 catch (HttpRequestException)

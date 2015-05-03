@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-30T09:21:59.091</Modified>
+      <Modified>2015-05-03T12:53:20.904</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-04-30T12:52:22.950</Modified>
+      <Modified>2015-05-03T13:20:55.394</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -66,11 +66,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-30T08:12:59.873</Modified>
+      <Modified>2015-05-03T11:39:51.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-04-30T10:53:27.818</Modified>
+      <Modified>2015-05-03T11:43:34.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
@@ -78,7 +78,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-30T12:52:23.582</Modified>
+      <Modified>2015-05-03T13:20:55.613</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
