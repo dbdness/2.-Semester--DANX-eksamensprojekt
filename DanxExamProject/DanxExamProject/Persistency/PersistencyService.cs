@@ -30,13 +30,19 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/mainEmployees").Result;
+                    var stdEmpResponse = client.GetAsync("api/mainEmployees").Result; //Changed to ("api/standardEmployees").
+                    //var adminEmpResponse = client.GetAsync("api/adminEmployees").Result;
 
-                    if (response.IsSuccessStatusCode)
+                    if (stdEmpResponse.IsSuccessStatusCode)
                     {
                         //Add employees to collection. Cannot read as abstract class Employee.
-                        
-                        
+                        var stdEmp = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
+                        //var adminEmp = adminEmpResponse.Content.ReadAsAsync....<AdminOne>.Result;
+
+                        foreach (var e in stdEmp) collection.Add(e);
+                        //foreach (var e in adminEmp) collection.Add(e);
+
+
                     }
                 }
                 catch (HttpRequestException)

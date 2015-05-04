@@ -12,7 +12,44 @@
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <ListView ItemsSource="{Binding EmployeesInDb}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" Height="483" Margin="469,136,0,0" VerticalAlignment="Top" Width="334"/>
+        <Canvas>
+            <Border BorderBrush="Gray" Background="Gray" BorderThickness="10" Canvas.Left="167" Canvas.Top="121" Width="1066" Height="46">
+                <Canvas>
+                    <TextBlock Text="EmployeeId" FontWeight="Bold"/>
+                    <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="74"/>
+                    <TextBlock Text="Manager" FontWeight="Bold" Canvas.Left="129"/>
+                    <TextBlock Text="Name" FontWeight="Bold" Canvas.Left="200"/>
+                    <TextBlock Text="Last login" FontWeight="Bold" Canvas.Left="290"/>
+                    <TextBlock Text="Last logout" FontWeight="Bold" Canvas.Left="428"/>
+                    <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="556"/>
+                    <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="631"/>
+                    <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="707"/>
+                    <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="779"/>
+                    <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="878"/>
+                    <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
+                </Canvas>
+            </Border>
+            <ListView ItemsSource="{Binding EmployeesInDb}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="167" Canvas.Top="167">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Canvas>
+                            <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
+                            <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
+                            <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
+                            <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="126"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="127"/>
+                            <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
+                            <TextBlock Text="{Binding TotalHours}" Canvas.Left="627"/>
+                            <TextBlock Text="{Binding TotalHours}" Canvas.Left="704"/>
+                            <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
+                            <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
+                            <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
+                        </Canvas>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Canvas>
 
     </Grid>
 </Page>
