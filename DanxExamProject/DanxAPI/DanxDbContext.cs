@@ -5,15 +5,16 @@ namespace DanxAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class EmployeeDbContext : DbContext
+    public partial class DanxDbContext : DbContext
     {
-        public EmployeeDbContext()
-            : base("name=EmployeeDbContext")
+        public DanxDbContext()
+            : base("name=DanxDbContext1")
         {
         }
 
         public virtual DbSet<LoggedInEmployee> LoggedInEmployees { get; set; }
-        public virtual DbSet<MainEmployee> MainEmployees { get; set; }
+        public virtual DbSet<AdminEmployee> AdminEmployees { get; set; }
+        public virtual DbSet<StandardEmployee> StandardEmployees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -21,11 +22,19 @@ namespace DanxAPI
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MainEmployee>()
+            modelBuilder.Entity<AdminEmployee>()
                 .Property(e => e.Manager)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<MainEmployee>()
+            modelBuilder.Entity<AdminEmployee>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<StandardEmployee>()
+                .Property(e => e.Manager)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<StandardEmployee>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
         }

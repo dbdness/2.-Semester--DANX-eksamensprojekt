@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DanxExamProject.Model
 {
-    class AdminTwo
+    class AdminEmp
     {
+        public char AdminLvl;
     }
 }

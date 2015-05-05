@@ -110,8 +110,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Handler\EmployeeHandler.cs" />
-    <Compile Include="Model\AdminOne.cs" />
-    <Compile Include="Model\AdminTwo.cs" />
+    <Compile Include="Model\AdminEmp.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\StandardEmp.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />

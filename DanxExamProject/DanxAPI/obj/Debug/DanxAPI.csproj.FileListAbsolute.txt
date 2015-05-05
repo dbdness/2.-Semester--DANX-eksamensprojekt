@@ -33,3 +33,4 @@ C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProje
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\bin\Antlr3.Runtime.pdb
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.dll
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.pdb
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxAPI\obj\Debug\DanxAPI.csprojResolveAssemblyReference.cache
