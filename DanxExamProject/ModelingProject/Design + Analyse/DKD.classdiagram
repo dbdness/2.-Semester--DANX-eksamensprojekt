@@ -81,12 +81,6 @@
                     <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
                   </type_NamedElement>
                 </property>
-                <property Id="9ff1ac4b-02c4-4f1d-8cf2-81dc932c5ddc" name="IsAdmin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="a9d914e9-696e-4ace-8fce-1208bfa0cb61" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="6e6a3599-dfbc-437d-bad0-30f9d4b45d90" LastKnownName="bool" />
-                  </type_NamedElement>
-                </property>
               </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
@@ -102,7 +96,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="8983ef6d-a81f-4d46-94f2-8024201d4ef7" name="AdminOne" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="8983ef6d-a81f-4d46-94f2-8024201d4ef7" name="AdminEmp" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="f5b42c79-3c0c-4d92-85fd-1805143d3983" />
               <generalsInternal>
                 <generalization Id="831193c7-6885-4c46-af26-83760539c5ed" isSubstitutable="false">
@@ -111,41 +105,10 @@
                 </generalization>
               </generalsInternal>
               <ownedAttributesInternal>
-                <property Id="7315e65e-05bd-45d1-88c8-cdfef2bff2cb" name="IsAdmin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="424413af-7520-4723-a2f1-5d67ce241949" />
+                <property Id="df89528e-cfb9-4890-8c40-262b49795811" name="AdminLvl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3ab3b217-9e34-482b-9b56-e6f041caec06" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="e6d32e04-67a9-4835-8c21-20b3f34ef84d" LastKnownName="const bool - true" />
-                  </type_NamedElement>
-                </property>
-                <property Id="28f700b6-a1b5-44aa-8de1-95263a7f9709" name="AdminLvl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="e33256a3-ef5e-412f-93f1-afd895f4d294" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="477f4fad-3378-48b9-abfa-2676fec5fab8" LastKnownName="const int" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="38eeae3b-fe2a-43b8-bb26-c21330f755c4" name="AdminTwo" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="ac768fdc-a159-404a-b158-a071a2da01a3" />
-              <generalsInternal>
-                <generalization Id="cf723602-5a73-44bd-92e9-2d2dd7740df6" isSubstitutable="false">
-                  <classMoniker Id="81e850e5-c0f2-44d9-9f00-c96298084892" LastKnownName="Employee" />
-                  <elementDefinition Id="e1e2a8e5-4b29-42ed-bcd8-dbb2b6a832b3" />
-                </generalization>
-              </generalsInternal>
-              <ownedAttributesInternal>
-                <property Id="42a9f6b8-a675-4946-91a8-126e3299e6f3" name="IsAdmin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="295c2158-4bd9-4be7-845c-6ab093b68f1b" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="a34ec2b4-3398-45af-88fd-e86b382e6189" LastKnownName="const bool - true" />
-                  </type_NamedElement>
-                </property>
-                <property Id="c8797587-eaf8-4907-ae58-ca49e6bd00de" name="AdminLvl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="a1331eaa-2cf0-4244-84b3-65b28f8eab84" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="477f4fad-3378-48b9-abfa-2676fec5fab8" LastKnownName="const int" />
+                    <referencedTypeMoniker Id="d11c8343-ba5e-4b92-bc09-f745d54b08e2" LastKnownName="char" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -289,11 +252,6 @@
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="477f4fad-3378-48b9-abfa-2676fec5fab8" name="const int" isAbstract="false" isLeaf="false" cachedFullName="const int">
-        <elementDefinition Id="cb858280-395b-4f87-8771-b41c0c38348e" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
         <elementDefinition Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef" />
       </referencedType>
@@ -301,16 +259,6 @@
     <packageHasNamedElement>
       <referencedType Id="58438e65-6d74-475a-b7a4-d2f02b55a820" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="e6d32e04-67a9-4835-8c21-20b3f34ef84d" name="const bool - true" isAbstract="false" isLeaf="false" cachedFullName="const bool - true">
-        <elementDefinition Id="068f0a30-9df0-4775-8510-da4b3d8934f4" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="a34ec2b4-3398-45af-88fd-e86b382e6189" name="const bool - true" isAbstract="false" isLeaf="false" cachedFullName="const bool - true">
-        <elementDefinition Id="068f0a30-9df0-4775-8510-da4b3d8934f4" />
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasPackages>
@@ -586,8 +534,8 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="6e6a3599-dfbc-437d-bad0-30f9d4b45d90" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
-        <elementDefinition Id="7818fb33-fc72-47ab-81bd-c069aa6889b7" />
+      <referencedType Id="d11c8343-ba5e-4b92-bc09-f745d54b08e2" name="char" isAbstract="false" isLeaf="false" cachedFullName="char">
+        <elementDefinition Id="7eff0fb7-838f-4828-bc7d-cd26013a494d" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

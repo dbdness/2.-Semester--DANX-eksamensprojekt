@@ -10,6 +10,7 @@ namespace DanxAPI
         public DanxDbContext()
             : base("name=DanxDbContext1")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<LoggedInEmployee> LoggedInEmployees { get; set; }

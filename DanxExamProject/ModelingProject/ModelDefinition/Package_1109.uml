@@ -228,24 +228,6 @@
                 LastKnownLocation="Package_1109.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="a9d914e9-696e-4ace-8fce-1208bfa0cb61"
-            name="IsAdmin"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7818fb33-fc72-47ab-81bd-c069aa6889b7"
-                LastKnownName="bool"
-                LastKnownLocation="Package_1109.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -271,7 +253,7 @@
     <packageHasNamedElement>
       <class
         Id="f5b42c79-3c0c-4d92-85fd-1805143d3983"
-        name="AdminOne"
+        name="AdminEmp"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -287,25 +269,7 @@
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="424413af-7520-4723-a2f1-5d67ce241949"
-            name="IsAdmin"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="068f0a30-9df0-4775-8510-da4b3d8934f4"
-                LastKnownName="const bool - true"
-                LastKnownLocation="Package_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="e33256a3-ef5e-412f-93f1-afd895f4d294"
+            Id="3ab3b217-9e34-482b-9b56-e6f041caec06"
             name="AdminLvl"
             isLeaf="false"
             isStatic="false"
@@ -317,8 +281,8 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="cb858280-395b-4f87-8771-b41c0c38348e"
-                LastKnownName="const int"
+                Id="7eff0fb7-838f-4828-bc7d-cd26013a494d"
+                LastKnownName="char"
                 LastKnownLocation="Package_1109.uml" />
             </type_NamedElement>
           </property>
@@ -452,6 +416,11 @@
       <undefinedType
         Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f"
         name="timespan" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7eff0fb7-838f-4828-bc7d-cd26013a494d"
+        name="char" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
