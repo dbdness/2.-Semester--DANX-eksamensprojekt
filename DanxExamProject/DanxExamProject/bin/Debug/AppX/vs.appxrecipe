@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-03T12:53:20.904</Modified>
+      <Modified>2015-05-05T10:11:58.386</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-04T14:10:43.867</Modified>
+      <Modified>2015-05-05T11:57:57.021</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -34,15 +34,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
-      <Modified>2015-04-30T09:00:16.470</Modified>
+      <Modified>2015-05-04T14:31:14.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
-      <Modified>2015-04-30T09:00:16.735</Modified>
+      <Modified>2015-05-04T14:31:13.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
-      <Modified>2015-04-30T09:00:16.507</Modified>
+      <Modified>2015-05-04T14:31:14.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -70,15 +70,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-05-03T11:43:34.540</Modified>
+      <Modified>2015-05-05T11:52:48.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-04-30T10:53:27.734</Modified>
+      <Modified>2015-05-05T11:40:23.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-04T14:04:31.529</Modified>
+      <Modified>2015-05-05T11:57:57.173</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

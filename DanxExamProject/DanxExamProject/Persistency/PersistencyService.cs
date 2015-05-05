@@ -19,7 +19,7 @@ namespace DanxExamProject.Persistency
         /// Gets the list of employees.
         /// </summary>
         /// <param name="collection"></param>
-        public static void GetDataAsync(ObservableCollection<Employee> collection)
+        public static async void GetDataAsync(ObservableCollection<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -30,19 +30,17 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var stdEmpResponse = client.GetAsync("api/mainEmployees").Result; //Changed to ("api/standardEmployees").
-                    //var adminEmpResponse = client.GetAsync("api/adminEmployees").Result;
+                    var stdEmpResponse = await client.GetAsync("api/standardEmployees");
+                    var adminEmpResponse = await client.GetAsync("api/adminEmployees");
 
-                    if (stdEmpResponse.IsSuccessStatusCode)
+                    if (stdEmpResponse.IsSuccessStatusCode && adminEmpResponse.IsSuccessStatusCode)
                     {
-                        //Add employees to collection. Cannot read as abstract class Employee.
-                        var stdEmp = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
-                        //var adminEmp = adminEmpResponse.Content.ReadAsAsync....<AdminOne>.Result;
+                        var stdEmpData = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
+                        var adminEmpData = adminEmpResponse.Content.ReadAsAsync<IEnumerable<AdminEmp>>().Result;
 
-                        foreach (var e in stdEmp) collection.Add(e);
-                        //foreach (var e in adminEmp) collection.Add(e);
-
-
+                        foreach (var e in stdEmpData) collection.Add(e);
+                        foreach (var e in adminEmpData) collection.Add(e);
+                        
                     }
                 }
                 catch (HttpRequestException)
@@ -68,7 +66,15 @@ namespace DanxExamProject.Persistency
             
                 try
                 {
-                    var response = client.PutAsJsonAsync("api/mainEmployees/" + employee.EmployeeId, employee).Result;
+                    if (employee.GetType() == typeof(StandardEmp))
+                    {
+                        var response = client.PutAsJsonAsync("api/standardEmployees/" + employee.EmployeeId, employee).Result;
+                    }
+                    if (employee.GetType() == typeof (AdminEmp))
+                    {
+                        var response = client.PutAsJsonAsync("api/adminEmployees/" + employee.EmployeeId, employee).Result;
+                    }
+
                 }
                 catch (HttpRequestException)
                 {
@@ -77,11 +83,13 @@ namespace DanxExamProject.Persistency
             }
         }
 
+
+
         /// <summary>
         /// Changes the login-time for the logged in Employee
         /// </summary>
         /// <param name="employee"></param>
-        public static void PutDataForLoggedin(Employee employee)
+        public static void PutDataLoggedin(Employee employee)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -105,7 +113,7 @@ namespace DanxExamProject.Persistency
         /// Get the list of logged in employees.
         /// </summary>
         /// <param name="collection"></param>
-        public async static void GetDataAsync(List<Employee> collection)
+        public async static void GetDataLoggedInAsync(List<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -120,7 +128,7 @@ namespace DanxExamProject.Persistency
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var dbData = response.Content.ReadAsAsync<IEnumerable<Employee>>().Result;
+                        var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
                         collection.AddRange(dbData);
                     }
                 }
@@ -135,7 +143,7 @@ namespace DanxExamProject.Persistency
         /// Add an employee to the database for logged in employees.
         /// </summary>
         /// <param name="employee"></param>
-        public static void PostData(Employee employee)
+        public static void PostDataLoggedIn(Employee employee)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -159,7 +167,7 @@ namespace DanxExamProject.Persistency
         /// Remove logged in employee from database when he logs out. 
         /// </summary>
         /// <param name="employee"></param>
-        public static void DeleteData(Employee employee)
+        public static void DeleteDataLoggedIn(Employee employee)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))

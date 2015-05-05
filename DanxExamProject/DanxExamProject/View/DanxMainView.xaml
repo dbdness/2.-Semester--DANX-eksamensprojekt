@@ -1,18 +1,18 @@
 ﻿<Page
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DanxExamProject"
+    xmlns:local="using:DanxExamProject.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:DanxExamProject.ViewModel"
-    x:Class="DanxExamProject.MainPage"
+    x:Class="DanxExamProject.View.DanxMainView"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.DataContext>
-            <ViewModel:MainViewModel/>
-        </Grid.DataContext>
         <Canvas>
+           <Canvas.DataContext>
+                <ViewModel:MainViewModel/>
+            </Canvas.DataContext>
             <Border BorderBrush="Gray" Background="Gray" BorderThickness="10" Canvas.Left="167" Canvas.Top="121" Width="1066" Height="46">
                 <Canvas>
                     <TextBlock Text="EmployeeId" FontWeight="Bold"/>
@@ -37,8 +37,8 @@
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="126"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="127"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
                             <TextBlock Text="{Binding TotalHours}" Canvas.Left="627"/>
                             <TextBlock Text="{Binding TotalHours}" Canvas.Left="704"/>
@@ -49,7 +49,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <TextBlock x:Name ="ChangeBlock"  Canvas.Left="200" TextWrapping="Wrap" Text="Jeg har en standard text" FontWeight="Bold" FontSize="25" Foreground="Lime" Canvas.Top="445" Height="52" Width="811"/>
         </Canvas>
-
     </Grid>
 </Page>

@@ -22,7 +22,6 @@ namespace DanxExamProject.Model
         public int SickDays { get; set; }
         public int WorkedDays { get; set; }
 
-        public bool IsAdmin { get; set; }
 
         
 

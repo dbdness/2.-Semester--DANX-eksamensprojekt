@@ -8,9 +8,6 @@ namespace DanxExamProject.Model
 {
     class StandardEmp: Employee
     {
-        public StandardEmp()
-        {
-            IsAdmin = false;
-        }
+       
     }
 }

@@ -6,18 +6,22 @@ namespace DanxAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MainEmployee")]
-    public partial class MainEmployee
+    [Table("AdminEmployee")]
+    public partial class AdminEmployee
     {
         [Key]
+        [Column(Order = 0)]
         public int EmployeeId { get; set; }
+
+        public int? AdminLvl { get; set; }
 
         public int? SalaryNumber { get; set; }
 
         [StringLength(50)]
         public string Manager { get; set; }
 
-        [Required]
+        [Key]
+        [Column(Order = 1)]
         [StringLength(50)]
         public string Name { get; set; }
 
@@ -36,7 +40,5 @@ namespace DanxAPI
         public int? SickDays { get; set; }
 
         public int? WorkedDays { get; set; }
-
-        public bool? IsAdmin { get; set; }
     }
 }

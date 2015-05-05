@@ -12,44 +12,44 @@ using DanxAPI;
 
 namespace DanxAPI.Controllers
 {
-    public class LoggedInEmployeesController : ApiController
+    public class AdminEmployeesController : ApiController
     {
         private DanxDbContext db = new DanxDbContext();
 
-        // GET: api/LoggedInEmployees
-        public IQueryable<LoggedInEmployee> GetLoggedInEmployees()
+        // GET: api/AdminEmployees
+        public IQueryable<AdminEmployee> GetAdminEmployees()
         {
-            return db.LoggedInEmployees;
+            return db.AdminEmployees;
         }
 
-        // GET: api/LoggedInEmployees/5
-        [ResponseType(typeof(LoggedInEmployee))]
-        public IHttpActionResult GetLoggedInEmployee(int id)
+        // GET: api/AdminEmployees/5
+        [ResponseType(typeof(AdminEmployee))]
+        public IHttpActionResult GetAdminEmployee(int id)
         {
-            LoggedInEmployee loggedInEmployee = db.LoggedInEmployees.Find(id);
-            if (loggedInEmployee == null)
+            AdminEmployee adminEmployee = db.AdminEmployees.Find(id);
+            if (adminEmployee == null)
             {
                 return NotFound();
             }
 
-            return Ok(loggedInEmployee);
+            return Ok(adminEmployee);
         }
 
-        // PUT: api/LoggedInEmployees/5
+        // PUT: api/AdminEmployees/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLoggedInEmployee(int id, LoggedInEmployee loggedInEmployee)
+        public IHttpActionResult PutAdminEmployee(int id, AdminEmployee adminEmployee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != loggedInEmployee.EmployeeId)
+            if (id != adminEmployee.EmployeeId)
             {
                 return BadRequest();
             }
 
-            db.Entry(loggedInEmployee).State = EntityState.Modified;
+            db.Entry(adminEmployee).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace DanxAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!LoggedInEmployeeExists(id))
+                if (!AdminEmployeeExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +70,16 @@ namespace DanxAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/LoggedInEmployees
-        [ResponseType(typeof(LoggedInEmployee))]
-        public IHttpActionResult PostLoggedInEmployee(LoggedInEmployee loggedInEmployee)
+        // POST: api/AdminEmployees
+        [ResponseType(typeof(AdminEmployee))]
+        public IHttpActionResult PostAdminEmployee(AdminEmployee adminEmployee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.LoggedInEmployees.Add(loggedInEmployee);
+            db.AdminEmployees.Add(adminEmployee);
 
             try
             {
@@ -87,7 +87,7 @@ namespace DanxAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (LoggedInEmployeeExists(loggedInEmployee.EmployeeId))
+                if (AdminEmployeeExists(adminEmployee.EmployeeId))
                 {
                     return Conflict();
                 }
@@ -97,23 +97,23 @@ namespace DanxAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = loggedInEmployee.EmployeeId }, loggedInEmployee);
+            return CreatedAtRoute("DefaultApi", new { id = adminEmployee.EmployeeId }, adminEmployee);
         }
 
-        // DELETE: api/LoggedInEmployees/5
-        [ResponseType(typeof(LoggedInEmployee))]
-        public IHttpActionResult DeleteLoggedInEmployee(int id)
+        // DELETE: api/AdminEmployees/5
+        [ResponseType(typeof(AdminEmployee))]
+        public IHttpActionResult DeleteAdminEmployee(int id)
         {
-            LoggedInEmployee loggedInEmployee = db.LoggedInEmployees.Find(id);
-            if (loggedInEmployee == null)
+            AdminEmployee adminEmployee = db.AdminEmployees.Find(id);
+            if (adminEmployee == null)
             {
                 return NotFound();
             }
 
-            db.LoggedInEmployees.Remove(loggedInEmployee);
+            db.AdminEmployees.Remove(adminEmployee);
             db.SaveChanges();
 
-            return Ok(loggedInEmployee);
+            return Ok(adminEmployee);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +125,9 @@ namespace DanxAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LoggedInEmployeeExists(int id)
+        private bool AdminEmployeeExists(int id)
         {
-            return db.LoggedInEmployees.Count(e => e.EmployeeId == id) > 0;
+            return db.AdminEmployees.Count(e => e.EmployeeId == id) > 0;
         }
     }
 }
