@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
@@ -49,6 +50,12 @@ namespace DanxExamProject.View
             if (_i != _newsList.Count-1) _i++;
             else _i = 0;
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Task.Delay(100);
+            Frame.Navigate(typeof (loggedIn));
         }
 
        

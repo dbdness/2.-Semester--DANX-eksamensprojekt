@@ -8,6 +8,9 @@ namespace DanxExamProject.Model
 {
     class StandardEmp: Employee
     {
-       
+        public override string ToString()
+        {
+            return String.Format("{0}h {1}m", TotalHours.Hours, TotalHours.Minutes);
+        }
     }
 }

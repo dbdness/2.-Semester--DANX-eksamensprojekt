@@ -9,5 +9,10 @@ namespace DanxExamProject.Model
     class AdminEmp: Employee
     {
         public char AdminLvl;
+
+        public override string ToString()
+        {
+            return String.Format("{0}h {1}m", TotalHours.Hours, TotalHours.Minutes);
+        }
     }
 }

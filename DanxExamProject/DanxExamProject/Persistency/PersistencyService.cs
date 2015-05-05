@@ -19,7 +19,7 @@ namespace DanxExamProject.Persistency
         /// Gets the list of employees.
         /// </summary>
         /// <param name="collection"></param>
-        public static async void GetDataAsync(ObservableCollection<Employee> collection)
+        public static void GetData(ObservableCollection<Employee> collection)
         {
             var handler = new HttpClientHandler();
             using (var client = new HttpClient(handler))
@@ -30,8 +30,8 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var stdEmpResponse = await client.GetAsync("api/standardEmployees");
-                    var adminEmpResponse = await client.GetAsync("api/adminEmployees");
+                    var stdEmpResponse = client.GetAsync("api/standardEmployees").Result;
+                    var adminEmpResponse = client.GetAsync("api/adminEmployees").Result;
 
                     if (stdEmpResponse.IsSuccessStatusCode && adminEmpResponse.IsSuccessStatusCode)
                     {
@@ -113,10 +113,10 @@ namespace DanxExamProject.Persistency
         /// Get the list of logged in employees.
         /// </summary>
         /// <param name="collection"></param>
-        public async static void GetDataLoggedInAsync(List<Employee> collection)
+        public static void GetDataLoggedIn(List<Employee> collection)
         {
             var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
+            using (var client = new HttpClient(handler))    
             {
                 client.BaseAddress = new Uri(ServerUri);
                 client.DefaultRequestHeaders.Clear();
@@ -124,10 +124,11 @@ namespace DanxExamProject.Persistency
 
                 try
                 {
-                    var response = await client.GetAsync("api/loggedInEmployees");
+                    var response = client.GetAsync("api/loggedInEmployees").Result;
 
                     if (response.IsSuccessStatusCode)
                     {
+                        //Need two logged in tables. 
                         var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
                         collection.AddRange(dbData);
                     }

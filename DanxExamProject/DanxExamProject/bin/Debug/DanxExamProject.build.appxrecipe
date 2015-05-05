@@ -53,6 +53,9 @@
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\loggedIn.xbf">
+      <PackagePath>View\loggedIn.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
     </AppxPackagedFile>

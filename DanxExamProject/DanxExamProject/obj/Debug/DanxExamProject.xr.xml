@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="LoginCommand" />
+    <RootPropertyPathName Name="LoginBox" />
     <RootPropertyPathName Name="EmployeesInDb" />
     <RootPropertyPathName Name="WorkedDays" />
     <RootPropertyPathName Name="SickDays" />
     <RootPropertyPathName Name="VacationDays" />
-    <RootPropertyPathName Name="TotalHours" />
+    <RootPropertyPathName Name="WatchHours" />
     <RootPropertyPathName Name="StdHours" />
     <RootPropertyPathName Name="LastLogout" />
     <RootPropertyPathName Name="LastLogin" />
@@ -13,18 +15,39 @@
     <RootPropertyPathName Name="Manager" />
     <RootPropertyPathName Name="SalaryNumber" />
     <RootPropertyPathName Name="EmployeeId" />
+    <RootPropertyPathName Name="DefaultViewModel" />
+    <RootPropertyPathName Name="NavigationHelper" />
+    <RootPropertyPathName Name="GoBackCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="ChildrenTransitions" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
+      <RootProperty Name="Margin" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Children" />
       <RootMethod Name="GetLeft" />
@@ -59,11 +82,46 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Command" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="RelativeSource" />
+      <RootProperty Name="ElementName" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="DanxExamProject.View.DanxMainView" />
+    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
+    <RootType FullName="System.String" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
+    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
+      <RootMethod Name="GetName" />
+      <RootMethod Name="SetName" />
+      <RootMethod Name="GetAutomationId" />
+      <RootMethod Name="SetAutomationId" />
+      <RootMethod Name="GetItemType" />
+      <RootMethod Name="SetItemType" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="DanxExamProject.View.loggedIn" />
   </Roots.RootTypes>
 </Roots>

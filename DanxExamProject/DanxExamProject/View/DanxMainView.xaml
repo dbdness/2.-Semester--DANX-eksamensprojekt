@@ -9,8 +9,18 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Canvas>
-           <Canvas.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="179"/>
+            <RowDefinition Height="386"/>
+            <RowDefinition Height="203"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="133"/>
+            <ColumnDefinition Width="1118*"/>
+            <ColumnDefinition Width="115*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10,87,41,-48">
+            <Canvas.DataContext>
                 <ViewModel:MainViewModel/>
             </Canvas.DataContext>
             <Border BorderBrush="Gray" Background="Gray" BorderThickness="10" Canvas.Left="167" Canvas.Top="121" Width="1066" Height="46">
@@ -40,8 +50,8 @@
                             <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
                             <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
-                            <TextBlock Text="{Binding TotalHours}" Canvas.Left="627"/>
-                            <TextBlock Text="{Binding TotalHours}" Canvas.Left="704"/>
+                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="627"/>
+                            <TextBlock Text="{Binding}" Canvas.Left="704"/>
                             <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
                             <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
                             <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
@@ -50,6 +60,8 @@
                 </ListView.ItemTemplate>
             </ListView>
             <TextBlock x:Name ="ChangeBlock"  Canvas.Left="200" TextWrapping="Wrap" Text="Jeg har en standard text" FontWeight="Bold" FontSize="25" Foreground="Lime" Canvas.Top="445" Height="52" Width="811"/>
+            <TextBox Canvas.Left="372" TextWrapping="Wrap" Text="{Binding LoginBox, Mode=TwoWay}" Canvas.Top="32" Width="114"/>
+            <Button Command="{Binding LoginCommand}" Content="Login" Canvas.Left="498" Canvas.Top="29" Click="Button_Click"/>
         </Canvas>
     </Grid>
 </Page>
