@@ -33,8 +33,11 @@ namespace DanxExamProject.ViewModel
             LoggedInEmployees = new List<Employee>();
             
             PersistencyService.GetData(EmployeesInDb);
+            PersistencyService.GetData(EmployeesInDb);
+            PersistencyService.GetDataLoggedIn(LoggedInEmployees);
 
             LoginCommand = new RelayCommand(EmployeeHandler.Login);
+            LogoutCommand = new RelayCommand(EmployeeHandler.Logout);
 
             //foreach (var v in EmployeesInDb)
             //{

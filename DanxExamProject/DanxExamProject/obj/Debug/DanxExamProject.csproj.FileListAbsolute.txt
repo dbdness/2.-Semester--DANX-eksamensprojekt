@@ -81,11 +81,3 @@ C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\
 C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\loggedIn.g.cs
 C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\loggedIn.xaml
 C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\loggedIn.xbf
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\layout.resfiles
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\layout.resfiles.intermediate
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\Resources.resfiles
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\Resources.resfiles.intermediate
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\pri.resfiles
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\pri.resfiles.intermediate
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\priconfig.xml
-C:\Users\Danny\Documents\GitHub\2SemesterDanx\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\priconfig.xml.intermediate

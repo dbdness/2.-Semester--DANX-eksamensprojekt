@@ -52,6 +52,6 @@
 				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <TextBox HorizontalAlignment="Left" Margin="404,230,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding LogoutBox, Mode=TwoWay}"  VerticalAlignment="Top" Width="102"/>
-        <Button Content="Logout" HorizontalAlignment="Left" Margin="526,227,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Command="{Binding LogoutCommand}" Content="Logout" HorizontalAlignment="Left" Margin="526,227,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Page>

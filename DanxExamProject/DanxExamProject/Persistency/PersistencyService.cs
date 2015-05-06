@@ -38,8 +38,18 @@ namespace DanxExamProject.Persistency
                         var stdEmpData = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
                         var adminEmpData = adminEmpResponse.Content.ReadAsAsync<IEnumerable<AdminEmp>>().Result;
 
-                        foreach (var e in stdEmpData) collection.Add(e);
-                        foreach (var e in adminEmpData) collection.Add(e);
+                        collection.Clear();
+
+                        foreach (var e in stdEmpData)
+                        {
+                            collection.Add(e);
+                        }
+                        foreach (var e in adminEmpData)
+                        {
+                            if (collection.Contains(e)) return;
+                            collection.Add(e);
+                            
+                        }
                         
                     }
                 }

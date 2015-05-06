@@ -61,8 +61,9 @@
             </ListView>
             <TextBlock x:Name ="ChangeBlock"  Canvas.Left="200" TextWrapping="Wrap" Text="Jeg har en standard text" FontWeight="Bold" FontSize="25" Foreground="Lime" Canvas.Top="445" Height="52" Width="811"/>
             <TextBox Canvas.Left="372" TextWrapping="Wrap" Text="{Binding LoginBox, Mode=TwoWay}" Canvas.Top="32" Width="114"/>
-            <Button x:ConnectionId='1' Command="{Binding LoginCommand}" Content="Login" Canvas.Left="498" Canvas.Top="29"                     />
+            <Button x:ConnectionId='2' Command="{Binding LoginCommand}" Content="Login" Canvas.Left="498" Canvas.Top="29"                     />
         </Canvas>
+        <AppBarButton x:ConnectionId='1' Grid.Column="2" IsCompact="True" HorizontalAlignment="Left" Icon="Forward" Label="AppBarButton" Margin="4,94,0,0" VerticalAlignment="Top"                           />
     </Grid>
 </Page>
 

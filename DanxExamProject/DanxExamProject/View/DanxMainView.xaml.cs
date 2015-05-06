@@ -58,6 +58,11 @@ namespace DanxExamProject.View
             Frame.Navigate(typeof (loggedIn));
         }
 
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (loggedIn));
+        }
+
        
 
         
