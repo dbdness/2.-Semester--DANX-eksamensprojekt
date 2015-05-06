@@ -5,6 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <MenuFlyout x:Key="AdminTools" Placement="Left">
+            <MenuFlyoutItem Text="Almen Database"/>
+            <MenuFlyoutItem Text="Database 2"/>
+            <MenuFlyoutItem Text="loggedinDatabase"/>
+            <MenuFlyoutSeparator x:Name="Seperator"/>
+            <MenuFlyoutItem Text="Afdelinger"/>
+            <MenuFlyoutItem Text="HR"/>
+            <MenuFlyoutItem Text="Løn"/>
+            <MenuFlyoutItem Text="Ekstra"/>
+        </MenuFlyout>
+    </Page.Resources>
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -12,56 +24,72 @@
             <RowDefinition Height="152"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Canvas Visibility="Visible" x:Name="MainCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+        <Canvas Visibility="Collapsed" x:Name="MainCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFACACAC" Offset="0"/>
+                    <GradientStop Color="#FF0D5AFF" Offset="0"/>
                     <GradientStop Color="White" Offset="0.049"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <TextBlock Canvas.Left="270" TextWrapping="Wrap" Text="                            Welcome!&#x0a;Insert worker-id in one of the above boxes." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="224" Height="110" Width="797"/>
+            <HyperlinkButton x:Name="DanxWebsite" Content="" Canvas.Left="315" Canvas.Top="63" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="700"/>
+            <TextBlock x:Name="NewsBlock"  Canvas.Left="308.538" TextWrapping="Wrap" Canvas.Top="72.593" Height="44.448" Width="711.66" FontSize="18.667" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015" Foreground="#FF0017FF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform SkewX="-25"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Canvas.Left="267" TextWrapping="Wrap" Text="                            Welcome!&#xA;Insert worker-id in one of the above boxes." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="205" Height="110" Width="797"/>
             <Canvas Height="100" Canvas.Left="448" Canvas.Top="315" Width="100"/>
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="497" Canvas.Top="465"/>
 
         </Canvas>
-        <Canvas Visibility="Collapsed" x:Name="StandardLoginCanvas" Background="White" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
-            <TextBlock Canvas.Left="496" TextWrapping="Wrap" Text="Welcome Daniel!" FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="126" Height="57" Width="322"/>
-            <Rectangle Fill="Black" Height="112" Canvas.Left="294" Stroke="Black" Canvas.Top="243" Width="818"/>
+        <Canvas Visibility="Collapsed" x:Name="StandardLoginCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D5AFF" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.049"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <TextBlock Canvas.Left="528" TextWrapping="Wrap" Text="Welcome Daniel!" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="85" Height="57" Width="322"/>
+            <Rectangle Fill="#FF0D5AFF" Height="276" Canvas.Left="262" Stroke="Black" Canvas.Top="259" Width="882"/>
             <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+            <TextBlock Canvas.Left="350" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="173" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
         </Canvas>
-        <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Background="White" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
-            <TextBlock Canvas.Left="466" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="22" Height="57" Width="322"/>
+        <Canvas x:Name="AdminManageCanvas" Visibility="Visible" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D5AFF"/>
+                    <GradientStop Color="White" Offset="0.049"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <TextBlock Canvas.Left="466" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="#FF0D5AFF" Canvas.Top="40" Height="57" Width="322"/>
             <Canvas x:Name="PastRegDatabase">
-                <Rectangle Visibility="Visible"  Fill="Black" Height="112" Canvas.Left="294" Stroke="Black" Canvas.Top="243" Width="818"/>
-                <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
-            </Canvas>
-
-            <Canvas  Background="Gray" Height="79" Canvas.Left="1035" Width="331">
-                <AppBarButton IsCompact="True" Icon="Setting" Label="AppBarButton" Canvas.Top="4" Canvas.Left="165"/>
-                <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="77" Canvas.Top="4"/>
-                <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4">
-                    <AppBarButton.Resources>
-                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
-                            <MenuFlyoutItem Text="Workerlist">
-
-                            </MenuFlyoutItem>
-                            <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Database 2"/>
-                            <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Database 3"/>
-
-
-                        </MenuFlyout>
-                    </AppBarButton.Resources>
-                    <AppBarButton.Flyout>
-                        <StaticResource ResourceKey="FlyoutBase1"/>
-                    </AppBarButton.Flyout>
-                </AppBarButton>
+                <Rectangle Visibility="Visible"  Fill="#FF0D5AFF" Height="342" Canvas.Left="205" Stroke="Black" Canvas.Top="179" Width="930"/>
+                <TextBlock Canvas.Left="439" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="317" Foreground="White"/>
             </Canvas>
             <Canvas x:Name="WorkerListDB" Visibility="Collapsed">
                 <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
                 <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             </Canvas>
+            <TextBlock Canvas.Left="332" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="102" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
+            <Border Height="130" Canvas.Left="1306" Canvas.Top="275" Width="64">
+                <Grid Margin="10,0,0,0">
+                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" StrokeThickness="0"/>
+                    <Rectangle Fill="White" Stroke="#00FFFFFF" Margin="0,0,43,0" StrokeThickness="0"/>
+                    <Ellipse Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,84,24,0"/>
+                    <Ellipse Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,0,24,84"/>
+                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,20,25,27" StrokeThickness="0"/>
+                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="24,0,14,0" StrokeThickness="0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Admin" FontSize="14" Margin="11,63,-3,27" Foreground="White"/>
+                    <Button Content="" HorizontalAlignment="Left" Margin="0,0,-15,0" VerticalAlignment="Top" Height="130" Width="69" BorderBrush="Transparent" Foreground="Transparent" BorderThickness="0" Opacity="0" Flyout="{StaticResource AdminTools}"/>
+
+
+
+
+
+
+
+                </Grid>
+            </Border>
 
 
 
@@ -71,31 +99,25 @@
 
         </Canvas>
 
-        <Canvas Grid.Row="0" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1366" RequestedTheme="Dark">
+        <Canvas x:Name="TopCanvas" Grid.Row="0" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1366" RequestedTheme="Dark">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Gray" Offset="0.026"/>
-                    <GradientStop Color="#FFACACAC" Offset="0.857"/>
+                    <GradientStop Color="#FF0016F7" Offset="0.888"/>
+                    <GradientStop Color="#FF4253F9" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <TextBox x:Name="LoginBox" Canvas.Left="200" TextWrapping="Wrap" Canvas.Top="60" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FFBFBFBF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
+            <TextBox x:Name="LoginBox" Canvas.Left="200" TextWrapping="Wrap" Canvas.Top="60" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
                 <TextBox.Projection>
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
             </TextBox>
-            <TextBox x:Name="ManageBox" Canvas.Left="1021" TextWrapping="Wrap" Canvas.Top="60" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FFBFBFBF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
+            <TextBox x:Name="ManageBox" Canvas.Left="1021" TextWrapping="Wrap" Canvas.Top="60" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF6682FF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
                 <TextBox.Projection>
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
             </TextBox>
-            
-            <TextBlock x:Name="NewsBlock"  Canvas.Left="393.064" TextWrapping="Wrap" Canvas.Top="68.116" Height="34" Width="535.146" FontSize="14" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015">
-             <TextBlock.RenderTransform>
-                    <CompositeTransform SkewX="-25"/>
-                </TextBlock.RenderTransform>
-                <Underline></Underline>
-            </TextBlock>
-            <HyperlinkButton x:Name="DanxWebsite" Content="" Canvas.Left="392" Canvas.Top="53" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="540"/>
+            <TextBlock x:Name="ValueBlock" Canvas.Left="532" TextWrapping="Wrap" Canvas.Top="15" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
+            <TextBlock x:Name="ValueText" Canvas.Left="486" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="69" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
         </Canvas>
 
 
