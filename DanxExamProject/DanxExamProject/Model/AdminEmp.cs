@@ -8,7 +8,7 @@ namespace DanxExamProject.Model
 {
     class AdminEmp: Employee
     {
-        public char AdminLvl;
+        public int AdminLvl;
 
         public override string ToString()
         {
