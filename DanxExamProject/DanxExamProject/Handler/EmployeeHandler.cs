@@ -13,6 +13,7 @@ namespace DanxExamProject.Handler
     {
         private MainViewModel _viewModel;
         private bool _isLoggedIn;
+        public static Employee SelectedEmployee { get; set; }
 
         public EmployeeHandler(MainViewModel viewModel)
         {
@@ -21,11 +22,13 @@ namespace DanxExamProject.Handler
 
         public void Login()
         {
-            var employeess = _viewModel.EmployeesInDb.ToList();
-            var matcingEmloyee = employeess.Find(e => e.EmployeeId.ToString() == _viewModel.LoginBox);
+            var employees = _viewModel.EmployeesInDb.ToList();
+            var matcingEmloyee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginBox);
             if (matcingEmloyee != null)
             {
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
+                matcingEmloyee.LastLogin = DateTime.Now;
+                PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the show employee list. 
                 UpdateLoginTime();
                 _isLoggedIn = true;
 
@@ -40,8 +43,7 @@ namespace DanxExamProject.Handler
 
             var recentEmployee = _viewModel.LoggedInEmployees.Last();
 
-            if (recentEmployee.GetType() == typeof (StandardEmp))
-            {
+            
                 var updatedEmployee = new StandardEmp()
                 {
                     EmployeeId = recentEmployee.EmployeeId,
@@ -51,23 +53,13 @@ namespace DanxExamProject.Handler
                     LastLogout = recentEmployee.LastLogout
 
                 };
-                PersistencyService.PutData(updatedEmployee); //Updated login time for shown employee list
+                
                 PersistencyService.PutDataLoggedin(updatedEmployee); //Updated login time for logged in employee
+                
+            
             }
-            else if (recentEmployee.GetType() == typeof(AdminEmp))
-            {
-                var updatedEmployee = new AdminEmp()
-                {
-                    EmployeeId = recentEmployee.EmployeeId,
-                    Name = recentEmployee.Name,
-                    TotalHours = recentEmployee.TotalHours,
-                    LastLogin = DateTime.Now,
-                    LastLogout = recentEmployee.LastLogout
 
-                };
-                PersistencyService.PutData(updatedEmployee); //Updated login time for shown employee list
-                PersistencyService.PutDataLoggedin(updatedEmployee); //Updated login time for logged in employee
-            }
+
             
 
             
@@ -75,4 +67,4 @@ namespace DanxExamProject.Handler
 
         }
     }
-}
+

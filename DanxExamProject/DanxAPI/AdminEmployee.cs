@@ -10,7 +10,6 @@ namespace DanxAPI
     public partial class AdminEmployee
     {
         [Key]
-        [Column(Order = 0)]
         public int EmployeeId { get; set; }
 
         public int? AdminLvl { get; set; }
@@ -20,8 +19,7 @@ namespace DanxAPI
         [StringLength(50)]
         public string Manager { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 

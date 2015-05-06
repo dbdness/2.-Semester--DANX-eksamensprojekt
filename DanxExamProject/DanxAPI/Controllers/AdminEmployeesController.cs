@@ -80,22 +80,7 @@ namespace DanxAPI.Controllers
             }
 
             db.AdminEmployees.Add(adminEmployee);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (AdminEmployeeExists(adminEmployee.EmployeeId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = adminEmployee.EmployeeId }, adminEmployee);
         }

@@ -39,7 +39,7 @@
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
                 </Canvas>
             </Border>
-            <ListView ItemsSource="{Binding EmployeesInDb}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="167" Canvas.Top="167">
+            <ListView ItemsSource="{Binding EmployeesInDb}" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="167" Canvas.Top="167">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>

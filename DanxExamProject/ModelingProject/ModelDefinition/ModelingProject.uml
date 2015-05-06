@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="36e04b60-98d4-4ba2-95ea-da3661aa3d7e"
   name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -51,17 +51,6 @@
           <property
             Id="2bdf18ae-e384-4070-82ed-4f90b985195f"
             name="Location"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="6313634a-4639-45af-948c-5c3b40728402"
-            name="Adress"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1920,22 +1909,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="8febdda4-293a-4079-96f4-54e407331c90"
-            name="MessageOccurrenceSpecification2">
-            <covered>
-              <lifelineMoniker
-                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
-                LastKnownName="PersistencyService"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="8b1af47b-f02b-439d-85ea-c4ec3343fe4a"
             name="MessageOccurrenceSpecification1">
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
                 LastKnownName="EmployeeHandler"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8febdda4-293a-4079-96f4-54e407331c90"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
+                LastKnownName="PersistencyService"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2446,22 +2435,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="615da9bf-d143-4622-baeb-a3b45bdc0259"
-            name="OperandOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
-                LastKnownName="PersistencyService"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="3c083197-19e5-4823-b45d-39e1b1ddf18d"
             name="OperandOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
                 Id="944c57e3-0733-4365-8bc6-ee18de971df0"
                 LastKnownName=": _loggedInEmployees"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="615da9bf-d143-4622-baeb-a3b45bdc0259"
+            name="OperandOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
+                LastKnownName="PersistencyService"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>

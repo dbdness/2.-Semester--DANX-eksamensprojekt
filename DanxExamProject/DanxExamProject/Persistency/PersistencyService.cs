@@ -66,11 +66,12 @@ namespace DanxExamProject.Persistency
             
                 try
                 {
+
                     if (employee.GetType() == typeof(StandardEmp))
                     {
                         var response = client.PutAsJsonAsync("api/standardEmployees/" + employee.EmployeeId, employee).Result;
                     }
-                    if (employee.GetType() == typeof (AdminEmp))
+                    if (employee.GetType() == typeof(AdminEmp))
                     {
                         var response = client.PutAsJsonAsync("api/adminEmployees/" + employee.EmployeeId, employee).Result;
                     }

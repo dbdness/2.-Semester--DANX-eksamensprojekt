@@ -80,22 +80,7 @@ namespace DanxAPI.Controllers
             }
 
             db.StandardEmployees.Add(standardEmployee);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (StandardEmployeeExists(standardEmployee.EmployeeId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = standardEmployee.EmployeeId }, standardEmployee);
         }

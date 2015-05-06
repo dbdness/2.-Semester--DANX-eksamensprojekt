@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="b566928f-616a-4bee-ba5a-961eb6902ba3" name="Model">
@@ -9,12 +9,6 @@
             <class Id="81e850e5-c0f2-44d9-9f00-c96298084892" name="Employee" isAbstract="true" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="9c23ebf4-2617-4af8-9450-75781fb7c3b5" />
               <ownedAttributesInternal>
-                <property Id="2c8a6610-3a23-40a2-afe8-29341db722ed" name="Adress" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="dc5623ae-53b5-4d05-8bcc-7992f8deaa45" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="86b1846a-424a-4d27-8286-f1f1dc776bc1" LastKnownName="string" />
-                  </type_NamedElement>
-                </property>
                 <property Id="ef8e87e5-42af-42e5-a75c-f6b4707f9138" name="EmployeeId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="92d7103c-a5cf-490f-a9af-f635f1114032" />
                   <type_NamedElement>

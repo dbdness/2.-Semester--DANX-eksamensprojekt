@@ -4,6 +4,8 @@
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="LoginBox" />
     <RootPropertyPathName Name="EmployeesInDb" />
+    <RootPropertyPathName Name="EmployeeHandler" />
+    <RootPropertyPathName Name="SelectedEmployee" />
     <RootPropertyPathName Name="WorkedDays" />
     <RootPropertyPathName Name="SickDays" />
     <RootPropertyPathName Name="VacationDays" />
@@ -16,6 +18,7 @@
     <RootPropertyPathName Name="SalaryNumber" />
     <RootPropertyPathName Name="EmployeeId" />
     <RootPropertyPathName Name="DefaultViewModel" />
+    <RootPropertyPathName Name="LogoutBox" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
   </Roots.PropertyPathNames>
@@ -32,10 +35,13 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="ChildrenTransitions" />
+      <RootProperty Name="DataContext" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
@@ -66,6 +72,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalAlignment" />
@@ -91,13 +98,17 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
       <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Command" />
       <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Style" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Style" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -109,7 +120,9 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="DanxExamProject.View.DanxMainView" />
-    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
+    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="System.String" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />

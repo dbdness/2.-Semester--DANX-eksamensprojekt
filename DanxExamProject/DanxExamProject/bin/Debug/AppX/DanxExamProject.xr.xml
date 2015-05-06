@@ -4,6 +4,8 @@
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="LoginBox" />
     <RootPropertyPathName Name="EmployeesInDb" />
+    <RootPropertyPathName Name="EmployeeHandler" />
+    <RootPropertyPathName Name="SelectedEmployee" />
     <RootPropertyPathName Name="WorkedDays" />
     <RootPropertyPathName Name="SickDays" />
     <RootPropertyPathName Name="VacationDays" />
@@ -66,6 +68,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalAlignment" />

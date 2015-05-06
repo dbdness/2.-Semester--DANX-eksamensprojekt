@@ -8,26 +8,26 @@ namespace DanxAPI
     public partial class DanxDbContext : DbContext
     {
         public DanxDbContext()
-            : base("name=DanxDbContext")
+            : base("name=DanxDbContext1")
         {
-            base.Configuration.ProxyCreationEnabled = false; 
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
-        public virtual DbSet<LoggedInEmployee> LoggedInEmployees { get; set; }
         public virtual DbSet<AdminEmployee> AdminEmployees { get; set; }
+        public virtual DbSet<LoggedInEmployee> LoggedInEmployees { get; set; }
         public virtual DbSet<StandardEmployee> StandardEmployees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<LoggedInEmployee>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
             modelBuilder.Entity<AdminEmployee>()
                 .Property(e => e.Manager)
                 .IsUnicode(false);
 
             modelBuilder.Entity<AdminEmployee>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LoggedInEmployee>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
