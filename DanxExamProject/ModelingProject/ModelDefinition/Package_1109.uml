@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="44369dd2-3645-4ff6-923d-9f035059eecf"
   name="Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -32,7 +32,7 @@
           </property>
           <property
             Id="92d7103c-a5cf-490f-a9af-f635f1114032"
-            name="Id"
+            name="EmployeeId"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -45,24 +45,6 @@
               <undefinedTypeMoniker
                 Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
                 LastKnownName="int"
-                LastKnownLocation="Package_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="efe4ce3e-b5e2-41ca-9cfa-4b17cd42a53b"
-            name="Location"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
-                LastKnownName="string"
                 LastKnownLocation="Package_1109.uml" />
             </type_NamedElement>
           </property>
@@ -86,7 +68,7 @@
           </property>
           <property
             Id="a0d983cf-36e1-4aca-a870-306e6e137d74"
-            name="SalaryId"
+            name="Salary_"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -99,6 +81,168 @@
               <undefinedTypeMoniker
                 Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
                 LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3ad176fd-f283-45d2-b6ad-074bb5d35a7b"
+            name="Manager"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ce027571-93de-496f-8725-f280abaef5b2"
+            name="LastLogin"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="52dfadb9-39aa-4201-b7a5-3ccc2b8be65c"
+                LastKnownName="datetime"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ded7c973-a711-4142-8d34-be6dcc24d571"
+            name="LastLogout"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="52dfadb9-39aa-4201-b7a5-3ccc2b8be65c"
+                LastKnownName="datetime"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="125b5ada-cacd-4627-bf60-dc678ea16c32"
+            name="StdHours"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f"
+                LastKnownName="timespan"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1ee4986a-89a6-49e9-800f-37f9efbc8c2c"
+            name="WatchHours"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e839b7a1-58e1-4bba-b9e5-387cd956943c"
+                LastKnownName="time"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cab11d06-de98-443c-a29f-62b1128fb9e9"
+            name="VacationDays"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
+                LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="da25497e-769c-48c8-9e4b-181eada37ec1"
+            name="SickDays"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
+                LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0ce449bb-21c8-43d0-a990-5917538263c2"
+            name="WorkedDays"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
+                LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a9d914e9-696e-4ace-8fce-1208bfa0cb61"
+            name="IsAdmin"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7818fb33-fc72-47ab-81bd-c069aa6889b7"
+                LastKnownName="bool"
                 LastKnownLocation="Package_1109.uml" />
             </type_NamedElement>
           </property>
@@ -293,6 +437,21 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="52dfadb9-39aa-4201-b7a5-3ccc2b8be65c"
+        name="datetime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e839b7a1-58e1-4bba-b9e5-387cd956943c"
+        name="time" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f"
+        name="timespan" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
