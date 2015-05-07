@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DANNY-MSI</Machine>
-    <WindowsUser>Danny</WindowsUser>
+    <Machine>PILSNEREN</Machine>
+    <WindowsUser>Daniel</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>1fbefa5c-eeaf-4c98-8145-c4a0d6868260</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>D36320B92514DCF4D6810DA6145454C09AFBDAB9B5754D0D6CC7AFDE9FE9895D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1fbefa5c-eeaf-4c98-8145-c4a0d6868260_1.0.0.0_neutral__4c5b9g29w27se</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1fbefa5c-eeaf-4c98-8145-c4a0d6868260_4c5b9g29w27se!App</RegisteredUserModeAppID>
@@ -17,52 +17,80 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-17T11:35:49.434</Modified>
+      <Modified>2015-05-07T09:30:43.166</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-04-17T11:35:48.020</Modified>
+      <Modified>2015-05-07T09:48:59.292</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2015-04-30T07:43:27.284</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+      <Modified>2015-05-05T09:29:21.153</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+      <Modified>2015-05-05T09:29:19.163</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+      <Modified>2015-05-05T09:29:21.178</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\DANXlogo.jpg">
+      <PackagePath>Assets\DANXlogo.jpg</PackagePath>
+      <Modified>2015-03-08T13:21:25.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T04:01:02.000</Modified>
+      <Modified>2015-04-30T07:43:22.188</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\mini logo.png">
+      <PackagePath>Assets\mini logo.png</PackagePath>
+      <Modified>2015-05-06T08:11:22.845</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T04:01:02.000</Modified>
+      <Modified>2015-04-30T07:43:22.195</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T04:01:02.000</Modified>
+      <Modified>2015-04-30T07:43:22.209</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T04:01:02.000</Modified>
+      <Modified>2015-04-30T07:43:22.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-17T11:35:47.672</Modified>
+      <Modified>2015-05-07T09:46:20.786</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\View\MainPage.xbf">
-      <PackagePath>View\MainPage.xbf</PackagePath>
-      <Modified>2015-04-17T11:35:47.679</Modified>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\BasicPage1.xbf">
+      <PackagePath>View\BasicPage1.xbf</PackagePath>
+      <Modified>2015-05-07T09:34:23.867</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
+      <PackagePath>View\DanxMainView.xbf</PackagePath>
+      <Modified>2015-05-07T09:48:58.696</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-04-17T11:35:47.347</Modified>
+      <Modified>2015-05-07T09:32:18.195</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\Visual Studio 2013\Projects\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-17T11:35:48.321</Modified>
+      <Modified>2015-05-07T09:46:21.729</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
