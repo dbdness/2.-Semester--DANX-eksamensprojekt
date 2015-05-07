@@ -39,14 +39,7 @@ namespace DanxExamProject.ViewModel
             LoginCommand = new RelayCommand(EmployeeHandler.Login);
             LogoutCommand = new RelayCommand(EmployeeHandler.Logout);
 
-            //foreach (var v in EmployeesInDb)
-            //{
-            //    if (v.GetType() == typeof (AdminOne))
-            //    {
-            //        var message = new MessageDialog("It worked");
-            //        message.ShowAsync();
-            //    }
-            //}
+           
 
 
 
