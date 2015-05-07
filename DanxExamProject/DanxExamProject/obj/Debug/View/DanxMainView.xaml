@@ -62,14 +62,6 @@
                 </LinearGradientBrush>
             </Canvas.Background>
             <Canvas Height="79" Canvas.Left="1126" Width="240" Margin="0" Canvas.Top="18" >
-                <Border BorderThickness="0" Height="79" Width="238">
-                    <Border.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF0D5AFF" Offset="0"/>
-                            <GradientStop Color="White" Offset="0.397"/>
-                        </LinearGradientBrush>
-                    </Border.BorderBrush>
-                </Border>
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="77" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" />
                 <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light">
                     <AppBarButton.Resources>
@@ -90,6 +82,7 @@
                 <AppBarButton IsCompact="True" Icon="Setting" Label="AppBarButton" Canvas.Top="4" Canvas.Left="165" Background="#FF0D5AFF" BorderBrush="#FF0D5AFF" Foreground="#FF0D5AFF" RequestedTheme="Light"/>
             </Canvas>
             <TextBlock Canvas.Left="466" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="#FF0D5AFF" Canvas.Top="40" Height="57" Width="322"/>
+            <TextBlock Canvas.Left="332" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="102" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
             <Canvas x:Name="PastRegDatabase">
                 <Rectangle Visibility="Visible"  Fill="#FF0D5AFF" Height="342" Canvas.Left="205" Stroke="Black" Canvas.Top="179" Width="930"/>
                 <TextBlock Canvas.Left="439" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="317" Foreground="White"/>
@@ -98,41 +91,6 @@
                 <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
                 <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             </Canvas>
-            <TextBlock Canvas.Left="332" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="102" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
-            <Border Height="168" Visibility ="Visible" Canvas.Left="1301" Canvas.Top="237" Width="69">
-                <Grid Margin="10,0,0,0">
-                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" StrokeThickness="0"/>
-                    <Rectangle Fill="White" Stroke="#00FFFFFF" Margin="0,0,43,0" StrokeThickness="0"/>
-                    <Ellipse Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,84,24,0"/>
-                    <Ellipse Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,0,24,84"/>
-                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="0,38,25,48" StrokeThickness="0"/>
-                    <Rectangle Fill="#FF0D5AFF" Stroke="#00FFFFFF" Margin="24,0,14,0" StrokeThickness="0"/>
-
-                    <AppBarButton IsCompact="True" Icon="ContactInfo" Label="DBbutton" Margin="0,4,-1,0" Height="69">
-                        <AppBarButton.Resources>
-                            <MenuFlyout Placement="Left" x:Key="FlyoutBase1">
-                                <MenuFlyoutItem Text="Workerlist" />
-                                <MenuFlyoutSeparator/>
-                                <MenuFlyoutItem Text="Database 2"/>
-                                <MenuFlyoutSeparator/>
-                                <MenuFlyoutItem Text="Database 3"/>
-
-
-                            </MenuFlyout>
-                        </AppBarButton.Resources>
-                        <AppBarButton.Flyout>
-                            <StaticResource ResourceKey="FlyoutBase1"/>
-                        </AppBarButton.Flyout>
-                    </AppBarButton>
-
-
-
-
-
-
-
-                </Grid>
-            </Border>
 
 
 

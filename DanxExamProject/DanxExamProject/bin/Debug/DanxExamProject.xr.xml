@@ -23,7 +23,6 @@
       <RootProperty Name="Background" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
     </RootType>
@@ -91,38 +90,21 @@
       <RootProperty Name="RotationX" />
       <RootProperty Name="GlobalOffsetZ" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Child" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="BorderBrush" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Fill" />
-      <RootProperty Name="Stroke" />
-      <RootProperty Name="StrokeThickness" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Stroke" />
       <RootProperty Name="Width" />
       <RootProperty Name="Visibility" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
-      <RootProperty Name="Fill" />
-      <RootProperty Name="Stroke" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="IsCompact" />
       <RootProperty Name="Icon" />
       <RootProperty Name="Label" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Resources" />
-      <RootProperty Name="Flyout" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Flyout" />
       <RootProperty Name="Background" />
       <RootProperty Name="BorderBrush" />
     </RootType>
