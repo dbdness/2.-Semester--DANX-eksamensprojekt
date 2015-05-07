@@ -8,16 +8,16 @@
         <SolidColorBrush x:Key="AppBarItemBackgroundThemeBrush" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemDisabledForegroundThemeBrush" Color="#FF0D5AFF" />
         <SolidColorBrush x:Key="AppBarItemForegroundThemeBrush" Color="#FF0D5AFF" />
-        <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush" Color="#FF0D5AFF" />
-        <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush" Color="Transparent" />
+        <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush" Color="Transparent" />
+        <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush" Color="#FF0D5AFF" />
         <SolidColorBrush x:Key="AppBarItemPressedForegroundThemeBrush" Color="Transparent" />
 
 
 
         <SolidColorBrush x:Key="AppBarItemBackgroundThemeBrush1" Color="Transparent" />
-        <SolidColorBrush x:Key="AppBarItemDisabledForegroundThemeBrush1" Color="White" />
-        <SolidColorBrush x:Key="AppBarItemForegroundThemeBrush1" Color="White" />
-        <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush1" Color="White" />
+        <SolidColorBrush x:Key="AppBarItemDisabledForegroundThemeBrush1" Color="Transparent" />
+        <SolidColorBrush x:Key="AppBarItemForegroundThemeBrush1" Color="Transparent" />
+        <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush1" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush1" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemPressedForegroundThemeBrush1" Color="Transparent" />
 
