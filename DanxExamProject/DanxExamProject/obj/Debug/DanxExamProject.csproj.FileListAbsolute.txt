@@ -75,9 +75,11 @@ C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProje
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\DanxExamProject.csproj.GenerateResource.Cache
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting.pri
 C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\qualifiers.txt
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\BasicPage1.xbf
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\BasicPage1.g.i.cs
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\BasicPage1.g.cs
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\BasicPage1.xaml
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\View\BasicPage1.xbf
-C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\DanxExamProject.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\layout.resfiles
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\layout.resfiles.intermediate
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\Resources.resfiles
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\Resources.resfiles.intermediate
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\pri.resfiles
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\pri.resfiles.intermediate
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\priconfig.xml
+C:\Users\Daniel\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\System.Net.Http.Formatting\priconfig.xml.intermediate

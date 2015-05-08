@@ -11,7 +11,7 @@
         <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush" Color="#FF0D5AFF" />
         <SolidColorBrush x:Key="AppBarItemPressedForegroundThemeBrush" Color="Transparent" />
-
+        <SolidColorBrush x:Key="FlyoutBorderThemeBrush" Color="#FF0D5AFF"/>
 
 
         <SolidColorBrush x:Key="AppBarItemBackgroundThemeBrush1" Color="Transparent" />
@@ -20,7 +20,6 @@
         <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush1" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush1" Color="Transparent" />
         <SolidColorBrush x:Key="AppBarItemPressedForegroundThemeBrush1" Color="Transparent" />
-
 
 
     </Application.Resources>
