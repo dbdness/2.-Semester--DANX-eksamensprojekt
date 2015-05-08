@@ -69,8 +69,8 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="DataContext" />
       <RootMethod Name="GetLeft" />
       <RootMethod Name="SetLeft" />
