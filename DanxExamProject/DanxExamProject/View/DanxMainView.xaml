@@ -1,0 +1,305 @@
+﻿<Page
+    x:Class="DanxExamProject.MainPage"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <MenuFlyout x:Key="AdminTools" Placement="Left">
+            <MenuFlyoutItem Text="Almen Database"/>
+            <MenuFlyoutItem Text="Database 2"/>
+            <MenuFlyoutItem Text="loggedinDatabase"/>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem Text="Afdelinger"/>
+            <MenuFlyoutItem Text="HR"/>
+            <MenuFlyoutItem Text="Løn"/>
+            <MenuFlyoutItem Text="Ekstra"/>
+        </MenuFlyout>
+        <MenuFlyout x:Key="SettingsTool" Placement="Bottom">
+            <MenuFlyoutItem Text="MenuFlyoutItem"/>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem Text="MenuFlyoutItem"/>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem Text="MenuFlyoutItem"/>
+        </MenuFlyout>
+        <Style x:Key="GG" TargetType="AppBarButton">
+            <Setter Property="Foreground" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="AppBarButton">
+                        <Grid x:Name="RootGrid" Background="Transparent" Width="100">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="ApplicationViewStates">
+                                    <VisualState x:Name="FullSize"/>
+                                    <VisualState x:Name="Compact">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Width" Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="60"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="OutlineEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemPressedForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="OutlineEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="TextLabel">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused"/>
+                                    <VisualState x:Name="PointerFocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <StackPanel Margin="0,14,0,13" VerticalAlignment="Top">
+                                <Grid HorizontalAlignment="Center" Height="40" Margin="0,0,0,5" Width="40">
+                                    <Ellipse x:Name="BackgroundEllipse" Fill="{ThemeResource AppBarItemBackgroundThemeBrush}" Height="40" UseLayoutRounding="False" Width="40"/>
+                                    <Ellipse x:Name="OutlineEllipse" Height="40" Stroke="{ThemeResource AppBarItemForegroundThemeBrush}" StrokeThickness="2" UseLayoutRounding="False" Width="40"/>
+                                    <ContentPresenter x:Name="Content" AutomationProperties.AccessibilityView="Raw" Content="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                </Grid>
+                                <TextBlock x:Name="TextLabel" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" FontSize="12" FontFamily="{TemplateBinding FontFamily}" TextAlignment="Center" TextWrapping="Wrap" Text="{TemplateBinding Label}" Width="88"/>
+                            </StackPanel>
+                            <Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                            <Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Flyout x:Key="InformationTool" Placement="Left" >
+            <Grid Height="238" Width="100" AllowDrop="True" UseLayoutRounding="True" >
+                <TextBlock TextWrapping="Wrap" Text="Name" Margin="0,0,0,224"/>
+                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,192"/>
+                <TextBlock TextWrapping="Wrap" Text="Age" Margin="0,46,0,178"/>
+                <TextBox TextWrapping="Wrap" Margin="0,60,0,146"/>
+                <TextBlock TextWrapping="Wrap" Text="Adress" Margin="0,92,0,132"/>
+                <TextBox TextWrapping="Wrap" Margin="0,106,0,100"/>
+                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,86"/>
+                <TextBox TextWrapping="Wrap" Margin="0,152,0,54"/>
+                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-12" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
+                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-12" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
+            </Grid>
+        </Flyout>
+        <Flyout x:Key="FlyoutBase1" Placement="Left">
+            <Grid Height="224" Width="100">
+                <TextBlock TextWrapping="Wrap" Text="Salary ID" Margin="0,0,0,211"/>
+                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,178"/>
+                <TextBlock TextWrapping="Wrap" Text="Salary Number" Margin="0,46,0,165"/>
+                <TextBox TextWrapping="Wrap" Margin="0,60,0,131"/>
+                <TextBlock TextWrapping="Wrap" Text="Department" Margin="0,92,0,119"/>
+                <TextBox TextWrapping="Wrap" Margin="0,106,0,86"/>
+                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,74"/>
+                <TextBox TextWrapping="Wrap" Margin="0,152,0,40"/>
+                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-150" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
+                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-150" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
+            </Grid>
+        </Flyout>
+        <Flyout x:Key="FlyoutBase2" Placement="Left">
+            <Grid Height="229" Width="100">
+                <TextBlock TextWrapping="Wrap" Text="Total Hours" Margin="0,0,0,216"/>
+                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,183"/>
+                <TextBlock TextWrapping="Wrap" Text="Days Worked" Margin="0,46,0,170"/>
+                <TextBox TextWrapping="Wrap" Margin="0,60,0,137"/>
+                <TextBlock TextWrapping="Wrap" Text="Department" Margin="0,92,0,124"/>
+                <TextBox TextWrapping="Wrap" Margin="0,106,0,91"/>
+                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,79"/>
+                <TextBox TextWrapping="Wrap" Margin="0,152,0,44"/>
+                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-150" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
+                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-150" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
+            </Grid>
+        </Flyout>
+        <Flyout x:Key="EditTools" Placement="Bottom">
+            <Grid Height="197" Width="131" Margin="0" HorizontalAlignment="Center" RequestedTheme="Dark">
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EdgeUIThemeTransition Edge="Bottom"/>
+                    </TransitionCollection>
+                </Grid.Transitions>
+                <Button x:Name="InfoButton" Content="Information" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Foreground="#FF0812E6" Flyout="{StaticResource InformationTool}" BorderBrush="#FF0812E6" Margin="6,-6,0,0"/>
+                <MenuFlyoutSeparator Margin="-30,43,-29,133" Foreground="#FF0812E6" Background="#FF0812E6"/>
+                <Button x:Name="SalaryButton" Content="Salary" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="6,69,2,0" BorderBrush="#FF0812E6" Foreground="#FF0812E6" Flyout="{StaticResource FlyoutBase1}"/>
+                <MenuFlyoutSeparator Margin="-29,120,-30,56" Foreground="#FF0812E6" Background="#FF0812E6"/>
+                <Button x:Name="HRButton" Content="HR" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="6,148,2,0" BorderBrush="#FF0812E6" Foreground="#FF0812E6" Flyout="{StaticResource FlyoutBase2}"/>
+            </Grid>
+        </Flyout>
+    </Page.Resources>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="1073"/>
+            <ColumnDefinition Width="315*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="152"/>
+            <RowDefinition Height="677"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Visibility="Collapsed" x:Name="MainCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D5AFF" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.049"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <HyperlinkButton x:Name="DanxWebsite" Content="" Canvas.Left="315" Canvas.Top="63" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="700"/>
+            <TextBlock x:Name="NewsBlock"  Canvas.Left="308.538" TextWrapping="Wrap" Canvas.Top="72.593" Height="44.448" Width="711.66" FontSize="18.667" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015" Foreground="#FF0017FF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform SkewX="-25"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Canvas.Left="267" TextWrapping="Wrap" Text="                            Welcome!&#xA;Insert worker-id in one of the above boxes." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="205" Height="110" Width="797"/>
+            <Canvas Height="100" Canvas.Left="448" Canvas.Top="315" Width="100"/>
+            <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="497" Canvas.Top="465"/>
+
+        </Canvas>
+        <Canvas Visibility="Collapsed" x:Name="StandardLoginCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D5AFF" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.049"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <TextBlock Canvas.Left="528" TextWrapping="Wrap" Text="Welcome Daniel!" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="85" Height="57" Width="322"/>
+            <Rectangle Fill="#FF0D5AFF" Height="276" Canvas.Left="262" Stroke="Black" Canvas.Top="259" Width="882"/>
+            <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+            <TextBlock Canvas.Left="350" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="173" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
+        </Canvas>
+        <Canvas x:Name="AdminManageCanvas" Visibility="Visible" HorizontalAlignment="Left" Height="748" Grid.Row="1" VerticalAlignment="Top" Width="1600" Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D5AFF"/>
+                    <GradientStop Color="White" Offset="0.049"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Canvas Height="79" Canvas.Left="1419" Width="171" Margin="0" Canvas.Top="29" >
+                <AppBarButton x:Name="DatabaseButton" IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
+                    <AppBarButton.Resources>
+                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
+                            <MenuFlyoutItem Text="Workerlist"/>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Department List"/>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Location List"/>
+
+
+                        </MenuFlyout>
+                    </AppBarButton.Resources>
+                    <AppBarButton.Flyout>
+                        <StaticResource ResourceKey="FlyoutBase1"/>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+                <AppBarButton x:Name="EditButton" IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
+            </Canvas>
+            <TextBlock Canvas.Left="618" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="#FF0D5AFF" Canvas.Top="101" Height="57" Width="322"/>
+            <TextBlock Canvas.Left="452" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="163" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
+            <Canvas x:Name="PastRegDatabase">
+                <Rectangle Visibility="Visible"  Fill="#FF0D5AFF" Height="382" Canvas.Left="253" Stroke="Black" Canvas.Top="241" Width="992"/>
+                <TextBlock Canvas.Left="505" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="377" Foreground="White"/>
+            </Canvas>
+            <Canvas x:Name="WorkerListDB" Visibility="Collapsed">
+                <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
+                <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
+            </Canvas>
+
+
+
+
+
+
+
+        </Canvas>
+
+        <Canvas x:Name="TopCanvas" Grid.Row="0" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1600" RequestedTheme="Dark" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0016F7" Offset="0.888"/>
+                    <GradientStop Color="#FF4253F9" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <TextBox x:Name="LoginBox" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth" Foreground="Gray">
+                <TextBox.Projection>
+                    <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
+                </TextBox.Projection>
+            </TextBox>
+            <TextBox x:Name="ManageBox" Canvas.Left="1149" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF6682FF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
+                <TextBox.Projection>
+                    <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
+                </TextBox.Projection>
+            </TextBox>
+            <TextBlock x:Name="ValueBlock" Canvas.Left="660" TextWrapping="Wrap" Canvas.Top="13" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
+            <TextBlock x:Name="ValueText" Canvas.Left="614" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="67" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
+            <Rectangle Fill="#FFD1CDCD" Height="20" Canvas.Left="450.25" Stroke="Transparent" Canvas.Top="65" Width="47.456" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform SkewX="-10"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock x:Name="noname" Canvas.Left="456" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
+            <Button x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Button.RenderTransform>
+                    <CompositeTransform SkewX="-10"/>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="ManageButton" Content="" Canvas.Left="1266.124" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Button.RenderTransform>
+                    <CompositeTransform SkewX="-10"/>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="#FFD1CDCD" Height="20" Canvas.Left="1270.25" Stroke="Transparent" Canvas.Top="65.21" Width="47.456" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform SkewX="-10"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock x:Name="noname_Copy" Canvas.Left="1275" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
+        </Canvas>
+
+
+    </Grid>
+</Page>
