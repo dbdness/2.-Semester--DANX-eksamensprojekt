@@ -3,8 +3,10 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="LoginBox" />
-    <RootPropertyPathName Name="EmployeesInDb" />
     <RootPropertyPathName Name="EmployeeHandler" />
+    <RootPropertyPathName Name="LastLoggedIn" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="EmployeesInDb" />
     <RootPropertyPathName Name="SelectedEmployee" />
     <RootPropertyPathName Name="WorkedDays" />
     <RootPropertyPathName Name="SickDays" />
@@ -13,7 +15,6 @@
     <RootPropertyPathName Name="StdHours" />
     <RootPropertyPathName Name="LastLogout" />
     <RootPropertyPathName Name="LastLogin" />
-    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Manager" />
     <RootPropertyPathName Name="SalaryNumber" />
     <RootPropertyPathName Name="EmployeeId" />
@@ -77,8 +78,8 @@
       <RootProperty Name="Background" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="DataContext" />
+      <RootProperty Name="ChildrenTransitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumnSpan" />
@@ -101,13 +102,14 @@
       <RootProperty Name="Flyout" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Command" />
       <RootProperty Name="Background" />
       <RootProperty Name="Height" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Command" />
       <RootProperty Name="Style" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutSeparator">
       <RootProperty Name="Margin" />
@@ -143,6 +145,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Height" />
       <RootProperty Name="BorderThickness" />
@@ -153,7 +156,6 @@
       <RootProperty Name="InputScope" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Projection" />
-      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -245,6 +247,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
+    <RootType FullName="DanxExamProject.ViewModel.MainViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="Visibility" />
       <RootProperty Name="HorizontalAlignment" />
@@ -273,6 +276,12 @@
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="SkewX" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="RelativeSource" />
+      <RootProperty Name="ElementName" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.PlaneProjection">
       <RootProperty Name="RotationX" />
       <RootProperty Name="GlobalOffsetZ" />
@@ -293,7 +302,6 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="DanxExamProject.MainPage" />
-    <RootType FullName="DanxExamProject.ViewModel.MainViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Background" />
@@ -312,11 +320,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="ItemTemplate" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="RelativeSource" />
-      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />

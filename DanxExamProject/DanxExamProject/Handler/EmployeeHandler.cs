@@ -15,6 +15,8 @@ namespace DanxExamProject.Handler
         private readonly MainViewModel _viewModel;
         public static Employee SelectedEmployee { get; set; }
         private static Employee _employeeToLogout;
+        public static Employee LastLoggedIn { get; set; }
+        public static bool IsLoggedIn { get; set; }
 
         public EmployeeHandler(MainViewModel viewModel)
         {
@@ -28,14 +30,15 @@ namespace DanxExamProject.Handler
             if (matcingEmloyee != null)
             {
                 matcingEmloyee.LastLogin = DateTime.Now;
+                LastLoggedIn = matcingEmloyee;
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
                 PersistencyService.PutDataLoggedin(matcingEmloyee);
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
-                //UpdateLoginTime(); //Updates logintime on the logged-in table.
-
+                IsLoggedIn = true;
             }
             else
             {
+                IsLoggedIn = false;
                 var errorMsg = new MessageDialog("Please enter a valid employee id.", "Error");
                 errorMsg.ShowAsync();
             }
