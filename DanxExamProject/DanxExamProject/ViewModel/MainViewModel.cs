@@ -17,10 +17,11 @@ namespace DanxExamProject.ViewModel
         public ObservableCollection<Employee> EmployeesInDb { get; set; }
         public EmployeeHandler EmployeeHandler { get; set; }
         public List<Employee> LoggedInEmployees { get; set; }
-        public string LoginBox { get; set; }
-        public string LogoutBox { get; set; }
-        public RelayCommand LoginCommand { get; set; }
-        public RelayCommand LogoutCommand { get; set; }
+        public ObservableCollection<Employee> RecentlyLoggedInEmployee { get; set; } 
+        public string LoginOrLogoutBox { get; set; }
+        public string AdminManageBox { get; set; }
+        public RelayCommand LoginOrLogoutCommand { get; set; }
+        public RelayCommand AdminManageCommannd { get; set; }
         
         
 
@@ -31,15 +32,17 @@ namespace DanxExamProject.ViewModel
 
             EmployeesInDb = new ObservableCollection<Employee>();
             LoggedInEmployees = new List<Employee>();
+            RecentlyLoggedInEmployee = new ObservableCollection<Employee>();
             
             PersistencyService.GetData(EmployeesInDb);
             PersistencyService.GetData(EmployeesInDb);
             PersistencyService.GetDataLoggedIn(LoggedInEmployees);
 
-            LoginCommand = new RelayCommand(EmployeeHandler.Login);
-            LogoutCommand = new RelayCommand(EmployeeHandler.Logout);
+            LoginOrLogoutCommand = new RelayCommand(EmployeeHandler.LoginOrLogout);
+            AdminManageCommannd = new RelayCommand(EmployeeHandler.AdminManage);
 
-           
+
+
 
 
 
