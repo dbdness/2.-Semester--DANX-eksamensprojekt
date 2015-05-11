@@ -1,41 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using DanxExamProject.Annotations;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
 using DanxExamProject.ViewModel;
 
 namespace DanxExamProject.Handler
 {
-    class EmployeeHandler
+    class EmployeeHandler: INotifyPropertyChanged
     {
         private readonly MainViewModel _viewModel;
         public static Employee SelectedEmployee { get; set; }
         private static Employee _employeeToLogout;
-        public static Employee LastLoggedIn { get; set; }
+        private static Employee _lastLoggedIn;
+
+        public Employee LastLoggedIn
+        {
+            get { return _lastLoggedIn; }
+            set
+            {
+                _lastLoggedIn = value;
+                OnPropertyChanged();
+            }
+        }
         public static bool IsLoggedIn { get; set; }
+        public static bool AdminLoggedIn { get; set; }
 
         public EmployeeHandler(MainViewModel viewModel)
         {
             _viewModel = viewModel;
         }
 
-        public void Login()
+        public void LoginOrLogout()
         {
+            PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
+
             var employees = _viewModel.EmployeesInDb.ToList();
-            var matcingEmloyee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginBox);
-            if (matcingEmloyee != null)
+            var matcingEmloyee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
+
+            var matchingLoggedInEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
+
+            //If user IS NOT logged in:
+            if (matcingEmloyee != null && matchingLoggedInEmployee == null)
             {
                 matcingEmloyee.LastLogin = DateTime.Now;
                 LastLoggedIn = matcingEmloyee;
+                _viewModel.RecentlyLoggedInEmployee.Clear();
+                _viewModel.RecentlyLoggedInEmployee.Add(LastLoggedIn);
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
                 PersistencyService.PutDataLoggedin(matcingEmloyee);
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
                 IsLoggedIn = true;
             }
+                //If user IS logged in:
+            else if (matchingLoggedInEmployee != null)
+            {
+                _employeeToLogout = matchingLoggedInEmployee;
+                UpdateLogoutTime();
+                UpdateTotalHours();
+                _employeeToLogout = null;
+                PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
+                IsLoggedIn = false;
+                var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
+                goodbyeMsg.ShowAsync();
+            }
+                //If a wrong user id is entered:
             else
             {
                 IsLoggedIn = false;
@@ -45,46 +81,62 @@ namespace DanxExamProject.Handler
 
         }
 
-        private void UpdateLoginTime()
+        public void AdminManage()
         {
-            PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
-
-            var recentEmployee = _viewModel.LoggedInEmployees.Last();
-
-            
-                var updatedEmployee = new StandardEmp()
-                {
-                    EmployeeId = recentEmployee.EmployeeId,
-                    Name = recentEmployee.Name,
-                    TotalHours = recentEmployee.TotalHours,
-                    LastLogin = DateTime.Now,
-                    LastLogout = recentEmployee.LastLogout
-
-                };
-                
-                PersistencyService.PutDataLoggedin(updatedEmployee); //Updated login time for logged in employee
-                
-            }
-
-        public void Logout()
-        {
-            PersistencyService.GetData(_viewModel.EmployeesInDb);
-            PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
-            var matchingEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LogoutBox);
-            if (matchingEmployee != null)
+            var employees = _viewModel.EmployeesInDb.ToList();
+            var matchingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.AdminManageBox);
+            if (matchingEmployee != null && matchingEmployee.GetType() == typeof (AdminEmp))
             {
-                _employeeToLogout = matchingEmployee;
-                UpdateLogoutTime();
-                UpdateTotalHours();
-                _employeeToLogout = null;
-                PersistencyService.DeleteDataLoggedIn(matchingEmployee); //Removing logged out employee from logged in table. 
+                AdminLoggedIn = true;
             }
             else
             {
-                var errorMsg = new MessageDialog("Invalid employee id, or the user is not logged in.", "Error");
+                AdminLoggedIn = false;
+                var errorMsg = new MessageDialog("That user is not an admin. Please try again.", "Error");
                 errorMsg.ShowAsync();
             }
         }
+
+        //private void UpdateLoginTime()
+        //{
+        //    PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
+
+        //    var recentEmployee = _viewModel.LoggedInEmployees.Last();
+
+            
+        //        var updatedEmployee = new StandardEmp()
+        //        {
+        //            EmployeeId = recentEmployee.EmployeeId,
+        //            Name = recentEmployee.Name,
+        //            TotalHours = recentEmployee.TotalHours,
+        //            LastLogin = DateTime.Now,
+        //            LastLogout = recentEmployee.LastLogout
+
+        //        };
+                
+        //        PersistencyService.PutDataLoggedin(updatedEmployee); //Updated login time for logged in employee
+                
+        //    }
+
+        //public void Logout()
+        //{
+        //    PersistencyService.GetData(_viewModel.EmployeesInDb);
+        //    PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
+        //    var matchingEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LogoutBox);
+        //    if (matchingEmployee != null)
+        //    {
+        //        _employeeToLogout = matchingEmployee;
+        //        UpdateLogoutTime();
+        //        UpdateTotalHours();
+        //        _employeeToLogout = null;
+        //        PersistencyService.DeleteDataLoggedIn(matchingEmployee); //Removing logged out employee from logged in table. 
+        //    }
+        //    else
+        //    {
+        //        var errorMsg = new MessageDialog("Invalid employee id, or the user is not logged in.", "Error");
+        //        errorMsg.ShowAsync();
+        //    }
+        //}
 
         private void UpdateLogoutTime()
         {
@@ -136,14 +188,16 @@ namespace DanxExamProject.Handler
         }
 
 
+        #region PropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-            
-            
-
-            
-
-
-        }
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        } 
+        #endregion
+    }
     }
 

@@ -137,6 +137,7 @@ namespace DanxExamProject.Persistency
                 {
                     var response = client.GetAsync("api/loggedInEmployees").Result;
 
+                    collection.Clear();
                     if (response.IsSuccessStatusCode)
                     {
                         //Need two logged in tables. 

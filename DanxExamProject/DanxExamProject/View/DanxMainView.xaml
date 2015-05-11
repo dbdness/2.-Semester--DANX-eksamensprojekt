@@ -212,10 +212,46 @@
                 </LinearGradientBrush>
             </Canvas.Background>
             <TextBlock Canvas.Left="528" TextWrapping="Wrap" Text="Welcome" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="85" Height="57" Width="177"/>
-            <Rectangle Fill="#FF0D5AFF" Height="276" Canvas.Left="262" Stroke="Black" Canvas.Top="259" Width="882"/>
             <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
-            <TextBlock Canvas.Left="350" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="173" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
+            <TextBlock Canvas.Left="350" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked               hours this week" Canvas.Top="173" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
             <TextBlock Canvas.Left="705" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="85" Height="57" Width="177"/>
+            <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="205" Canvas.Top="231" Width="1066" Height="46">
+                <Canvas>
+                    <TextBlock Text="EmployeeId" FontWeight="Bold"/>
+                    <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="74"/>
+                    <TextBlock Text="Manager" FontWeight="Bold" Canvas.Left="129"/>
+                    <TextBlock Text="Name" FontWeight="Bold" Canvas.Left="200"/>
+                    <TextBlock Text="Last login" FontWeight="Bold" Canvas.Left="290"/>
+                    <TextBlock Text="Last logout" FontWeight="Bold" Canvas.Left="428"/>
+                    <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="556"/>
+                    <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="631"/>
+                    <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="707"/>
+                    <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="779"/>
+                    <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="878"/>
+                    <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
+                </Canvas>
+            </Border>
+            <ListView ItemsSource="{Binding RecentlyLoggedInEmployee, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="205" Canvas.Top="277">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Canvas>
+                            <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
+                            <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
+                            <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
+                            <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
+                            <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
+                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="627"/>
+                            <TextBlock Text="{Binding}" Canvas.Left="704"/>
+                            <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
+                            <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
+                            <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
+                        </Canvas>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock Canvas.Left="823" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
         </Canvas>
         <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="748" Grid.Row="1" VerticalAlignment="Top" Width="1600" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Canvas.Background>
@@ -244,10 +280,44 @@
                 <AppBarButton x:Name="EditButton" IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
             <TextBlock Canvas.Left="618" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="#FF0D5AFF" Canvas.Top="101" Height="57" Width="322"/>
-            <TextBlock Canvas.Left="452" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked ---- hours this week" Canvas.Top="163" Foreground="#FF0D5AFF" Height="58" Width="691" FontSize="20"/>
+            <TextBlock Canvas.Left="568" TextWrapping="Wrap" Text="Manage data using the buttons to the right." Canvas.Top="158" Foreground="#FF0D5AFF" Height="33" Width="409" FontSize="20"/>
             <Canvas x:Name="PastRegDatabase">
-                <Rectangle Visibility="Visible"  Fill="#FF0D5AFF" Height="382" Canvas.Left="253" Stroke="Black" Canvas.Top="241" Width="992"/>
-                <TextBlock Canvas.Left="505" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="377" Foreground="White"/>
+                <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="258" Canvas.Top="220" Width="1066" Height="46">
+                    <Canvas>
+                        <TextBlock Text="EmployeeId" FontWeight="Bold"/>
+                        <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="74"/>
+                        <TextBlock Text="Manager" FontWeight="Bold" Canvas.Left="129"/>
+                        <TextBlock Text="Name" FontWeight="Bold" Canvas.Left="200"/>
+                        <TextBlock Text="Last login" FontWeight="Bold" Canvas.Left="290"/>
+                        <TextBlock Text="Last logout" FontWeight="Bold" Canvas.Left="428"/>
+                        <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="556"/>
+                        <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="631"/>
+                        <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="707"/>
+                        <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="779"/>
+                        <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="878"/>
+                        <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
+                    </Canvas>
+                </Border>
+                <ListView ItemsSource="{Binding EmployeesInDb}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="258" Canvas.Top="260">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Canvas>
+                                <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
+                                <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
+                                <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
+                                <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
+                                <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
+                                <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
+                                <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
+                                <TextBlock Text="{Binding WatchHours}" Canvas.Left="627"/>
+                                <TextBlock Text="{Binding}" Canvas.Left="704"/>
+                                <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
+                                <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
+                                <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
+                            </Canvas>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Canvas>
             <Canvas x:Name="WorkerListDB" Visibility="Collapsed">
                 <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
@@ -269,12 +339,12 @@
                     <GradientStop Color="#FF4253F9" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <TextBox x:Name="LoginBox" Text="{Binding LoginBox, Mode=TwoWay}" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth" Foreground="Gray">
+            <TextBox x:Name="LoginBox" Text="{Binding LoginOrLogoutBox, Mode=TwoWay}" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth" Foreground="Gray">
                 <TextBox.Projection>
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
             </TextBox>
-            <TextBox x:Name="ManageBox" Canvas.Left="1149" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF6682FF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
+            <TextBox x:Name="ManageBox" Text="{Binding AdminManageBox, Mode=TwoWay}" Canvas.Left="1149" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF6682FF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
                 <TextBox.Projection>
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
@@ -287,12 +357,7 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <TextBlock x:Name="noname" Canvas.Left="456" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
-            <Button Command="{Binding LoginCommand}" x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="LoginButton_Click">
-                <Button.RenderTransform>
-                    <CompositeTransform SkewX="-10"/>
-                </Button.RenderTransform>
-            </Button>
-            <Button x:Name="ManageButton" Content="" Canvas.Left="1266.124" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Button Command="{Binding LoginOrLogoutCommand}" x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="LoginButton_Click">
                 <Button.RenderTransform>
                     <CompositeTransform SkewX="-10"/>
                 </Button.RenderTransform>
@@ -302,7 +367,12 @@
                     <CompositeTransform SkewX="-10"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="noname_Copy" Canvas.Left="1275" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
+            <TextBlock Canvas.Left="1275" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
+            <Button x:Name="ManageButton" Command="{Binding AdminManageCommannd}" Content="" Canvas.Left="1266.124" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="ManageButton_Click">
+                <Button.RenderTransform>
+                    <CompositeTransform SkewX="-10"/>
+                </Button.RenderTransform>
+            </Button>
         </Canvas>
 
 
