@@ -255,13 +255,12 @@
     <RootType FullName="DanxExamProject.ViewModel.MainViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="Visibility" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="DataContext" />
       <RootMethod Name="GetLeft" />

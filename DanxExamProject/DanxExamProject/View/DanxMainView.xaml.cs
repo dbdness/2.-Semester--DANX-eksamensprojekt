@@ -33,15 +33,18 @@ namespace DanxExamProject
         private int _i = 0;
         private int _v = 0;
         private int _vt = 0;
-        private List<Canvas> _canvasList; 
+        private static List<Canvas> _canvasList;
+        public static Canvas MainScreenCanvas = new Canvas();
+        public static Canvas MainScreenLoginCanvas = new Canvas();
 
+      
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            _canvasList = new List<Canvas>(){MainCanvas, AdminManageCanvas, StandardLoginCanvas}; 
-
+            _canvasList = new List<Canvas>(){MainCanvas, LoginCanvas};
+            MainScreenCanvas = MainCanvas;
+            MainScreenLoginCanvas = LoginCanvas;
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");
@@ -97,19 +100,25 @@ We treat our customers, partners and colleagues with the same respect that we wa
 
         }
 
+        public static void CloseCanvas()
+        {
+            foreach(var c in _canvasList) c.Visibility = Visibility.Collapsed;
+           
+        }
+
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-           await Task.Delay(50);
-            if (EmployeeHandler.IsLoggedIn)
-            {
-                foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-                StandardLoginCanvas.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-                MainCanvas.Visibility = Visibility.Visible;
-            }
+            //await Task.Delay(50);
+            //if (EmployeeHandler.IsLoggedIn)
+            //{
+            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
+            //    StandardLoginCanvas.Visibility = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
+            //    MainCanvas.Visibility = Visibility.Visible;
+            //}
 
             
             
@@ -122,12 +131,12 @@ We treat our customers, partners and colleagues with the same respect that we wa
 
         private async void ManageButton_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Delay(50);
-            if (EmployeeHandler.AdminLoggedIn)
-            {
-                foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-                AdminManageCanvas.Visibility = Visibility.Visible;
-            }
+            //await Task.Delay(50);
+            //if (EmployeeHandler.AdminLoggedIn)
+            //{
+            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
+            //    AdminManageCanvas.Visibility = Visibility.Visible;
+            //}
             
             
 

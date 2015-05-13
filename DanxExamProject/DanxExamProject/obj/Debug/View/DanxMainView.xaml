@@ -174,19 +174,19 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="212*"/>
-            <ColumnDefinition Width="1073"/>
-            <ColumnDefinition Width="315*"/>
+            <ColumnDefinition Width="212"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="224"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="152"/>
-            <RowDefinition Height="677"/>
             <RowDefinition/>
+            <RowDefinition Height="125"/>
         </Grid.RowDefinitions>
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <Canvas Visibility="Visible" x:Name="MainCanvas" HorizontalAlignment="Left" Height="748" Grid.Row="1" VerticalAlignment="Top" Width="1600" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas Visibility="Visible" x:Name="MainCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -204,7 +204,7 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas Visibility="Collapsed" x:Name="StandardLoginCanvas" HorizontalAlignment="Left" Height="616" Grid.Row="1" VerticalAlignment="Top" Width="1366" Grid.ColumnSpan="3">
+        <Canvas Visibility="Collapsed" x:Name="LoginCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -253,14 +253,14 @@
             </ListView>
             <TextBlock Canvas.Left="823" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
         </Canvas>
-        <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="748" Grid.Row="1" VerticalAlignment="Top" Width="1600" Grid.RowSpan="2" Grid.ColumnSpan="3">
+        <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF"/>
                     <GradientStop Color="White" Offset="0.049"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <Canvas Height="79" Canvas.Left="1419" Width="171" Margin="0" Canvas.Top="29" >
+            <Canvas x:Name="AdminButtons" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
                 <AppBarButton x:Name="DatabaseButton" IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
                     <AppBarButton.Resources>
                         <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
@@ -332,7 +332,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="TopCanvas" Grid.Row="0" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1600" RequestedTheme="Dark" Grid.ColumnSpan="3">
+        <Canvas x:Name="TopCanvas" Grid.Row="0" Height="152" VerticalAlignment="Top" RequestedTheme="Dark" Grid.ColumnSpan="3">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0016F7" Offset="0.888"/>

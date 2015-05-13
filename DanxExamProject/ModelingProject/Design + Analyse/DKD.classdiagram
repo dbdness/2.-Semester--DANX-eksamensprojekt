@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5299e46b-a597-4799-9cb0-e26b3cba8e5f" name="DesignClassDiagram" linkedPackageId="6ef4d6b0-5a37-46a2-acf7-8fded36b2c7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="b566928f-616a-4bee-ba5a-961eb6902ba3" name="Model">
@@ -54,7 +54,7 @@
                 <property Id="cbb35383-b2d2-4d66-be43-61c8ec4f39ab" name="WatchHours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="1ee4986a-89a6-49e9-800f-37f9efbc8c2c" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="e0badec9-689a-44d3-927f-289ba873aecf" LastKnownName="time" />
+                    <referencedTypeMoniker Id="40b09550-ed0b-4dca-9e5d-441cbfc2ccdb" LastKnownName="timespan" />
                   </type_NamedElement>
                 </property>
                 <property Id="075176e0-df20-48e5-87eb-1b09363ad8cc" name="VacationDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -160,12 +160,12 @@
                     <associationHasOwnedEnds>
                       <memberEnd Id="e5fefaa5-1733-4f2e-b8f4-12a35647b7ab" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
-                          <literalString Id="0f10a8e2-e78b-4559-abf6-9d1d87516730" name="Lower" value="1.*">
+                          <literalString Id="0f10a8e2-e78b-4559-abf6-9d1d87516730" name="Lower" value="1">
                             <elementDefinition Id="c44e3055-a7eb-4506-82a9-08423b0b8862" />
                           </literalString>
                         </lowerValueInternal>
                         <upperValueInternal>
-                          <literalString Id="f80c8602-b8a8-43b4-ace6-face1a0d1e74" name="Upper" value="1.*">
+                          <literalString Id="f80c8602-b8a8-43b4-ace6-face1a0d1e74" name="Upper" value="*">
                             <elementDefinition Id="a0be738a-4e7a-4785-b666-d7e6c0dd08cf" />
                           </literalString>
                         </upperValueInternal>
@@ -379,12 +379,12 @@
                     <associationHasOwnedEnds>
                       <memberEnd Id="bd64486a-eee1-49f6-bd1f-2e52007e7ae5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
-                          <literalString Id="8e250a2f-71c0-4250-860d-71c45881d0b9" name="Lower" value="1.*">
+                          <literalString Id="8e250a2f-71c0-4250-860d-71c45881d0b9" name="Lower" value="1">
                             <elementDefinition Id="b41418c3-5a3e-443e-aa33-bd0adf8a729c" />
                           </literalString>
                         </lowerValueInternal>
                         <upperValueInternal>
-                          <literalString Id="eddaa92f-145a-4b7f-8eea-e70e28d70e0a" name="Upper" value="1.*">
+                          <literalString Id="eddaa92f-145a-4b7f-8eea-e70e28d70e0a" name="Upper" value="*">
                             <elementDefinition Id="0aed4ee4-d49c-4581-8d42-57b15d70d271" />
                           </literalString>
                         </upperValueInternal>
@@ -513,11 +513,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="e0badec9-689a-44d3-927f-289ba873aecf" name="time" isAbstract="false" isLeaf="false" cachedFullName="time">
-        <elementDefinition Id="e839b7a1-58e1-4bba-b9e5-387cd956943c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="ac597ef4-eb1b-4db1-8482-9d1987bf927e" name="timespan" isAbstract="false" isLeaf="false" cachedFullName="timespan">
         <elementDefinition Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f" />
       </referencedType>
@@ -530,6 +525,11 @@
     <packageHasNamedElement>
       <referencedType Id="5e8b4d48-a1f5-4d56-b082-5945365c7565" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="40b09550-ed0b-4dca-9e5d-441cbfc2ccdb" name="timespan" isAbstract="false" isLeaf="false" cachedFullName="timespan">
+        <elementDefinition Id="fc064517-86ed-40a3-a65f-25dd1f3e4a2f" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using DanxExamProject.Annotations;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
@@ -30,7 +31,6 @@ namespace DanxExamProject.Handler
                 OnPropertyChanged();
             }
         }
-        public static bool IsLoggedIn { get; set; }
         public static bool AdminLoggedIn { get; set; }
 
         public EmployeeHandler(MainViewModel viewModel)
@@ -57,7 +57,9 @@ namespace DanxExamProject.Handler
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
                 PersistencyService.PutDataLoggedin(matcingEmloyee);
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
-                IsLoggedIn = true;
+                MainPage.CloseCanvas();
+                MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
+
             }
                 //If user IS logged in:
             else if (matchingLoggedInEmployee != null)
@@ -67,14 +69,15 @@ namespace DanxExamProject.Handler
                 UpdateTotalHours();
                 _employeeToLogout = null;
                 PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
-                IsLoggedIn = false;
+
                 var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
                 goodbyeMsg.ShowAsync();
+                MainPage.CloseCanvas();
+                MainPage.MainScreenCanvas.Visibility = Visibility.Visible;
             }
                 //If a wrong user id is entered:
             else
             {
-                IsLoggedIn = false;
                 var errorMsg = new MessageDialog("Please enter a valid employee id.", "Error");
                 errorMsg.ShowAsync();
             }

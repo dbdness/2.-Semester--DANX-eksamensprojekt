@@ -5,10 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using DanxExamProject.Common;
 using DanxExamProject.Handler;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
+using DanxExamProject.View;
 
 namespace DanxExamProject.ViewModel
 {
@@ -40,6 +43,7 @@ namespace DanxExamProject.ViewModel
 
             LoginOrLogoutCommand = new RelayCommand(EmployeeHandler.LoginOrLogout);
             AdminManageCommannd = new RelayCommand(EmployeeHandler.AdminManage);
+
 
 
 
