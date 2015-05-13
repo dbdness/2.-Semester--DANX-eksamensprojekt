@@ -100,7 +100,7 @@ We treat our customers, partners and colleagues with the same respect that we wa
 
         }
 
-        public static void CloseCanvas()
+        public static void CloseCanvases()
         {
             foreach(var c in _canvasList) c.Visibility = Visibility.Collapsed;
            

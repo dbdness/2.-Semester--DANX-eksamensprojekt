@@ -57,7 +57,7 @@ namespace DanxExamProject.Handler
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
                 PersistencyService.PutDataLoggedin(matcingEmloyee);
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
-                MainPage.CloseCanvas();
+                MainPage.CloseCanvases();
                 MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
 
             }
@@ -72,7 +72,7 @@ namespace DanxExamProject.Handler
 
                 var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
                 goodbyeMsg.ShowAsync();
-                MainPage.CloseCanvas();
+                MainPage.CloseCanvases();
                 MainPage.MainScreenCanvas.Visibility = Visibility.Visible;
             }
                 //If a wrong user id is entered:
