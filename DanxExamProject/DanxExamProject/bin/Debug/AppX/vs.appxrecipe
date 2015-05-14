@@ -8,7 +8,7 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>1fbefa5c-eeaf-4c98-8145-c4a0d6868260</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>D36320B92514DCF4D6810DA6145454C09AFBDAB9B5754D0D6CC7AFDE9FE9895D</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>897F3485E19E5F85EF9A9FAD7AE1B6AA4C196DC9DBC23874A4B50C0B31942F08</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1fbefa5c-eeaf-4c98-8145-c4a0d6868260_1.0.0.0_neutral__4c5b9g29w27se</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1fbefa5c-eeaf-4c98-8145-c4a0d6868260_4c5b9g29w27se!App</RegisteredUserModeAppID>
     <RegisteredPackageID>1fbefa5c-eeaf-4c98-8145-c4a0d6868260</RegisteredPackageID>
@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-11T11:01:18.101</Modified>
+      <Modified>2015-05-14T13:12:01.615</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-13T11:38:52.083</Modified>
+      <Modified>2015-05-14T13:16:07.739</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -44,9 +44,18 @@
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
       <Modified>2015-05-08T08:44:39.521</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\DANXbigLogo.jpg">
+      <PackagePath>Assets\DANXbigLogo.jpg</PackagePath>
+      <Modified>2015-05-14T13:02:23.660</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\DANXlogo.jpg">
       <PackagePath>Assets\DANXlogo.jpg</PackagePath>
       <Modified>2015-05-08T08:59:55.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-140.jpg">
+      <PackagePath>Assets\SplashScreen.scale-140.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-14T13:09:55.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -64,7 +73,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-05-08T08:44:30.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\StoreLogo.scale-100.png">
@@ -94,7 +102,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-11T11:01:17.726</Modified>
+      <Modified>2015-05-14T13:12:01.505</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -36,6 +36,7 @@ namespace DanxExamProject
         private static List<Canvas> _canvasList;
         public static Canvas MainScreenCanvas = new Canvas();
         public static Canvas MainScreenLoginCanvas = new Canvas();
+        public static Canvas AdminToolsCanvas = new Canvas();
 
       
 
@@ -45,6 +46,7 @@ namespace DanxExamProject
             _canvasList = new List<Canvas>(){MainCanvas, LoginCanvas};
             MainScreenCanvas = MainCanvas;
             MainScreenLoginCanvas = LoginCanvas;
+            AdminToolsCanvas = AdminButtons;
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");

@@ -47,7 +47,7 @@ namespace DanxExamProject.Handler
 
             var matchingLoggedInEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
-            //If user IS NOT logged in:
+            //If user IS NOT logged in, he will be logged in:
             if (matcingEmloyee != null && matchingLoggedInEmployee == null)
             {
                 matcingEmloyee.LastLogin = DateTime.Now;
@@ -55,13 +55,13 @@ namespace DanxExamProject.Handler
                 _viewModel.RecentlyLoggedInEmployee.Clear();
                 _viewModel.RecentlyLoggedInEmployee.Add(LastLoggedIn);
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
-                PersistencyService.PutDataLoggedin(matcingEmloyee);
+                //PersistencyService.PutDataLoggedin(matcingEmloyee); //Updates logintime for logged in.
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
                 MainPage.CloseCanvases();
                 MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
 
             }
-                //If user IS logged in:
+                //If user IS logged in, he will be logged out:
             else if (matchingLoggedInEmployee != null)
             {
                 _employeeToLogout = matchingLoggedInEmployee;
