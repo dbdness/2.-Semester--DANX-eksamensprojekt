@@ -59,6 +59,9 @@ namespace DanxExamProject.Handler
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
                 MainPage.CloseCanvases();
                 MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
+                if (matcingEmloyee.GetType() == typeof (AdminEmp))
+                    MainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
+                else MainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
 
             }
                 //If user IS logged in, he will be logged out:
@@ -154,6 +157,7 @@ namespace DanxExamProject.Handler
             //        Total_hours = EmployeeToLogOut.Total_hours
 
             //    };
+            PersistencyService.GetData(_viewModel.EmployeesInDb);
             var employeeList = _viewModel.EmployeesInDb.ToList();
             var employeeToLogout = employeeList.Find(e => e.EmployeeId == _employeeToLogout.EmployeeId);
             _employeeToLogout = employeeToLogout;

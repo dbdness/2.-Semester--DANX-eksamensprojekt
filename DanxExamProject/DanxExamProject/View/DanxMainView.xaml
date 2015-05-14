@@ -204,7 +204,8 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas Visibility="Collapsed" x:Name="LoginCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas Visibility="Collapsed" x:Name="LoginCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+                Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -251,6 +252,25 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Canvas x:Name="AdminTools" Visibility="Collapsed" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
+                <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
+                    <AppBarButton.Resources>
+                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
+                            <MenuFlyoutItem Text="Workerlist"/>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Department List"/>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Location List"/>
+
+
+                        </MenuFlyout>
+                    </AppBarButton.Resources>
+                    <AppBarButton.Flyout>
+                        <StaticResource ResourceKey="FlyoutBase1"/>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+                <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
+            </Canvas>
             <TextBlock Canvas.Left="823" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
         </Canvas>
         <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
@@ -323,13 +343,6 @@
                 <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
                 <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             </Canvas>
-
-
-
-
-
-
-
         </Canvas>
 
         <Canvas x:Name="TopCanvas" Grid.Row="0" Height="152" VerticalAlignment="Top" RequestedTheme="Dark" Grid.ColumnSpan="3">
@@ -344,11 +357,6 @@
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
             </TextBox>
-            <TextBox x:Name="ManageBox" Text="{Binding AdminManageBox, Mode=TwoWay}" Canvas.Left="1149" TextWrapping="Wrap" Canvas.Top="58" Width="121" PlaceholderText="     Manage" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF6682FF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth">
-                <TextBox.Projection>
-                    <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
-                </TextBox.Projection>
-            </TextBox>
             <TextBlock x:Name="ValueBlock" Canvas.Left="660" TextWrapping="Wrap" Canvas.Top="13" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
             <TextBlock x:Name="ValueText" Canvas.Left="614" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="67" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
             <Rectangle Fill="#FFD1CDCD" Height="20" Canvas.Left="450.25" Stroke="Transparent" Canvas.Top="65" Width="47.456" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
@@ -356,19 +364,8 @@
                     <CompositeTransform SkewX="-10"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="noname" Canvas.Left="456" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
+            <TextBlock Canvas.Left="456" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
             <Button Command="{Binding LoginOrLogoutCommand}" x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="LoginButton_Click">
-                <Button.RenderTransform>
-                    <CompositeTransform SkewX="-10"/>
-                </Button.RenderTransform>
-            </Button>
-            <Rectangle Fill="#FFD1CDCD" Height="20" Canvas.Left="1270.25" Stroke="Transparent" Canvas.Top="65.21" Width="47.456" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                <Rectangle.RenderTransform>
-                    <CompositeTransform SkewX="-10"/>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <TextBlock Canvas.Left="1275" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
-            <Button x:Name="ManageButton" Command="{Binding AdminManageCommannd}" Content="" Canvas.Left="1266.124" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="ManageButton_Click">
                 <Button.RenderTransform>
                     <CompositeTransform SkewX="-10"/>
                 </Button.RenderTransform>

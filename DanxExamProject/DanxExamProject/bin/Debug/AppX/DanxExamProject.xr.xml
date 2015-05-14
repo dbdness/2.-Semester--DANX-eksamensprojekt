@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="AdminManageCommannd" />
     <RootPropertyPathName Name="LoginOrLogoutCommand" />
-    <RootPropertyPathName Name="AdminManageBox" />
     <RootPropertyPathName Name="LoginOrLogoutBox" />
     <RootPropertyPathName Name="EmployeesInDb" />
     <RootPropertyPathName Name="WorkedDays" />
