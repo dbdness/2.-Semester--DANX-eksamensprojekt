@@ -102,12 +102,12 @@
       <SubType>Content</SubType>
       <DependentUpon>BusinessModeling\DomainModel.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Design + Analyse\DKD.classdiagram">
+    <Content Include="Design + Analyse\DCD.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Design + Analyse\DKD.classdiagram.layout">
+    <Content Include="Design + Analyse\DCD.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Design + Analyse\DKD.classdiagram</DependentUpon>
+      <DependentUpon>Design + Analyse\DCD.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\ModelingProject.uml">
       <SubType>Content</SubType>
