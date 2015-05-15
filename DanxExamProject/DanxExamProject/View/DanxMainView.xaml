@@ -256,11 +256,11 @@
                 <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
                     <AppBarButton.Resources>
                         <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
-                            <MenuFlyoutItem Text="Workerlist"/>
+                            <MenuFlyoutItem Text="Personal entry"/>
                             <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Department List"/>
+                            <MenuFlyoutItem Text="Own department list"/>
                             <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Location List"/>
+                            <MenuFlyoutItem Text="Employee list"/>
 
 
                         </MenuFlyout>
