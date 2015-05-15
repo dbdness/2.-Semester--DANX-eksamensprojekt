@@ -31,7 +31,6 @@ namespace DanxExamProject.Handler
                 OnPropertyChanged();
             }
         }
-        public static bool AdminLoggedIn { get; set; }
 
         public EmployeeHandler(MainViewModel viewModel)
         {
@@ -55,7 +54,6 @@ namespace DanxExamProject.Handler
                 _viewModel.RecentlyLoggedInEmployee.Clear();
                 _viewModel.RecentlyLoggedInEmployee.Add(LastLoggedIn);
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
-                //PersistencyService.PutDataLoggedin(matcingEmloyee); //Updates logintime for logged in.
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
                 MainPage.CloseCanvases();
                 MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
@@ -87,21 +85,21 @@ namespace DanxExamProject.Handler
 
         }
 
-        public void AdminManage()
-        {
-            var employees = _viewModel.EmployeesInDb.ToList();
-            var matchingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.AdminManageBox);
-            if (matchingEmployee != null && matchingEmployee.GetType() == typeof (AdminEmp))
-            {
-                AdminLoggedIn = true;
-            }
-            else
-            {
-                AdminLoggedIn = false;
-                var errorMsg = new MessageDialog("That user is not an admin. Please try again.", "Error");
-                errorMsg.ShowAsync();
-            }
-        }
+        //public void AdminManage()
+        //{
+        //    var employees = _viewModel.EmployeesInDb.ToList();
+        //    var matchingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.AdminManageBox);
+        //    if (matchingEmployee != null && matchingEmployee.GetType() == typeof (AdminEmp))
+        //    {
+        //        AdminLoggedIn = true;
+        //    }
+        //    else
+        //    {
+        //        AdminLoggedIn = false;
+        //        var errorMsg = new MessageDialog("That user is not an admin. Please try again.", "Error");
+        //        errorMsg.ShowAsync();
+        //    }
+        //}
 
         //private void UpdateLoginTime()
         //{

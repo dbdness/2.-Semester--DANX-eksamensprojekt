@@ -22,9 +22,7 @@ namespace DanxExamProject.ViewModel
         public List<Employee> LoggedInEmployees { get; set; }
         public ObservableCollection<Employee> RecentlyLoggedInEmployee { get; set; } 
         public string LoginOrLogoutBox { get; set; }
-        public string AdminManageBox { get; set; }
         public RelayCommand LoginOrLogoutCommand { get; set; }
-        public RelayCommand AdminManageCommannd { get; set; }
         
         
 
@@ -42,9 +40,8 @@ namespace DanxExamProject.ViewModel
             PersistencyService.GetDataLoggedIn(LoggedInEmployees);
 
             LoginOrLogoutCommand = new RelayCommand(EmployeeHandler.LoginOrLogout);
-            AdminManageCommannd = new RelayCommand(EmployeeHandler.AdminManage);
 
-
+ 
 
 
 

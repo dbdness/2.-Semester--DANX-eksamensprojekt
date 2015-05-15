@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="a1165c31-4df1-4f3d-9153-9c8aa7f183d6"
   name="Handler" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -12,44 +12,6 @@
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
-          <association
-            Id="f1c34dc3-bd90-46b0-929b-8cc3ead553c9"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="dd9a16b0-905a-4f2e-89f0-8a5e91c39407"
-              LastKnownName="MainViewModel"
-              LastKnownLocation="Package2_1109.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9e702442-77ff-418d-bfee-e096830b15b7"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d9271507-3286-4ca8-bad8-da2494792ed5"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
           <association
             Id="325d86d0-42a7-4a67-b380-e464bafa5f92"
             isDerived="false"
@@ -124,6 +86,42 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="6237bd27-9d72-42af-88f2-da909e9722f9"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dd9a16b0-905a-4f2e-89f0-8a5e91c39407"
+              LastKnownName="MainViewModel"
+              LastKnownLocation="Package2_1109.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2eb571f-73b0-4b10-8a7b-6ecbe1d3e998"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="09af48f7-3ffb-489c-9707-ca07233c6ee3"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -145,9 +143,46 @@
             </type_NamedElement>
           </property>
           <property
-            Id="8dbcc272-1199-4e98-8d00-c74c32ce7f82"
-            name="_viewModel"
+            Id="587f181c-aa45-4cae-acb7-2d2204ec2842"
+            name="_employeeToLogout"
             visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="35bad876-3112-41e2-aad5-b6c30f2dc93c"
+                LastKnownName="Employee"
+                LastKnownLocation="Package_1127.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e8012771-3d71-4544-9337-dfebfed2c7dc"
+            name="_lastLoggedIn"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="35bad876-3112-41e2-aad5-b6c30f2dc93c"
+                LastKnownName="Employee"
+                LastKnownLocation="Package_1127.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6e6c1084-f1e1-49a5-8d34-0abc295b138d"
+            name="LastLoggedIn"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -158,56 +193,16 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="7cc32851-3994-4f8b-86cb-4ca9a99cb1e7"
-                LastKnownName="MainViewModel"
+                Id="35bad876-3112-41e2-aad5-b6c30f2dc93c"
+                LastKnownName="Employee"
                 LastKnownLocation="Package_1127.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="650406ff-5ee3-4ef0-93e7-9952ff91b66f"
-            name="AddEmployee"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="48135640-4554-4975-9a63-973215b7dc19"
-            name="DeleteEmployee"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="7ef85169-b27d-45c6-a3c4-de91d2265df1"
-            name="ChangeEmployeeData"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="2f48ffdc-453a-43b5-bdc2-83398c547507"
-            name="Login"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="3ab7f50a-bbf5-4b2e-8da6-261d26e7037b"
-            name="Logout"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="a286ef75-b9ef-4299-9d85-b5668bb001a0"
-            name="UpdateLoginTime"
+            name="LoginOrLogout"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

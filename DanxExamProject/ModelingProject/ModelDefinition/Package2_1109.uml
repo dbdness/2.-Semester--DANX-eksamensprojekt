@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="179cb71b-e4a6-443e-a0a3-76313a08419b"
   name="ViewModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -107,7 +107,7 @@
                     <literalString
                       Id="a9f38a68-45e2-414b-8b54-aa546405a1cc"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
@@ -140,81 +140,8 @@
             </type_NamedElement>
           </property>
           <property
-            Id="c0534a0e-506e-4825-b4d4-596c6676947c"
-            name="CheckLoginCommand"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
-                LastKnownName="RelayCommand"
-                LastKnownLocation="Package2_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="539bcb44-c9d4-442b-874f-4e51df4eb6b2"
-            name="AddEmployeeCommand"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
-                LastKnownName="RelayCommand"
-                LastKnownLocation="Package2_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="04fabdc8-38c2-4764-857a-d8c426ee93f7"
-            name="DeleteEmployeeCommand"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
-                LastKnownName="RelayCommand"
-                LastKnownLocation="Package2_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="8f583a74-1ead-4f06-a1ae-9def0862cbfb"
-            name="ChangeEmployeeDataCommand"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
-                LastKnownName="RelayCommand"
-                LastKnownLocation="Package2_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="1ba72200-be5a-45a6-98e0-e356ccb467d6"
-            name="_loggedInEmployees"
-            visibility="Private"
+            name="LoggedInEmployees"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -227,6 +154,60 @@
               <undefinedTypeMoniker
                 Id="9a82db68-32de-4fa7-9973-117d2712fe78"
                 LastKnownName="List&lt;Employee&gt;"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0da3351b-bca3-4833-87aa-fccbf74022a5"
+            name="RecentlyLoggedInEmployee"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0e26cecb-4463-44af-8fc4-53655ca95577"
+                LastKnownName="ObservableCollection&lt;Employee&gt;"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ce649a5d-4b49-4022-871c-16d40816d594"
+            name="LoginOrLogoutBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="108c2c78-3f03-4691-bd03-a91d3909932c"
+            name="LoginOrLogoutCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
                 LastKnownLocation="Package2_1109.uml" />
             </type_NamedElement>
           </property>
