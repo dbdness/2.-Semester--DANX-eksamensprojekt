@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="AddSickOrVacationdaysCommand" />
+    <RootPropertyPathName Name="AgeList" />
+    <RootPropertyPathName Name="StandardSickDays" />
+    <RootPropertyPathName Name="StandardVacationDays" />
+    <RootPropertyPathName Name="EmployeeHandler" />
+    <RootPropertyPathName Name="SelectedEmployee" />
+    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="LoginOrLogoutCommand" />
     <RootPropertyPathName Name="LoginOrLogoutBox" />
     <RootPropertyPathName Name="EmployeesInDb" />
@@ -11,17 +18,17 @@
     <RootPropertyPathName Name="StdHours" />
     <RootPropertyPathName Name="LastLogout" />
     <RootPropertyPathName Name="LastLogin" />
-    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Manager" />
     <RootPropertyPathName Name="SalaryNumber" />
     <RootPropertyPathName Name="EmployeeId" />
-    <RootPropertyPathName Name="EmployeeHandler" />
     <RootPropertyPathName Name="LastLoggedIn" />
     <RootPropertyPathName Name="TotalHours" />
-    <RootPropertyPathName Name="RecentlyLoggedInEmployee" />
+    <RootPropertyPathName Name="CompleteEmployeeListCommand" />
+    <RootPropertyPathName Name="OwnDepartmentListCommand" />
+    <RootPropertyPathName Name="PersonalEntryListCommand" />
+    <RootPropertyPathName Name="DatabaseTable" />
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="LoginBox" />
-    <RootPropertyPathName Name="SelectedEmployee" />
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="LogoutCommand" />
     <RootPropertyPathName Name="LogoutBox" />
@@ -40,17 +47,18 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
-      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="IsCompact" />
       <RootProperty Name="Icon" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Label" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="IsCompact" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="RequestedTheme" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Flyout" />
       <RootProperty Name="Style" />
@@ -69,6 +77,45 @@
       <RootProperty Name="Placement" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="DanxExamProject.ViewModel.MainViewModel" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="SelectionHighlightColor" />
+      <RootProperty Name="FontStyle" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="UseLayoutRounding" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="RenderTransform" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="IsHitTestVisible" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="RelativeSource" />
+      <RootProperty Name="ElementName" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
@@ -79,10 +126,10 @@
       <RootProperty Name="Children" />
       <RootProperty Name="AllowDrop" />
       <RootProperty Name="UseLayoutRounding" />
+      <RootProperty Name="DataContext" />
       <RootProperty Name="Background" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="DataContext" />
       <RootProperty Name="ChildrenTransitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
@@ -122,27 +169,6 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension">
       <RootProperty Name="ResourceKey" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="SelectionHighlightColor" />
-      <RootProperty Name="FontStyle" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="RenderTransformOrigin" />
-      <RootProperty Name="UseLayoutRounding" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="IsHitTestVisible" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="TextWrapping" />
@@ -197,11 +223,6 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Children" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="IsHitTestVisible" />
       <RootProperty Name="Opacity" />
@@ -243,6 +264,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutItem">
       <RootProperty Name="Text" />
+      <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -250,7 +272,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
-    <RootType FullName="DanxExamProject.ViewModel.MainViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="Visibility" />
       <RootProperty Name="Background" />
@@ -274,12 +295,6 @@
     <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
       <RootProperty Name="Color" />
       <RootProperty Name="Offset" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="RelativeSource" />
-      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="SkewX" />
@@ -310,6 +325,11 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Symbol" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
       <RootProperty Name="Content" />

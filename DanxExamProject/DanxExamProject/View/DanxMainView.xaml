@@ -115,8 +115,11 @@
         </Style>
         <Flyout x:Key="InformationTool" Placement="Left" >
             <Grid Height="238" Width="100" AllowDrop="True" UseLayoutRounding="True" >
+                <Grid.DataContext>
+                    <ViewModel:MainViewModel/>
+                </Grid.DataContext>
                 <TextBlock TextWrapping="Wrap" Text="Name" Margin="0,0,0,224"/>
-                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,192"/>
+                <TextBox Text="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,192"/>
                 <TextBlock TextWrapping="Wrap" Text="Age" Margin="0,46,0,178"/>
                 <TextBox TextWrapping="Wrap" Margin="0,60,0,146"/>
                 <TextBlock TextWrapping="Wrap" Text="Adress" Margin="0,92,0,132"/>
@@ -169,6 +172,19 @@
                 <Button x:Name="HRButton" Content="HR" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="6,148,2,0" BorderBrush="#FF0812E6" Foreground="#FF0812E6" Flyout="{StaticResource FlyoutBase2}"/>
             </Grid>
         </Flyout>
+        <Flyout x:Key="FlyoutBase3" Placement="Bottom">
+            <StackPanel>
+                <StackPanel.DataContext>
+                    <ViewModel:MainViewModel/>
+                </StackPanel.DataContext>
+                <TextBlock Text="Add vacation or sick days&#x0a;" FontWeight="Bold"/>
+                <TextBlock Text="Vacation days this month:"/>
+                <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardVacationDays, Mode=TwoWay}" Width="23" />
+                <TextBlock Text="Sick days this month:"/>
+                <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardSickDays, Mode=TwoWay}" Width="38"/>
+                <AppBarButton Command="{Binding AddSickOrVacationdaysCommand}" IsCompact="True" Icon="Accept" Foreground="#FF0D5AFF" RequestedTheme="Light" HorizontalAlignment="Center"/>
+                </StackPanel>
+        </Flyout>
     </Page.Resources>
 
 
@@ -186,7 +202,7 @@
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <Canvas Visibility="Visible" x:Name="MainCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas Visibility="Collapsed" x:Name="MainCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -204,7 +220,7 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas Visibility="Collapsed" x:Name="LoginCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -232,7 +248,7 @@
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
                 </Canvas>
             </Border>
-            <ListView ItemsSource="{Binding RecentlyLoggedInEmployee, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="205" Canvas.Top="277">
+            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="205" Canvas.Top="277">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
@@ -252,17 +268,15 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Canvas x:Name="AdminTools" Visibility="Collapsed" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
+            <Canvas x:Name="AdminTools" Visibility="Visible" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
                 <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
                     <AppBarButton.Resources>
-                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
-                            <MenuFlyoutItem Text="Personal entry"/>
+                        <MenuFlyout x:Name="DatabaseViews" Placement="Bottom" x:Key="FlyoutBase1">
+                            <MenuFlyoutItem Text="Personal entry" Command="{Binding PersonalEntryListCommand}"/>
                             <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Own department list"/>
+                            <MenuFlyoutItem Text="Own department list" Command="{Binding OwnDepartmentListCommand}"/>
                             <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Employee list"/>
-
-
+                            <MenuFlyoutItem Text="Employee list" Command="{Binding CompleteEmployeeListCommand}"/>
                         </MenuFlyout>
                     </AppBarButton.Resources>
                     <AppBarButton.Flyout>
@@ -272,6 +286,11 @@
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
             <TextBlock Canvas.Left="823" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
+            <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1332" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
+                <AppBarButton.Icon>
+                    <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </Canvas>
         <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Canvas.Background>

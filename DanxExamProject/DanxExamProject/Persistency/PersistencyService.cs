@@ -46,7 +46,6 @@ namespace DanxExamProject.Persistency
                         }
                         foreach (var e in adminEmpData)
                         {
-                            if (collection.Contains(e)) return;
                             collection.Add(e);
                             
                         }

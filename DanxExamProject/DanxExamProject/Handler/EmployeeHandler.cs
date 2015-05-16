@@ -51,10 +51,11 @@ namespace DanxExamProject.Handler
             {
                 matcingEmloyee.LastLogin = DateTime.Now;
                 LastLoggedIn = matcingEmloyee;
-                _viewModel.RecentlyLoggedInEmployee.Clear();
-                _viewModel.RecentlyLoggedInEmployee.Add(LastLoggedIn);
+                _viewModel.DatabaseTable.Clear();
+                _viewModel.DatabaseTable.Add(LastLoggedIn);
                 PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
                 PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
+
                 MainPage.CloseCanvases();
                 MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
                 if (matcingEmloyee.GetType() == typeof (AdminEmp))
@@ -192,6 +193,42 @@ namespace DanxExamProject.Handler
             //PersistencyService.PutDataForLoggedin(updatedEmployee);
         }
 
+        public void CompleteEmployeeList()
+        {
+            PersistencyService.GetData(_viewModel.DatabaseTable);
+        }
+
+        public void PersonalEntryList()
+        {
+            _viewModel.DatabaseTable.Clear();
+            _viewModel.DatabaseTable.Add(LastLoggedIn);
+        }
+
+        public void OwnDepartmentList()
+        {
+            var allEmployees = new ObservableCollection<Employee>();
+            PersistencyService.GetData(allEmployees);
+            var ownDepartment = from e in allEmployees where e.Manager == LastLoggedIn.Name select e;
+            _viewModel.DatabaseTable.Clear();
+            foreach (var e in ownDepartment) _viewModel.DatabaseTable.Add(e);
+        }
+
+        public void ChangeVacationOrSickdays()
+        {
+            if (_viewModel.StandardVacationDays != 0) LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;
+            if (_viewModel.StandardSickDays != 0) LastLoggedIn.SickDays += _viewModel.StandardSickDays;
+            PersistencyService.PutData(LastLoggedIn);
+
+            PersistencyService.GetData(_viewModel.EmployeesInDb);
+            var updatedEmpList = _viewModel.EmployeesInDb.ToList();
+            var updatedEmp = updatedEmpList.Find(e => e.EmployeeId == LastLoggedIn.EmployeeId);
+            _viewModel.DatabaseTable.Clear();
+            _viewModel.DatabaseTable.Add(updatedEmp);
+
+        }
+
+
+
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -205,4 +242,4 @@ namespace DanxExamProject.Handler
         #endregion
     }
     }
-
+    
