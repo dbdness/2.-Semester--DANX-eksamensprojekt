@@ -7,23 +7,6 @@
     x:Class="DanxExamProject.MainPage"
     mc:Ignorable="d">
     <Page.Resources>
-        <MenuFlyout x:Key="AdminTools" Placement="Left">
-            <MenuFlyoutItem Text="Almen Database"/>
-            <MenuFlyoutItem Text="Database 2"/>
-            <MenuFlyoutItem Text="loggedinDatabase"/>
-            <MenuFlyoutSeparator/>
-            <MenuFlyoutItem Text="Afdelinger"/>
-            <MenuFlyoutItem Text="HR"/>
-            <MenuFlyoutItem Text="Løn"/>
-            <MenuFlyoutItem Text="Ekstra"/>
-        </MenuFlyout>
-        <MenuFlyout x:Key="SettingsTool" Placement="Bottom">
-            <MenuFlyoutItem Text="MenuFlyoutItem"/>
-            <MenuFlyoutSeparator/>
-            <MenuFlyoutItem Text="MenuFlyoutItem"/>
-            <MenuFlyoutSeparator/>
-            <MenuFlyoutItem Text="MenuFlyoutItem"/>
-        </MenuFlyout>
         <Style x:Key="GG" TargetType="AppBarButton">
             <Setter Property="Foreground" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
@@ -113,17 +96,17 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Flyout x:Key="InformationTool" Placement="Left" >
+        <Flyout x:Name="InformationToolFlyout" x:Key="InformationTool" Placement="Left" >
             <Grid AllowDrop="True" UseLayoutRounding="True" Height="171">
                 <TextBlock TextWrapping="Wrap" Text="Name" Height="26" VerticalAlignment="Top"/>
                 <TextBox Text="{Binding AdminChangeNameBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,0" Height="44" VerticalAlignment="Top"/>
                 <TextBlock TextWrapping="Wrap" Text="Manager" Margin="0,58,0,0" Height="26" VerticalAlignment="Top"/>
                 <TextBox Text="{Binding AdminChangeManagerBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Manager, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="-1,68,1,0" Height="36" VerticalAlignment="Top"/>
                 <AppBarButton Command="{Binding AdminChangePersonalInfoCommand}" HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="0,117,50,0" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
-                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="50,117,-1,0" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
+                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="50,117,-1,0" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0" Click="AppBarButton_Click"/>
             </Grid>
         </Flyout>
-        <Flyout x:Key="FlyoutBase1" Placement="Left">
+        <Flyout x:Name="SalaryToolFlyout" x:Key="FlyoutBase1" Placement="Left">
             <StackPanel>
                 <TextBlock Text="Salary Number"/>
                 <TextBox Text="{Binding AdminChangeSalaryNumberBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SalaryNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -134,7 +117,7 @@
                 <TextBlock Text="Worked Days"/>
                 <TextBox Text="{Binding AdminChangeWorkedDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.WorkedDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <AppBarButton Command="{Binding AdminChangeSalaryInfoCommand}" IsCompact="True" Icon="Accept"/>
-                <AppBarButton Margin="50,-72,0,0" IsCompact="True" Icon="Cancel"/>
+                <AppBarButton Margin="50,-72,0,0" IsCompact="True" Icon="Cancel" Click="AppBarButton_Click_1"/>
                 </StackPanel>
         </Flyout>
         
@@ -218,7 +201,7 @@
                     <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="556"/>
                     <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="631"/>
                     <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="707"/>
-                    <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="779"/>
+                    <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="783"/>
                     <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="878"/>
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
                 </Canvas>
@@ -229,13 +212,13 @@
                         <Canvas>
                             <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
-                            <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
-                            <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
-                            <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
-                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="627"/>
-                            <TextBlock Text="{Binding}" Canvas.Left="704"/>
+                            <TextBlock Text="{Binding Manager}" Canvas.Left="118"/>
+                            <TextBlock Text="{Binding Name}" Canvas.Left="203"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="128"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="128"/>
+                            <TextBlock Text="{Binding StdHours}" Canvas.Left="557"/>
+                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="637"/>
+                            <TextBlock Text="{Binding}" Canvas.Left="718"/>
                             <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
                             <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
                             <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
@@ -260,85 +243,14 @@
                 </AppBarButton>
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
-            <TextBlock Canvas.Left="823" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
+            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
             <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1332" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
                 <AppBarButton.Icon>
                     <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>
                 </AppBarButton.Icon>
             </AppBarButton>
         </Canvas>
-        <Canvas x:Name="AdminManageCanvas" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
-            <Canvas.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D5AFF"/>
-                    <GradientStop Color="White" Offset="0.049"/>
-                </LinearGradientBrush>
-            </Canvas.Background>
-            <Canvas x:Name="AdminButtons" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
-                <AppBarButton x:Name="DatabaseButton" IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
-                    <AppBarButton.Resources>
-                        <MenuFlyout Placement="Bottom" x:Key="FlyoutBase1">
-                            <MenuFlyoutItem Text="Workerlist"/>
-                            <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Department List"/>
-                            <MenuFlyoutSeparator/>
-                            <MenuFlyoutItem Text="Location List"/>
-
-
-                        </MenuFlyout>
-                    </AppBarButton.Resources>
-                    <AppBarButton.Flyout>
-                        <StaticResource ResourceKey="FlyoutBase1"/>
-                    </AppBarButton.Flyout>
-                </AppBarButton>
-                <AppBarButton x:Name="EditButton" IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
-            </Canvas>
-            <TextBlock Canvas.Left="618" TextWrapping="Wrap" Text="Welcome Admin!" FontSize="40" FontWeight="SemiBold" Foreground="#FF0D5AFF" Canvas.Top="101" Height="57" Width="322"/>
-            <TextBlock Canvas.Left="568" TextWrapping="Wrap" Text="Manage data using the buttons to the right." Canvas.Top="158" Foreground="#FF0D5AFF" Height="33" Width="409" FontSize="20"/>
-            <Canvas x:Name="PastRegDatabase">
-                <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="258" Canvas.Top="220" Width="1066" Height="46">
-                    <Canvas>
-                        <TextBlock Text="EmployeeId" FontWeight="Bold"/>
-                        <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="74"/>
-                        <TextBlock Text="Manager" FontWeight="Bold" Canvas.Left="129"/>
-                        <TextBlock Text="Name" FontWeight="Bold" Canvas.Left="200"/>
-                        <TextBlock Text="Last login" FontWeight="Bold" Canvas.Left="290"/>
-                        <TextBlock Text="Last logout" FontWeight="Bold" Canvas.Left="428"/>
-                        <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="556"/>
-                        <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="631"/>
-                        <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="707"/>
-                        <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="779"/>
-                        <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="878"/>
-                        <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
-                    </Canvas>
-                </Border>
-                <ListView ItemsSource="{Binding EmployeesInDb}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="258" Canvas.Top="260">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Canvas>
-                                <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
-                                <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
-                                <TextBlock Text="{Binding Manager}" Canvas.Left="129"/>
-                                <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
-                                <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="117"/>
-                                <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="112"/>
-                                <TextBlock Text="{Binding StdHours}" Canvas.Left="552"/>
-                                <TextBlock Text="{Binding WatchHours}" Canvas.Left="627"/>
-                                <TextBlock Text="{Binding}" Canvas.Left="704"/>
-                                <TextBlock Text="{Binding VacationDays}" Canvas.Left="808"/>
-                                <TextBlock Text="{Binding SickDays}" Canvas.Left="893"/>
-                                <TextBlock Text="{Binding WorkedDays}" Canvas.Left="977"/>
-                            </Canvas>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Canvas>
-            <Canvas x:Name="WorkerListDB" Visibility="Collapsed">
-                <Rectangle Fill="Black" Height="425" Canvas.Left="184" Stroke="Black" Canvas.Top="117" Width="984"/>
-                <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database - Workerlist**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
-            </Canvas>
-        </Canvas>
-
+        
         <Canvas x:Name="TopCanvas" Grid.Row="0" Height="152" VerticalAlignment="Top" RequestedTheme="Dark" Grid.ColumnSpan="3">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -365,7 +277,5 @@
                 </Button.RenderTransform>
             </Button>
         </Canvas>
-
-
     </Grid>
 </Page>

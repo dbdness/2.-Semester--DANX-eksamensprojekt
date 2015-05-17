@@ -653,7 +653,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private void set_21_MainViewModel_AdminChangeSalaryNumberBox(object instance, object Value)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
-            that.AdminChangeSalaryNumberBox = (global::System.Nullable<global::System.Int32>)Value;
+            that.AdminChangeSalaryNumberBox = (global::System.String)Value;
         }
         private object get_22_MainViewModel_AdminChangeVacationDaysBox(object instance)
         {
@@ -663,7 +663,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private void set_22_MainViewModel_AdminChangeVacationDaysBox(object instance, object Value)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
-            that.AdminChangeVacationDaysBox = (global::System.Nullable<global::System.Int32>)Value;
+            that.AdminChangeVacationDaysBox = (global::System.String)Value;
         }
         private object get_23_MainViewModel_AdminChangeSickDaysBox(object instance)
         {
@@ -683,7 +683,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private void set_24_MainViewModel_AdminChangeWorkedDaysBox(object instance, object Value)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
-            that.AdminChangeWorkedDaysBox = (global::System.Nullable<global::System.Int32>)Value;
+            that.AdminChangeWorkedDaysBox = (global::System.String)Value;
         }
         private object get_25_MainViewModel_LoginOrLogoutCommand(object instance)
         {
@@ -911,13 +911,13 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 break;
             case "DanxExamProject.ViewModel.MainViewModel.AdminChangeSalaryNumberBox":
                 userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeSalaryNumberBox", "System.Nullable`1<Int32>");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeSalaryNumberBox", "String");
                 xamlMember.Getter = get_21_MainViewModel_AdminChangeSalaryNumberBox;
                 xamlMember.Setter = set_21_MainViewModel_AdminChangeSalaryNumberBox;
                 break;
             case "DanxExamProject.ViewModel.MainViewModel.AdminChangeVacationDaysBox":
                 userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeVacationDaysBox", "System.Nullable`1<Int32>");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeVacationDaysBox", "String");
                 xamlMember.Getter = get_22_MainViewModel_AdminChangeVacationDaysBox;
                 xamlMember.Setter = set_22_MainViewModel_AdminChangeVacationDaysBox;
                 break;
@@ -929,7 +929,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 break;
             case "DanxExamProject.ViewModel.MainViewModel.AdminChangeWorkedDaysBox":
                 userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeWorkedDaysBox", "System.Nullable`1<Int32>");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeWorkedDaysBox", "String");
                 xamlMember.Getter = get_24_MainViewModel_AdminChangeWorkedDaysBox;
                 xamlMember.Setter = set_24_MainViewModel_AdminChangeWorkedDaysBox;
                 break;

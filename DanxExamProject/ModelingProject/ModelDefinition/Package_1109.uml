@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="44369dd2-3645-4ff6-923d-9f035059eecf"
   name="Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -222,7 +222,7 @@
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="2e0d0eaa-ce57-4606-afeb-6fbba8292a05"
+            Id="dd7304ac-aa48-445e-9e8e-81d816179c68"
             isSubstitutable="false">
             <classMoniker
               Id="9c23ebf4-2617-4af8-9450-75781fb7c3b5"
@@ -241,7 +241,7 @@
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="12bff1ef-8320-41d4-be45-a64c12eebe6f"
+            Id="6b938d62-7da8-4ede-a8ac-fceba73c355e"
             isSubstitutable="false">
             <classMoniker
               Id="9c23ebf4-2617-4af8-9450-75781fb7c3b5"

@@ -198,6 +198,61 @@
                 LastKnownLocation="Package_1127.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="43df9b1a-b899-4106-87d1-504f4db5d143"
+            name="_selectedEmployee"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="35bad876-3112-41e2-aad5-b6c30f2dc93c"
+                LastKnownName="Employee"
+                LastKnownLocation="Package_1127.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0eec968b-0b04-4a1f-b26a-97e0981492c9"
+            name="SelectedEmployee"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="35bad876-3112-41e2-aad5-b6c30f2dc93c"
+                LastKnownName="Employee"
+                LastKnownLocation="Package_1127.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="47095c59-8a89-4dc6-830c-8f2202a92565"
+            name="PropertyChanged"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3989296a-1dca-404a-831c-3f4dba26d348"
+                LastKnownName="PropertyChangedEventHandler"
+                LastKnownLocation="Package_1127.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -232,6 +287,72 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="8e1864b1-b28f-47d0-85fd-51f3f4018946"
+            name="CompleteEmployeeList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c937b933-db79-43f3-a537-29c23a06309d"
+            name="PersonalEntryList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="666b9759-cae3-4b70-9451-3e7f8a102c0d"
+            name="OwnDepartmentList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="07e79f44-1b93-4499-acda-e51616ac7a80"
+            name="ChangeVacationOrSickdays"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5d4925b1-3db1-4eaf-8cae-b8518edfc8f1"
+            name="AdminChangePersonalInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3dca7330-e575-4e9a-846c-bdb0e8e107fc"
+            name="AdminChangeSalaryInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="872f100c-27e3-4740-9ced-eafad1829904"
+            name="OnPropertyChanged"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3304985a-24a0-4cc4-a56d-c3a152b9ec40"
+                  name="string propertyName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -244,6 +365,11 @@
       <undefinedType
         Id="7cc32851-3994-4f8b-86cb-4ca9a99cb1e7"
         name="MainViewModel" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3989296a-1dca-404a-831c-3f4dba26d348"
+        name="PropertyChangedEventHandler" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

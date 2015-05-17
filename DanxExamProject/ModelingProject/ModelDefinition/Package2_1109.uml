@@ -158,24 +158,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="0da3351b-bca3-4833-87aa-fccbf74022a5"
-            name="RecentlyLoggedInEmployee"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="0e26cecb-4463-44af-8fc4-53655ca95577"
-                LastKnownName="ObservableCollection&lt;Employee&gt;"
-                LastKnownLocation="Package2_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="ce649a5d-4b49-4022-871c-16d40816d594"
             name="LoginOrLogoutBox"
             isLeaf="false"
@@ -211,7 +193,306 @@
                 LastKnownLocation="Package2_1109.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="6d8f5309-76a6-4965-b8f1-fa1737e2ec1e"
+            name="DatabaseTable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0e26cecb-4463-44af-8fc4-53655ca95577"
+                LastKnownName="ObservableCollection&lt;Employee&gt;"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="85b49698-6332-432a-98fd-e1413c2c6b33"
+            name="StandardVacationDays"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
+                LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2224c3d9-3d93-4651-bc99-14264d791aa2"
+            name="StandardSickDays"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
+                LastKnownName="int"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a7e1fd6c-e98a-46ea-929a-90df732877bd"
+            name="AdminChangeNameBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d3fc23a5-f8d4-4dc6-a7c9-4d879b160fe7"
+            name="AdminChangeManagerBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="daf0e677-bb9d-4b18-9d55-d25307543fe1"
+            name="AdminChangeSalaryNumberBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ec0b6b6b-ba21-4624-a46e-3a7c8ba7e782"
+            name="AdminChangeVacationDaysBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7d976200-1b3f-43ad-8113-acfb3f95fe5f"
+            name="AdminChangeSickDaysBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="66224c0b-f3d2-4cc6-a56c-3e849f8af183"
+            name="AdminChangeWorkedDaysBox"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="97ef00a0-3c95-48b1-9d48-7900ca27b0ef"
+                LastKnownName="string"
+                LastKnownLocation="Package_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c086b529-2152-4e6a-b02e-74d0aae5c3da"
+            name="CompleteEmployeeListCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d0b082f2-0e07-4440-9614-ad473a5f60cc"
+            name="PersonalEntryListCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="732be857-805a-4f72-8c7b-76d8a9184027"
+            name="OwnDepartmentListCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="61528123-0af4-46b9-9f0f-5442b9ac674a"
+            name="AddSickOrVacationdaysCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="33bc6fb3-7ac5-4fd6-93fd-d9f7aa43f7b7"
+            name="AdminChangePersonalInfoCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1258d4cd-3d13-49cc-8486-2cb34f1a07ba"
+            name="AdminChangeSalaryInfoCommand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fda93f73-5b88-44c4-8e73-3de956e85849"
+                LastKnownName="RelayCommand"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="261586fb-05d8-4faf-b6b5-a9cae144609d"
+            name="AgeList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2d6c56ac-829f-4999-b57f-81bb2abd4361"
+                LastKnownName="List&lt;int&gt;"
+                LastKnownLocation="Package2_1109.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c4ecfc94-ff71-4fee-9839-41fb80cc288e"
+            name="Ages"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -228,6 +509,11 @@
       <undefinedType
         Id="9a82db68-32de-4fa7-9973-117d2712fe78"
         name="List&lt;Employee&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2d6c56ac-829f-4999-b57f-81bb2abd4361"
+        name="List&lt;int&gt;" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

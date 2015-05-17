@@ -44,13 +44,14 @@ namespace DanxExamProject.ViewModel
        
         public MainViewModel()
         {
+
             EmployeeHandler = new EmployeeHandler(this);
+            PersistencyService.OpenApiConnection();
 
             EmployeesInDb = new ObservableCollection<Employee>();
             LoggedInEmployees = new List<Employee>();
             DatabaseTable = new ObservableCollection<Employee>();
             
-            PersistencyService.GetData(EmployeesInDb);
             PersistencyService.GetData(EmployeesInDb);
             PersistencyService.GetDataLoggedIn(LoggedInEmployees);
 
@@ -63,9 +64,6 @@ namespace DanxExamProject.ViewModel
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
 
             AgeList = Ages();
-
-
-
 
 
         }

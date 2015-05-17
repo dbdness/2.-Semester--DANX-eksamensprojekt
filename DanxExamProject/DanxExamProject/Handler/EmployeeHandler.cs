@@ -18,7 +18,7 @@ namespace DanxExamProject.Handler
     class EmployeeHandler: INotifyPropertyChanged
     {
         private readonly MainViewModel _viewModel;
-        public static Employee _selectedEmployee;
+        private static Employee _selectedEmployee;
 
         public Employee SelectedEmployee
         {
@@ -240,6 +240,20 @@ namespace DanxExamProject.Handler
         public void AdminChangePersonalInfo()
         {
             if (SelectedEmployee == null) return;
+
+            //Admin level 1 and 2 privileges check
+            var admin = (AdminEmp) LastLoggedIn;
+            if (admin.AdminLvl != 2) //If admin is lvl 1
+            {
+                if (SelectedEmployee.Manager != LastLoggedIn.Name)
+                {
+                 var errorMsg = new MessageDialog("You can only change data for your own employees.", "Error");
+                    errorMsg.ShowAsync();
+                    return;
+                }
+
+            }
+            
             
             if (_viewModel.AdminChangeNameBox != null) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
             if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
@@ -253,20 +267,32 @@ namespace DanxExamProject.Handler
         {           
             if (SelectedEmployee == null) return;
 
+            var admin = (AdminEmp)LastLoggedIn;
+            if (admin.AdminLvl != 2) //If admin is lvl 1
+            {
+                if (SelectedEmployee.Manager != LastLoggedIn.Name)
+                {
+                    var errorMsg = new MessageDialog("You can only change data for your own employees.", "Error");
+                    errorMsg.ShowAsync();
+                    return;
+                }
+                
+            }
+            
             try
             {
                 //The following needs parsing due to the fact that the TextBox controls are bound to string values. 
 
-                if (_viewModel.AdminChangeSalaryNumberBox != null)
+                if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeSalaryNumberBox))
                     SelectedEmployee.SalaryNumber = int.Parse(_viewModel.AdminChangeSalaryNumberBox);
 
-                if (_viewModel.AdminChangeVacationDaysBox != null)
+                if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeVacationDaysBox))
                     SelectedEmployee.VacationDays = int.Parse(_viewModel.AdminChangeVacationDaysBox);
 
-                if (_viewModel.AdminChangeSickDaysBox != null)
+                if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeSickDaysBox))
                     SelectedEmployee.SickDays = int.Parse(_viewModel.AdminChangeSickDaysBox);  
 
-                if (_viewModel.AdminChangeWorkedDaysBox != null)
+                if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeWorkedDaysBox))
                     SelectedEmployee.WorkedDays = int.Parse(_viewModel.AdminChangeWorkedDaysBox);
 
 
@@ -280,8 +306,7 @@ namespace DanxExamProject.Handler
             }
         }
 
-
-
+        
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

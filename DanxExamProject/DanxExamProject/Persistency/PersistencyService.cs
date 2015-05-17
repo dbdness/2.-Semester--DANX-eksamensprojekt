@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using DanxExamProject.Model;
 
 namespace DanxExamProject.Persistency
@@ -14,6 +15,25 @@ namespace DanxExamProject.Persistency
     class PersistencyService
     {
         private const string ServerUri = "http://localhost:2000";
+        private static HttpClient _client;
+
+        public static void OpenApiConnection()
+        {
+            try
+            {
+                var handler = new HttpClientHandler();
+                _client = new HttpClient(handler) {BaseAddress = new Uri(ServerUri)};
+                _client.DefaultRequestHeaders.Clear();
+                _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            }
+            catch (HttpRequestException)
+            {
+                var errorMsg = new MessageDialog("There was a problem in establishing connection to the database.",
+                    "Error");
+                errorMsg.ShowAsync();
+            }
+        }
 
         /// <summary>
         /// Gets the list of employees.
@@ -21,17 +41,10 @@ namespace DanxExamProject.Persistency
         /// <param name="collection"></param>
         public static void GetData(ObservableCollection<Employee> collection)
         {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
-                    var stdEmpResponse = client.GetAsync("api/standardEmployees").Result;
-                    var adminEmpResponse = client.GetAsync("api/adminEmployees").Result;
+                    var stdEmpResponse = _client.GetAsync("api/standardEmployees").Result;
+                    var adminEmpResponse = _client.GetAsync("api/adminEmployees").Result;
 
                     if (stdEmpResponse.IsSuccessStatusCode && adminEmpResponse.IsSuccessStatusCode)
                     {
@@ -40,15 +53,9 @@ namespace DanxExamProject.Persistency
 
                         collection.Clear();
 
-                        foreach (var e in stdEmpData)
-                        {
-                            collection.Add(e);
-                        }
-                        foreach (var e in adminEmpData)
-                        {
-                            collection.Add(e);
-                            
-                        }
+                        foreach (var e in stdEmpData) collection.Add(e);
+
+                        foreach (var e in adminEmpData) collection.Add(e);
                         
                     }
                 }
@@ -56,7 +63,7 @@ namespace DanxExamProject.Persistency
                 {
 
                 }
-            }
+            
         }
 
         /// <summary>
@@ -64,25 +71,17 @@ namespace DanxExamProject.Persistency
         /// </summary>
         /// <param name="employee"></param>
         public static void PutData(Employee employee)
-        {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                
-            
+        {  
                 try
                 {
 
                     if (employee.GetType() == typeof(StandardEmp))
                     {
-                        var response = client.PutAsJsonAsync("api/standardEmployees/" + employee.EmployeeId, employee).Result;
+                        var response = _client.PutAsJsonAsync("api/standardEmployees/" + employee.EmployeeId, employee).Result;
                     }
                     if (employee.GetType() == typeof(AdminEmp))
                     {
-                        var response = client.PutAsJsonAsync("api/adminEmployees/" + employee.EmployeeId, employee).Result;
+                        var response = _client.PutAsJsonAsync("api/adminEmployees/" + employee.EmployeeId, employee).Result;
                     }
 
                 }
@@ -90,7 +89,7 @@ namespace DanxExamProject.Persistency
                 {
 
                 }
-            }
+            
         }
 
 
@@ -101,22 +100,15 @@ namespace DanxExamProject.Persistency
         /// <param name="employee"></param>
         public static void PutDataLoggedin(Employee employee)
         {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
-                    var response = client.PutAsJsonAsync("api/loggedInEmployees/" + employee.EmployeeId, employee).Result;
+                    var response = _client.PutAsJsonAsync("api/loggedInEmployees/" + employee.EmployeeId, employee).Result;
                 }
                 catch (HttpRequestException)
                 {
 
                 }
-            }
+            
         }
 
         /// <summary>
@@ -125,21 +117,13 @@ namespace DanxExamProject.Persistency
         /// <param name="collection"></param>
         public static void GetDataLoggedIn(List<Employee> collection)
         {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))    
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
-                    var response = client.GetAsync("api/loggedInEmployees").Result;
+                    var response = _client.GetAsync("api/loggedInEmployees").Result;
 
                     collection.Clear();
                     if (response.IsSuccessStatusCode)
                     {
-                        //Need two logged in tables. 
                         var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
                         collection.AddRange(dbData);
                     }
@@ -148,7 +132,7 @@ namespace DanxExamProject.Persistency
                 {
 
                 }
-            }
+            
         }
 
         /// <summary>
@@ -157,22 +141,15 @@ namespace DanxExamProject.Persistency
         /// <param name="employee"></param>
         public static void PostDataLoggedIn(Employee employee)
         {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
-                    var response = client.PostAsJsonAsync("api/loggedInEmployees", employee).Result;
+                    var response = _client.PostAsJsonAsync("api/loggedInEmployees", employee).Result;
                 }
                 catch (HttpRequestException)
                 {
 
                 }
-            }
+            
         }
 
         /// <summary>
@@ -181,22 +158,15 @@ namespace DanxExamProject.Persistency
         /// <param name="employee"></param>
         public static void DeleteDataLoggedIn(Employee employee)
         {
-            var handler = new HttpClientHandler();
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUri);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
-                    var response = client.DeleteAsync("api/loggedInEmployees/" + employee.EmployeeId).Result;
+                    var response = _client.DeleteAsync("api/loggedInEmployees/" + employee.EmployeeId).Result;
                 }
                 catch (HttpRequestException)
                 {
 
                 }
-            }
+            
         }
     }
 }

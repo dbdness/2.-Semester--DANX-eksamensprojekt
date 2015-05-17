@@ -144,6 +144,16 @@ We treat our customers, partners and colleagues with the same respect that we wa
 
         }
 
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.InformationToolFlyout.Hide();
+        }
+
+        private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.SalaryToolFlyout.Hide();
+        }
+
         
             
         }

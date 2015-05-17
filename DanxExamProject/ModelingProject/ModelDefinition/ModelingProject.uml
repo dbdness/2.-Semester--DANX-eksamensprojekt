@@ -622,22 +622,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="97e7874f-48f5-4337-a186-878eb3f3e7e6"
-            name="MessageOccurrenceSpecification17">
-            <covered>
-              <lifelineMoniker
-                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
-                LastKnownName="System"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="fe9fe639-65ed-44db-bd86-7809de85e887"
             name="MessageOccurrenceSpecification18">
             <covered>
               <lifelineMoniker
                 Id="add91b11-93bc-4e02-8d6d-becf1aba1c68"
                 LastKnownName="WebService"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="97e7874f-48f5-4337-a186-878eb3f3e7e6"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
+                LastKnownName="System"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -776,22 +776,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="23d864d6-7645-480f-a5dc-1cce738bb51f"
-            name="MessageOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
-                LastKnownName="System"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="f3ec0cd8-23f7-42c0-a7f8-c9144209bdb4"
             name="MessageOccurrenceSpecification9">
             <covered>
               <lifelineMoniker
                 Id="8ab16b71-dd45-462a-9752-494548613f4d"
                 LastKnownName="Aktør"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="23d864d6-7645-480f-a5dc-1cce738bb51f"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
+                LastKnownName="System"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -904,22 +904,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2efc5a4c-d24c-4e37-b550-9949a4240a6c"
-            name="MessageOccurrenceSpecification11">
-            <covered>
-              <lifelineMoniker
-                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
-                LastKnownName="System"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="68d48f3d-62ac-4587-b320-d679b21f996b"
             name="MessageOccurrenceSpecification12">
             <covered>
               <lifelineMoniker
                 Id="8ab16b71-dd45-462a-9752-494548613f4d"
                 LastKnownName="Aktør"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2efc5a4c-d24c-4e37-b550-9949a4240a6c"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="d055e0f1-b52f-43e0-8c9d-a9f265a56608"
+                LastKnownName="System"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>

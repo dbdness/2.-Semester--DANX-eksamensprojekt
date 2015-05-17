@@ -31,6 +31,25 @@
                 LastKnownLocation="Package1_1127.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="63774735-1cfa-42e7-a6d8-f00c99bdc426"
+            name="_client"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c536c6e2-d9b7-4d94-8dd2-950728359417"
+                LastKnownName="HttpClient"
+                LastKnownLocation="Package1_1127.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -177,6 +196,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="f3de2878-ae4f-4170-8b79-d0320715fc2a"
+            name="OpenApiConnection"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -184,6 +211,11 @@
       <undefinedType
         Id="60451f83-e212-4ab3-8c15-2ddae7a81a24"
         name="const String" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c536c6e2-d9b7-4d94-8dd2-950728359417"
+        name="HttpClient" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
