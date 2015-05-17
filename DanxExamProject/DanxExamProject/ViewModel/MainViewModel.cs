@@ -24,11 +24,19 @@ namespace DanxExamProject.ViewModel
         public string LoginOrLogoutBox { get; set; }
         public int StandardVacationDays { get; set; }
         public int StandardSickDays { get; set; }
+        public string AdminChangeNameBox { get; set; }
+        public string AdminChangeManagerBox { get; set; }
+        public string AdminChangeSalaryNumberBox { get; set; }
+        public string AdminChangeVacationDaysBox { get; set; }
+        public string AdminChangeSickDaysBox { get; set; }
+        public string AdminChangeWorkedDaysBox { get; set; }
         public RelayCommand LoginOrLogoutCommand { get; set; }
         public RelayCommand CompleteEmployeeListCommand { get; set; }
         public RelayCommand PersonalEntryListCommand { get; set; }
         public RelayCommand OwnDepartmentListCommand { get; set; }
         public RelayCommand AddSickOrVacationdaysCommand { get; set; }
+        public RelayCommand AdminChangePersonalInfoCommand { get; set; }
+        public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
 
         public List<int> AgeList { get; set; } 
         
@@ -51,6 +59,8 @@ namespace DanxExamProject.ViewModel
             PersonalEntryListCommand = new RelayCommand(EmployeeHandler.PersonalEntryList);
             OwnDepartmentListCommand = new RelayCommand(EmployeeHandler.OwnDepartmentList);
             AddSickOrVacationdaysCommand = new RelayCommand(EmployeeHandler.ChangeVacationOrSickdays);
+            AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
+            AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
 
             AgeList = Ages();
 

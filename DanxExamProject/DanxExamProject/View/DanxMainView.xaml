@@ -114,76 +114,51 @@
             </Setter>
         </Style>
         <Flyout x:Key="InformationTool" Placement="Left" >
-            <Grid Height="238" Width="100" AllowDrop="True" UseLayoutRounding="True" >
-                <Grid.DataContext>
-                    <ViewModel:MainViewModel/>
-                </Grid.DataContext>
-                <TextBlock TextWrapping="Wrap" Text="Name" Margin="0,0,0,224"/>
-                <TextBox Text="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,192"/>
-                <TextBlock TextWrapping="Wrap" Text="Age" Margin="0,46,0,178"/>
-                <TextBox TextWrapping="Wrap" Margin="0,60,0,146"/>
-                <TextBlock TextWrapping="Wrap" Text="Adress" Margin="0,92,0,132"/>
-                <TextBox TextWrapping="Wrap" Margin="0,106,0,100"/>
-                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,86"/>
-                <TextBox TextWrapping="Wrap" Margin="0,152,0,54"/>
-                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-12" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
-                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-12" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
+            <Grid AllowDrop="True" UseLayoutRounding="True" Height="171">
+                <TextBlock TextWrapping="Wrap" Text="Name" Height="26" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding AdminChangeNameBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,0" Height="44" VerticalAlignment="Top"/>
+                <TextBlock TextWrapping="Wrap" Text="Manager" Margin="0,58,0,0" Height="26" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding AdminChangeManagerBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Manager, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="-1,68,1,0" Height="36" VerticalAlignment="Top"/>
+                <AppBarButton Command="{Binding AdminChangePersonalInfoCommand}" HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="0,117,50,0" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
+                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="50,117,-1,0" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
             </Grid>
         </Flyout>
         <Flyout x:Key="FlyoutBase1" Placement="Left">
-            <Grid Height="224" Width="100">
-                <TextBlock TextWrapping="Wrap" Text="Salary ID" Margin="0,0,0,211"/>
-                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,178"/>
-                <TextBlock TextWrapping="Wrap" Text="Salary Number" Margin="0,46,0,165"/>
-                <TextBox TextWrapping="Wrap" Margin="0,60,0,131"/>
-                <TextBlock TextWrapping="Wrap" Text="Department" Margin="0,92,0,119"/>
-                <TextBox TextWrapping="Wrap" Margin="0,106,0,86"/>
-                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,74"/>
-                <TextBox TextWrapping="Wrap" Margin="0,152,0,40"/>
-                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-150" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
-                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-150" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
-            </Grid>
+            <StackPanel>
+                <TextBlock Text="Salary Number"/>
+                <TextBox Text="{Binding AdminChangeSalaryNumberBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SalaryNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Vacation Days"/>
+                <TextBox Text="{Binding AdminChangeVacationDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.VacationDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Sick Days"/>
+                <TextBox Text="{Binding AdminChangeSickDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SickDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Worked Days"/>
+                <TextBox Text="{Binding AdminChangeWorkedDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.WorkedDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <AppBarButton Command="{Binding AdminChangeSalaryInfoCommand}" IsCompact="True" Icon="Accept"/>
+                <AppBarButton Margin="50,-72,0,0" IsCompact="True" Icon="Cancel"/>
+                </StackPanel>
         </Flyout>
-        <Flyout x:Key="FlyoutBase2" Placement="Left">
-            <Grid Height="229" Width="100">
-                <TextBlock TextWrapping="Wrap" Text="Total Hours" Margin="0,0,0,216"/>
-                <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,183"/>
-                <TextBlock TextWrapping="Wrap" Text="Days Worked" Margin="0,46,0,170"/>
-                <TextBox TextWrapping="Wrap" Margin="0,60,0,137"/>
-                <TextBlock TextWrapping="Wrap" Text="Department" Margin="0,92,0,124"/>
-                <TextBox TextWrapping="Wrap" Margin="0,106,0,91"/>
-                <TextBlock TextWrapping="Wrap" Text="Location" Margin="0,138,0,79"/>
-                <TextBox TextWrapping="Wrap" Margin="0,152,0,44"/>
-                <AppBarButton HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="-6,183,56,-150" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
-                <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="49,183,0,-150" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"/>
-            </Grid>
-        </Flyout>
+        
         <Flyout x:Key="EditTools" Placement="Bottom">
-            <Grid Height="197" Width="131" Margin="0" HorizontalAlignment="Center" RequestedTheme="Dark">
+            <Grid HorizontalAlignment="Center" RequestedTheme="Dark" Height="120" Width="129">
                 <Grid.Transitions>
                     <TransitionCollection>
                         <EdgeUIThemeTransition Edge="Bottom"/>
                     </TransitionCollection>
                 </Grid.Transitions>
                 <Button x:Name="InfoButton" Content="Information" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Foreground="#FF0812E6" Flyout="{StaticResource InformationTool}" BorderBrush="#FF0812E6" Margin="6,-6,0,0"/>
-                <MenuFlyoutSeparator Margin="-30,43,-29,133" Foreground="#FF0812E6" Background="#FF0812E6"/>
+                <MenuFlyoutSeparator Foreground="#FF0812E6" Background="#FF0812E6" Margin="0,35,-1,0" HorizontalAlignment="Left" Width="130" Height="42" VerticalAlignment="Top"/>
                 <Button x:Name="SalaryButton" Content="Salary" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="6,69,2,0" BorderBrush="#FF0812E6" Foreground="#FF0812E6" Flyout="{StaticResource FlyoutBase1}"/>
-                <MenuFlyoutSeparator Margin="-29,120,-30,56" Foreground="#FF0812E6" Background="#FF0812E6"/>
-                <Button x:Name="HRButton" Content="HR" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="6,148,2,0" BorderBrush="#FF0812E6" Foreground="#FF0812E6" Flyout="{StaticResource FlyoutBase2}"/>
             </Grid>
         </Flyout>
         <Flyout x:Key="FlyoutBase3" Placement="Bottom">
             <StackPanel>
-                <StackPanel.DataContext>
-                    <ViewModel:MainViewModel/>
-                </StackPanel.DataContext>
                 <TextBlock Text="Add vacation or sick days&#x0a;" FontWeight="Bold"/>
                 <TextBlock Text="Vacation days this month:"/>
                 <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardVacationDays, Mode=TwoWay}" Width="23" />
                 <TextBlock Text="Sick days this month:"/>
                 <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardSickDays, Mode=TwoWay}" Width="38"/>
                 <AppBarButton Command="{Binding AddSickOrVacationdaysCommand}" IsCompact="True" Icon="Accept" Foreground="#FF0D5AFF" RequestedTheme="Light" HorizontalAlignment="Center"/>
-                </StackPanel>
+            </StackPanel>
         </Flyout>
     </Page.Resources>
 
@@ -202,7 +177,7 @@
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <Canvas Visibility="Collapsed" x:Name="MainCanvas" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas x:Name="MainCanvas" Visibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -220,7 +195,7 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -248,7 +223,7 @@
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="954"/>
                 </Canvas>
             </Border>
-            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="205" Canvas.Top="277">
+            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1066" Canvas.Left="205" Canvas.Top="277">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>

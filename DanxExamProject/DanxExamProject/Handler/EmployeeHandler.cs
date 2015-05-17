@@ -18,7 +18,17 @@ namespace DanxExamProject.Handler
     class EmployeeHandler: INotifyPropertyChanged
     {
         private readonly MainViewModel _viewModel;
-        public static Employee SelectedEmployee { get; set; }
+        public static Employee _selectedEmployee;
+
+        public Employee SelectedEmployee
+        {
+            get { return _selectedEmployee; }
+            set
+            {
+                _selectedEmployee = value;
+                OnPropertyChanged();
+            }
+        }
         private static Employee _employeeToLogout;
         private static Employee _lastLoggedIn;
 
@@ -215,8 +225,8 @@ namespace DanxExamProject.Handler
 
         public void ChangeVacationOrSickdays()
         {
-            if (_viewModel.StandardVacationDays != 0) LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;
-            if (_viewModel.StandardSickDays != 0) LastLoggedIn.SickDays += _viewModel.StandardSickDays;
+            if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
+            if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
             PersistencyService.PutData(LastLoggedIn);
 
             PersistencyService.GetData(_viewModel.EmployeesInDb);
@@ -225,6 +235,49 @@ namespace DanxExamProject.Handler
             _viewModel.DatabaseTable.Clear();
             _viewModel.DatabaseTable.Add(updatedEmp);
 
+        }
+
+        public void AdminChangePersonalInfo()
+        {
+            if (SelectedEmployee == null) return;
+            
+            if (_viewModel.AdminChangeNameBox != null) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
+            if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
+
+            PersistencyService.PutData(SelectedEmployee);
+            PersistencyService.GetData(_viewModel.DatabaseTable);
+            
+        }
+
+        public void AdminChangeSalaryInfo()
+        {           
+            if (SelectedEmployee == null) return;
+
+            try
+            {
+                //The following needs parsing due to the fact that the TextBox controls are bound to string values. 
+
+                if (_viewModel.AdminChangeSalaryNumberBox != null)
+                    SelectedEmployee.SalaryNumber = int.Parse(_viewModel.AdminChangeSalaryNumberBox);
+
+                if (_viewModel.AdminChangeVacationDaysBox != null)
+                    SelectedEmployee.VacationDays = int.Parse(_viewModel.AdminChangeVacationDaysBox);
+
+                if (_viewModel.AdminChangeSickDaysBox != null)
+                    SelectedEmployee.SickDays = int.Parse(_viewModel.AdminChangeSickDaysBox);  
+
+                if (_viewModel.AdminChangeWorkedDaysBox != null)
+                    SelectedEmployee.WorkedDays = int.Parse(_viewModel.AdminChangeWorkedDaysBox);
+
+
+                PersistencyService.PutData(SelectedEmployee);
+                PersistencyService.GetData(_viewModel.DatabaseTable);
+            }
+            catch (FormatException)
+            {
+                var errorMsg = new MessageDialog("Only integer values are allowed.", "Error");
+                errorMsg.ShowAsync();
+            }
         }
 
 

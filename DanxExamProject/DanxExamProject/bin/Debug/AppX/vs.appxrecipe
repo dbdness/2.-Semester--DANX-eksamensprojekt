@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-16T19:52:22.018</Modified>
+      <Modified>2015-05-17T16:30:56.795</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-05-16T19:31:39.358</Modified>
+      <Modified>2015-05-17T16:12:20.589</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainViewOld.xbf">
       <PackagePath>View\DanxMainViewOld.xbf</PackagePath>
@@ -98,7 +98,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-05-16T19:31:39.316</Modified>
+      <Modified>2015-05-17T15:32:46.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
