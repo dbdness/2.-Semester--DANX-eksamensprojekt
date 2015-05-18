@@ -11,7 +11,6 @@ using DanxExamProject.Common;
 using DanxExamProject.Handler;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
-using DanxExamProject.View;
 
 namespace DanxExamProject.ViewModel
 {

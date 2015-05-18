@@ -259,7 +259,8 @@ namespace DanxExamProject.Handler
             if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
 
             PersistencyService.PutData(SelectedEmployee);
-            PersistencyService.GetData(_viewModel.DatabaseTable);
+            if(admin.AdminLvl != 2) OwnDepartmentList();
+            else PersistencyService.GetData(_viewModel.DatabaseTable);
             
         }
 
@@ -297,7 +298,8 @@ namespace DanxExamProject.Handler
 
 
                 PersistencyService.PutData(SelectedEmployee);
-                PersistencyService.GetData(_viewModel.DatabaseTable);
+                if(admin.AdminLvl != 2) OwnDepartmentList();
+                else PersistencyService.GetData(_viewModel.DatabaseTable);
             }
             catch (FormatException)
             {

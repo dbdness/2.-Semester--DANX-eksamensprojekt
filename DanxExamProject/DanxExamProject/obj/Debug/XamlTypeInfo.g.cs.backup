@@ -124,7 +124,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[23];
+            _typeNameTable = new string[18];
             _typeNameTable[0] = "DanxExamProject.ViewModel.MainViewModel";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>";
@@ -143,13 +143,8 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             _typeNameTable[15] = "DanxExamProject.MainPage";
             _typeNameTable[16] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[17] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[18] = "DanxExamProject.View.DanxMainView";
-            _typeNameTable[19] = "DanxExamProject.View.loggedIn";
-            _typeNameTable[20] = "DanxExamProject.Common.ObservableDictionary";
-            _typeNameTable[21] = "DanxExamProject.Common.NavigationHelper";
-            _typeNameTable[22] = "Windows.UI.Xaml.DependencyObject";
 
-            _typeTable = new global::System.Type[23];
+            _typeTable = new global::System.Type[18];
             _typeTable[0] = typeof(global::DanxExamProject.ViewModel.MainViewModel);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>);
@@ -168,11 +163,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             _typeTable[15] = typeof(global::DanxExamProject.MainPage);
             _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[18] = typeof(global::DanxExamProject.View.DanxMainView);
-            _typeTable[19] = typeof(global::DanxExamProject.View.loggedIn);
-            _typeTable[20] = typeof(global::DanxExamProject.Common.ObservableDictionary);
-            _typeTable[21] = typeof(global::DanxExamProject.Common.NavigationHelper);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.DependencyObject);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -213,9 +203,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private object Activate_12_List() { return new global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>(); }
         private object Activate_14_List() { return new global::System.Collections.Generic.List<global::System.Int32>(); }
         private object Activate_15_MainPage() { return new global::DanxExamProject.MainPage(); }
-        private object Activate_18_DanxMainView() { return new global::DanxExamProject.View.DanxMainView(); }
-        private object Activate_19_loggedIn() { return new global::DanxExamProject.View.loggedIn(); }
-        private object Activate_20_ObservableDictionary() { return new global::DanxExamProject.Common.ObservableDictionary(); }
         private void VectorAdd_2_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
@@ -239,13 +226,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             var collection = (global::System.Collections.Generic.ICollection<global::System.Int32>)instance;
             var newItem = (global::System.Int32)item;
             collection.Add(newItem);
-        }
-        private void MapAdd_20_ObservableDictionary(object instance, object key, object item)
-        {
-            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
-            var newKey = (global::System.String)key;
-            var newItem = (global::System.Object)item;
-            collection.Add(newKey, newItem);
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -393,41 +373,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 break;
 
             case 17:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 18:   //  DanxExamProject.View.DanxMainView
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_DanxMainView;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 19:   //  DanxExamProject.View.loggedIn
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_loggedIn;
-                userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("NavigationHelper");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  DanxExamProject.Common.ObservableDictionary
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_20_ObservableDictionary;
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 21:   //  DanxExamProject.Common.NavigationHelper
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 22:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -765,16 +710,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
             that.AgeList = (global::System.Collections.Generic.List<global::System.Int32>)Value;
         }
-        private object get_33_loggedIn_DefaultViewModel(object instance)
-        {
-            var that = (global::DanxExamProject.View.loggedIn)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_34_loggedIn_NavigationHelper(object instance)
-        {
-            var that = (global::DanxExamProject.View.loggedIn)instance;
-            return that.NavigationHelper;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -980,18 +915,6 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AgeList", "System.Collections.Generic.List`1<Int32>");
                 xamlMember.Getter = get_32_MainViewModel_AgeList;
                 xamlMember.Setter = set_32_MainViewModel_AgeList;
-                break;
-            case "DanxExamProject.View.loggedIn.DefaultViewModel":
-                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.View.loggedIn");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "DanxExamProject.Common.ObservableDictionary");
-                xamlMember.Getter = get_33_loggedIn_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "DanxExamProject.View.loggedIn.NavigationHelper":
-                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.View.loggedIn");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "NavigationHelper", "DanxExamProject.Common.NavigationHelper");
-                xamlMember.Getter = get_34_loggedIn_NavigationHelper;
-                xamlMember.SetIsReadOnly();
                 break;
             }
             return xamlMember;

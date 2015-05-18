@@ -34,21 +34,12 @@
     <RootPropertyPathName Name="LastLogout" />
     <RootPropertyPathName Name="LastLogin" />
     <RootPropertyPathName Name="EmployeeId" />
-    <RootPropertyPathName Name="LoginCommand" />
-    <RootPropertyPathName Name="LoginBox" />
-    <RootPropertyPathName Name="EmployeesInDb" />
-    <RootPropertyPathName Name="DefaultViewModel" />
-    <RootPropertyPathName Name="LogoutCommand" />
-    <RootPropertyPathName Name="LogoutBox" />
-    <RootPropertyPathName Name="NavigationHelper" />
-    <RootPropertyPathName Name="GoBackCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
-      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Command" />
@@ -105,8 +96,6 @@
       <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="IsHitTestVisible" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="ItemsSource" />
@@ -116,8 +105,6 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
       <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="RelativeSource" />
-      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="HorizontalAlignment" />
@@ -133,7 +120,6 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="DataContext" />
-      <RootProperty Name="ChildrenTransitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumnSpan" />
@@ -162,7 +148,6 @@
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="UseLayoutRounding" />
       <RootProperty Name="RenderTransform" />
-      <RootProperty Name="Style" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutSeparator">
@@ -262,12 +247,6 @@
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetAccessibilityView" />
       <RootMethod Name="SetAccessibilityView" />
-      <RootMethod Name="GetName" />
-      <RootMethod Name="SetName" />
-      <RootMethod Name="GetAutomationId" />
-      <RootMethod Name="SetAutomationId" />
-      <RootMethod Name="GetItemType" />
-      <RootMethod Name="SetItemType" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -285,7 +264,6 @@
       <RootProperty Name="RequestedTheme" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="DataContext" />
       <RootMethod Name="GetLeft" />
       <RootMethod Name="SetLeft" />
       <RootMethod Name="GetTop" />
@@ -359,12 +337,5 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="DanxExamProject.MainPage" />
-    <RootType FullName="DanxExamProject.View.DanxMainView" />
-    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
-      <RootProperty Name="Mode" />
-    </RootType>
-    <RootType FullName="System.String" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
-    <RootType FullName="DanxExamProject.View.loggedIn" />
   </Roots.RootTypes>
 </Roots>

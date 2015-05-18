@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-14T19:57:38.703</Modified>
+      <Modified>2015-05-18T00:36:56.681</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-18T00:02:30.092</Modified>
+      <Modified>2015-05-18T00:45:27.944</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -88,21 +88,13 @@
       <PackagePath>View\DanxMainView.xbf</PackagePath>
       <Modified>2015-05-18T00:02:29.818</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainViewOld.xbf">
-      <PackagePath>View\DanxMainViewOld.xbf</PackagePath>
-      <Modified>2015-05-11T11:26:05.674</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\loggedIn.xbf">
-      <PackagePath>View\loggedIn.xbf</PackagePath>
-      <Modified>2015-05-08T09:07:57.289</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-05-17T23:51:38.865</Modified>
+      <Modified>2015-05-18T00:36:56.179</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-14T19:57:38.605</Modified>
+      <Modified>2015-05-18T00:36:56.515</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -120,12 +120,6 @@
     <Compile Include="View\DanxMainView.xaml.cs">
       <DependentUpon>DanxMainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DanxMainViewOld.xaml.cs">
-      <DependentUpon>DanxMainViewOld.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\loggedIn.xaml.cs">
-      <DependentUpon>loggedIn.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -170,14 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\DanxMainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DanxMainViewOld.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\loggedIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
