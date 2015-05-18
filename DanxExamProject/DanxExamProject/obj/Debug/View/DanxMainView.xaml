@@ -213,9 +213,9 @@
                             <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="118"/>
-                            <TextBlock Text="{Binding Name}" Canvas.Left="203"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="253" Width="128"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="128"/>
+                            <TextBlock Text="{Binding Name}" Canvas.Left="195"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="268" Width="118"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="400" Width="118"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="557"/>
                             <TextBlock Text="{Binding WatchHours}" Canvas.Left="637"/>
                             <TextBlock Text="{Binding}" Canvas.Left="718"/>

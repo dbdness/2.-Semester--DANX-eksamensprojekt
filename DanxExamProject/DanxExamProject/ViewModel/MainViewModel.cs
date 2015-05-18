@@ -65,7 +65,6 @@ namespace DanxExamProject.ViewModel
 
             AgeList = Ages();
 
-
         }
 
         private List<int> Ages()
