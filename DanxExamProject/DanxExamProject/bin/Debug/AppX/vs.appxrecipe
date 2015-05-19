@@ -20,109 +20,109 @@
     <AppXManifest Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-19T07:59:32.193</Modified>
+      <Modified>2015-05-19T08:36:18.483</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-19T08:13:29.055</Modified>
+      <Modified>2015-05-19T08:36:17.694</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2015-05-08T08:44:39.950</Modified>
+      <Modified>2015-05-19T08:32:13.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
-      <Modified>2015-05-08T08:44:39.511</Modified>
+      <Modified>2015-05-19T08:32:12.797</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
-      <Modified>2015-05-08T08:44:32.599</Modified>
+      <Modified>2015-05-19T08:32:06.075</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Microsoft.Net.Http.2.2.22\lib\win8\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
-      <Modified>2015-05-08T08:44:39.521</Modified>
+      <Modified>2015-05-19T08:32:12.819</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar.dll">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar.dll</PackagePath>
-      <Modified>2015-05-19T07:59:12.011</Modified>
+      <Modified>2015-05-19T08:36:16.149</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\DANXbigLogo.jpg">
       <PackagePath>Assets\DANXbigLogo.jpg</PackagePath>
-      <Modified>2015-05-14T13:02:23.660</Modified>
+      <Modified>2015-05-19T08:32:04.086</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\DANXlogo.jpg">
       <PackagePath>Assets\DANXlogo.jpg</PackagePath>
-      <Modified>2015-05-08T08:59:55.779</Modified>
+      <Modified>2015-05-19T08:32:04.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-140.jpg">
       <PackagePath>Assets\SplashScreen.scale-140.jpg</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-14T13:09:55.237</Modified>
+      <Modified>2015-05-19T08:32:04.094</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-08T08:44:30.933</Modified>
+      <Modified>2015-05-19T08:32:04.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\mini logo.png">
       <PackagePath>Assets\mini logo.png</PackagePath>
-      <Modified>2015-05-08T08:59:55.799</Modified>
+      <Modified>2015-05-19T08:32:04.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-08T08:44:30.933</Modified>
+      <Modified>2015-05-19T08:32:04.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
-      <Modified>2015-05-08T08:44:30.934</Modified>
+      <Modified>2015-05-19T08:32:04.091</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-08T08:44:30.934</Modified>
+      <Modified>2015-05-19T08:32:04.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-05-08T09:07:57.283</Modified>
+      <Modified>2015-05-19T08:36:17.489</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-05-19T08:13:28.850</Modified>
+      <Modified>2015-05-19T08:36:17.492</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-05-18T00:36:56.179</Modified>
+      <Modified>2015-05-19T08:32:04.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\WinRTXamlToolkit.Controls.Calendar.xr.xml">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\WinRTXamlToolkit.Controls.Calendar.xr.xml</PackagePath>
-      <Modified>2015-05-19T07:59:12.024</Modified>
+      <Modified>2015-05-19T08:36:16.189</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\Calendar.xbf">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\Calendar.xbf</PackagePath>
-      <Modified>2015-05-19T07:59:12.013</Modified>
+      <Modified>2015-05-19T08:36:16.178</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarButton.xbf">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarButton.xbf</PackagePath>
-      <Modified>2015-05-19T07:59:12.016</Modified>
+      <Modified>2015-05-19T08:36:16.181</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarDayButton.xbf">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarDayButton.xbf</PackagePath>
-      <Modified>2015-05-19T07:59:12.019</Modified>
+      <Modified>2015-05-19T08:36:16.184</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarItem.xbf">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarItem.xbf</PackagePath>
-      <Modified>2015-05-19T07:59:12.022</Modified>
+      <Modified>2015-05-19T08:36:16.187</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\Themes\Generic.xbf">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\Themes\Generic.xbf</PackagePath>
-      <Modified>2015-05-19T07:59:12.024</Modified>
+      <Modified>2015-05-19T08:36:16.188</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-19T07:59:31.600</Modified>
+      <Modified>2015-05-19T08:36:18.203</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
