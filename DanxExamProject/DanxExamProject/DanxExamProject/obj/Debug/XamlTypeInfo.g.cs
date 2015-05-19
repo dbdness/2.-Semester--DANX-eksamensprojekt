@@ -59,6 +59,18 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -82,6 +94,18 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -124,15 +148,45 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "DanxExamProject.MainPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[18];
+            _typeNameTable[0] = "DanxExamProject.ViewModel.MainViewModel";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>";
+            _typeNameTable[3] = "System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>";
+            _typeNameTable[4] = "DanxExamProject.Model.Employee";
+            _typeNameTable[5] = "Int32";
+            _typeNameTable[6] = "System.Nullable`1<Int32>";
+            _typeNameTable[7] = "System.ValueType";
+            _typeNameTable[8] = "String";
+            _typeNameTable[9] = "System.DateTime";
+            _typeNameTable[10] = "TimeSpan";
+            _typeNameTable[11] = "DanxExamProject.Handler.EmployeeHandler";
+            _typeNameTable[12] = "System.Collections.Generic.List`1<DanxExamProject.Model.Employee>";
+            _typeNameTable[13] = "DanxExamProject.Common.RelayCommand";
+            _typeNameTable[14] = "System.Collections.Generic.List`1<Int32>";
+            _typeNameTable[15] = "DanxExamProject.MainPage";
+            _typeNameTable[16] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[17] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::DanxExamProject.MainPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[18];
+            _typeTable[0] = typeof(global::DanxExamProject.ViewModel.MainViewModel);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>);
+            _typeTable[4] = typeof(global::DanxExamProject.Model.Employee);
+            _typeTable[5] = typeof(global::System.Int32);
+            _typeTable[6] = typeof(global::System.Nullable<global::System.Int32>);
+            _typeTable[7] = typeof(global::System.ValueType);
+            _typeTable[8] = typeof(global::System.String);
+            _typeTable[9] = typeof(global::System.DateTime);
+            _typeTable[10] = typeof(global::System.TimeSpan);
+            _typeTable[11] = typeof(global::DanxExamProject.Handler.EmployeeHandler);
+            _typeTable[12] = typeof(global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>);
+            _typeTable[13] = typeof(global::DanxExamProject.Common.RelayCommand);
+            _typeTable[14] = typeof(global::System.Collections.Generic.List<global::System.Int32>);
+            _typeTable[15] = typeof(global::DanxExamProject.MainPage);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -167,7 +221,36 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::DanxExamProject.MainPage(); }
+        private object Activate_0_MainViewModel() { return new global::DanxExamProject.ViewModel.MainViewModel(); }
+        private object Activate_2_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_3_Collection() { return new global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_12_List() { return new global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>(); }
+        private object Activate_14_List() { return new global::System.Collections.Generic.List<global::System.Int32>(); }
+        private object Activate_15_MainPage() { return new global::DanxExamProject.MainPage(); }
+        private void VectorAdd_2_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
+            var newItem = (global::DanxExamProject.Model.Employee)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_3_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
+            var newItem = (global::DanxExamProject.Model.Employee)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_12_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
+            var newItem = (global::DanxExamProject.Model.Employee)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_14_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.Int32>)instance;
+            var newItem = (global::System.Int32)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -179,30 +262,738 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  DanxExamProject.MainPage
-                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+            case 0:   //  DanxExamProject.ViewModel.MainViewModel
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_MainViewModel;
+                userType.AddMemberName("EmployeesInDb");
+                userType.AddMemberName("EmployeeHandler");
+                userType.AddMemberName("LoggedInEmployees");
+                userType.AddMemberName("DatabaseTable");
+                userType.AddMemberName("LoginOrLogoutBox");
+                userType.AddMemberName("StandardVacationDays");
+                userType.AddMemberName("StandardSickDays");
+                userType.AddMemberName("AdminChangeNameBox");
+                userType.AddMemberName("AdminChangeManagerBox");
+                userType.AddMemberName("AdminChangeSalaryNumberBox");
+                userType.AddMemberName("AdminChangeVacationDaysBox");
+                userType.AddMemberName("AdminChangeSickDaysBox");
+                userType.AddMemberName("AdminChangeWorkedDaysBox");
+                userType.AddMemberName("LoginOrLogoutCommand");
+                userType.AddMemberName("CompleteEmployeeListCommand");
+                userType.AddMemberName("PersonalEntryListCommand");
+                userType.AddMemberName("OwnDepartmentListCommand");
+                userType.AddMemberName("AddSickOrVacationdaysCommand");
+                userType.AddMemberName("AdminChangePersonalInfoCommand");
+                userType.AddMemberName("AdminChangeSalaryInfoCommand");
+                userType.AddMemberName("AgeList");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>"));
+                userType.CollectionAdd = VectorAdd_2_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 3:   //  System.Collections.ObjectModel.Collection`1<DanxExamProject.Model.Employee>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_3_Collection;
+                userType.CollectionAdd = VectorAdd_3_Collection;
+                xamlType = userType;
+                break;
+
+            case 4:   //  DanxExamProject.Model.Employee
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("EmployeeId");
+                userType.AddMemberName("SalaryNumber");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("Manager");
+                userType.AddMemberName("LastLogin");
+                userType.AddMemberName("LastLogout");
+                userType.AddMemberName("StdHours");
+                userType.AddMemberName("WatchHours");
+                userType.AddMemberName("TotalHours");
+                userType.AddMemberName("VacationDays");
+                userType.AddMemberName("SickDays");
+                userType.AddMemberName("WorkedDays");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Int32
+                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  System.Nullable`1<Int32>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 7:   //  System.ValueType
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 8:   //  String
+                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  System.DateTime
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  TimeSpan
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 11:   //  DanxExamProject.Handler.EmployeeHandler
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  System.Collections.Generic.List`1<DanxExamProject.Model.Employee>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_12_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 13:   //  DanxExamProject.Common.RelayCommand
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.Collections.Generic.List`1<Int32>
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_14_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 15:   //  DanxExamProject.MainPage
+                userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_15_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 17:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::WinRTXamlToolkit.Controls.WinRTXamlToolkit_Controls_Calendar_Windows_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                }
+                return _otherProviders;
+            }
+        }
 
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private object get_0_MainViewModel_EmployeesInDb(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.EmployeesInDb;
+        }
+        private void set_0_MainViewModel_EmployeesInDb(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.EmployeesInDb = (global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>)Value;
+        }
+        private object get_1_Employee_EmployeeId(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.EmployeeId;
+        }
+        private void set_1_Employee_EmployeeId(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.EmployeeId = (global::System.Int32)Value;
+        }
+        private object get_2_Employee_SalaryNumber(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.SalaryNumber;
+        }
+        private void set_2_Employee_SalaryNumber(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.SalaryNumber = (global::System.Nullable<global::System.Int32>)Value;
+        }
+        private object get_3_Employee_Name(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.Name;
+        }
+        private void set_3_Employee_Name(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_4_Employee_Manager(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.Manager;
+        }
+        private void set_4_Employee_Manager(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.Manager = (global::System.String)Value;
+        }
+        private object get_5_Employee_LastLogin(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.LastLogin;
+        }
+        private void set_5_Employee_LastLogin(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.LastLogin = (global::System.DateTime)Value;
+        }
+        private object get_6_Employee_LastLogout(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.LastLogout;
+        }
+        private void set_6_Employee_LastLogout(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.LastLogout = (global::System.DateTime)Value;
+        }
+        private object get_7_Employee_StdHours(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.StdHours;
+        }
+        private void set_7_Employee_StdHours(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.StdHours = (global::System.TimeSpan)Value;
+        }
+        private object get_8_Employee_WatchHours(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.WatchHours;
+        }
+        private void set_8_Employee_WatchHours(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.WatchHours = (global::System.TimeSpan)Value;
+        }
+        private object get_9_Employee_TotalHours(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.TotalHours;
+        }
+        private void set_9_Employee_TotalHours(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.TotalHours = (global::System.TimeSpan)Value;
+        }
+        private object get_10_Employee_VacationDays(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.VacationDays;
+        }
+        private void set_10_Employee_VacationDays(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.VacationDays = (global::System.Nullable<global::System.Int32>)Value;
+        }
+        private object get_11_Employee_SickDays(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.SickDays;
+        }
+        private void set_11_Employee_SickDays(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.SickDays = (global::System.Nullable<global::System.Int32>)Value;
+        }
+        private object get_12_Employee_WorkedDays(object instance)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            return that.WorkedDays;
+        }
+        private void set_12_Employee_WorkedDays(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.Model.Employee)instance;
+            that.WorkedDays = (global::System.Nullable<global::System.Int32>)Value;
+        }
+        private object get_13_MainViewModel_EmployeeHandler(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.EmployeeHandler;
+        }
+        private void set_13_MainViewModel_EmployeeHandler(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.EmployeeHandler = (global::DanxExamProject.Handler.EmployeeHandler)Value;
+        }
+        private object get_14_MainViewModel_LoggedInEmployees(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.LoggedInEmployees;
+        }
+        private void set_14_MainViewModel_LoggedInEmployees(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.LoggedInEmployees = (global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>)Value;
+        }
+        private object get_15_MainViewModel_DatabaseTable(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.DatabaseTable;
+        }
+        private void set_15_MainViewModel_DatabaseTable(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.DatabaseTable = (global::System.Collections.ObjectModel.ObservableCollection<global::DanxExamProject.Model.Employee>)Value;
+        }
+        private object get_16_MainViewModel_LoginOrLogoutBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.LoginOrLogoutBox;
+        }
+        private void set_16_MainViewModel_LoginOrLogoutBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.LoginOrLogoutBox = (global::System.String)Value;
+        }
+        private object get_17_MainViewModel_StandardVacationDays(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.StandardVacationDays;
+        }
+        private void set_17_MainViewModel_StandardVacationDays(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.StandardVacationDays = (global::System.Int32)Value;
+        }
+        private object get_18_MainViewModel_StandardSickDays(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.StandardSickDays;
+        }
+        private void set_18_MainViewModel_StandardSickDays(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.StandardSickDays = (global::System.Int32)Value;
+        }
+        private object get_19_MainViewModel_AdminChangeNameBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeNameBox;
+        }
+        private void set_19_MainViewModel_AdminChangeNameBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeNameBox = (global::System.String)Value;
+        }
+        private object get_20_MainViewModel_AdminChangeManagerBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeManagerBox;
+        }
+        private void set_20_MainViewModel_AdminChangeManagerBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeManagerBox = (global::System.String)Value;
+        }
+        private object get_21_MainViewModel_AdminChangeSalaryNumberBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeSalaryNumberBox;
+        }
+        private void set_21_MainViewModel_AdminChangeSalaryNumberBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeSalaryNumberBox = (global::System.String)Value;
+        }
+        private object get_22_MainViewModel_AdminChangeVacationDaysBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeVacationDaysBox;
+        }
+        private void set_22_MainViewModel_AdminChangeVacationDaysBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeVacationDaysBox = (global::System.String)Value;
+        }
+        private object get_23_MainViewModel_AdminChangeSickDaysBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeSickDaysBox;
+        }
+        private void set_23_MainViewModel_AdminChangeSickDaysBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeSickDaysBox = (global::System.String)Value;
+        }
+        private object get_24_MainViewModel_AdminChangeWorkedDaysBox(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeWorkedDaysBox;
+        }
+        private void set_24_MainViewModel_AdminChangeWorkedDaysBox(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeWorkedDaysBox = (global::System.String)Value;
+        }
+        private object get_25_MainViewModel_LoginOrLogoutCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.LoginOrLogoutCommand;
+        }
+        private void set_25_MainViewModel_LoginOrLogoutCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.LoginOrLogoutCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_26_MainViewModel_CompleteEmployeeListCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.CompleteEmployeeListCommand;
+        }
+        private void set_26_MainViewModel_CompleteEmployeeListCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.CompleteEmployeeListCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_27_MainViewModel_PersonalEntryListCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.PersonalEntryListCommand;
+        }
+        private void set_27_MainViewModel_PersonalEntryListCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.PersonalEntryListCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_28_MainViewModel_OwnDepartmentListCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.OwnDepartmentListCommand;
+        }
+        private void set_28_MainViewModel_OwnDepartmentListCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.OwnDepartmentListCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_29_MainViewModel_AddSickOrVacationdaysCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AddSickOrVacationdaysCommand;
+        }
+        private void set_29_MainViewModel_AddSickOrVacationdaysCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AddSickOrVacationdaysCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_30_MainViewModel_AdminChangePersonalInfoCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangePersonalInfoCommand;
+        }
+        private void set_30_MainViewModel_AdminChangePersonalInfoCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangePersonalInfoCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_31_MainViewModel_AdminChangeSalaryInfoCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AdminChangeSalaryInfoCommand;
+        }
+        private void set_31_MainViewModel_AdminChangeSalaryInfoCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AdminChangeSalaryInfoCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
+        private object get_32_MainViewModel_AgeList(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.AgeList;
+        }
+        private void set_32_MainViewModel_AgeList(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.AgeList = (global::System.Collections.Generic.List<global::System.Int32>)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "DanxExamProject.ViewModel.MainViewModel.EmployeesInDb":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "EmployeesInDb", "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>");
+                xamlMember.Getter = get_0_MainViewModel_EmployeesInDb;
+                xamlMember.Setter = set_0_MainViewModel_EmployeesInDb;
+                break;
+            case "DanxExamProject.Model.Employee.EmployeeId":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "EmployeeId", "Int32");
+                xamlMember.Getter = get_1_Employee_EmployeeId;
+                xamlMember.Setter = set_1_Employee_EmployeeId;
+                break;
+            case "DanxExamProject.Model.Employee.SalaryNumber":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "SalaryNumber", "System.Nullable`1<Int32>");
+                xamlMember.Getter = get_2_Employee_SalaryNumber;
+                xamlMember.Setter = set_2_Employee_SalaryNumber;
+                break;
+            case "DanxExamProject.Model.Employee.Name":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_3_Employee_Name;
+                xamlMember.Setter = set_3_Employee_Name;
+                break;
+            case "DanxExamProject.Model.Employee.Manager":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "Manager", "String");
+                xamlMember.Getter = get_4_Employee_Manager;
+                xamlMember.Setter = set_4_Employee_Manager;
+                break;
+            case "DanxExamProject.Model.Employee.LastLogin":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "LastLogin", "System.DateTime");
+                xamlMember.Getter = get_5_Employee_LastLogin;
+                xamlMember.Setter = set_5_Employee_LastLogin;
+                break;
+            case "DanxExamProject.Model.Employee.LastLogout":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "LastLogout", "System.DateTime");
+                xamlMember.Getter = get_6_Employee_LastLogout;
+                xamlMember.Setter = set_6_Employee_LastLogout;
+                break;
+            case "DanxExamProject.Model.Employee.StdHours":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "StdHours", "TimeSpan");
+                xamlMember.Getter = get_7_Employee_StdHours;
+                xamlMember.Setter = set_7_Employee_StdHours;
+                break;
+            case "DanxExamProject.Model.Employee.WatchHours":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "WatchHours", "TimeSpan");
+                xamlMember.Getter = get_8_Employee_WatchHours;
+                xamlMember.Setter = set_8_Employee_WatchHours;
+                break;
+            case "DanxExamProject.Model.Employee.TotalHours":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "TotalHours", "TimeSpan");
+                xamlMember.Getter = get_9_Employee_TotalHours;
+                xamlMember.Setter = set_9_Employee_TotalHours;
+                break;
+            case "DanxExamProject.Model.Employee.VacationDays":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "VacationDays", "System.Nullable`1<Int32>");
+                xamlMember.Getter = get_10_Employee_VacationDays;
+                xamlMember.Setter = set_10_Employee_VacationDays;
+                break;
+            case "DanxExamProject.Model.Employee.SickDays":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "SickDays", "System.Nullable`1<Int32>");
+                xamlMember.Getter = get_11_Employee_SickDays;
+                xamlMember.Setter = set_11_Employee_SickDays;
+                break;
+            case "DanxExamProject.Model.Employee.WorkedDays":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.Model.Employee");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "WorkedDays", "System.Nullable`1<Int32>");
+                xamlMember.Getter = get_12_Employee_WorkedDays;
+                xamlMember.Setter = set_12_Employee_WorkedDays;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.EmployeeHandler":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "EmployeeHandler", "DanxExamProject.Handler.EmployeeHandler");
+                xamlMember.Getter = get_13_MainViewModel_EmployeeHandler;
+                xamlMember.Setter = set_13_MainViewModel_EmployeeHandler;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.LoggedInEmployees":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "LoggedInEmployees", "System.Collections.Generic.List`1<DanxExamProject.Model.Employee>");
+                xamlMember.Getter = get_14_MainViewModel_LoggedInEmployees;
+                xamlMember.Setter = set_14_MainViewModel_LoggedInEmployees;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.DatabaseTable":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "DatabaseTable", "System.Collections.ObjectModel.ObservableCollection`1<DanxExamProject.Model.Employee>");
+                xamlMember.Getter = get_15_MainViewModel_DatabaseTable;
+                xamlMember.Setter = set_15_MainViewModel_DatabaseTable;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.LoginOrLogoutBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "LoginOrLogoutBox", "String");
+                xamlMember.Getter = get_16_MainViewModel_LoginOrLogoutBox;
+                xamlMember.Setter = set_16_MainViewModel_LoginOrLogoutBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.StandardVacationDays":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "StandardVacationDays", "Int32");
+                xamlMember.Getter = get_17_MainViewModel_StandardVacationDays;
+                xamlMember.Setter = set_17_MainViewModel_StandardVacationDays;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.StandardSickDays":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "StandardSickDays", "Int32");
+                xamlMember.Getter = get_18_MainViewModel_StandardSickDays;
+                xamlMember.Setter = set_18_MainViewModel_StandardSickDays;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeNameBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeNameBox", "String");
+                xamlMember.Getter = get_19_MainViewModel_AdminChangeNameBox;
+                xamlMember.Setter = set_19_MainViewModel_AdminChangeNameBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeManagerBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeManagerBox", "String");
+                xamlMember.Getter = get_20_MainViewModel_AdminChangeManagerBox;
+                xamlMember.Setter = set_20_MainViewModel_AdminChangeManagerBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeSalaryNumberBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeSalaryNumberBox", "String");
+                xamlMember.Getter = get_21_MainViewModel_AdminChangeSalaryNumberBox;
+                xamlMember.Setter = set_21_MainViewModel_AdminChangeSalaryNumberBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeVacationDaysBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeVacationDaysBox", "String");
+                xamlMember.Getter = get_22_MainViewModel_AdminChangeVacationDaysBox;
+                xamlMember.Setter = set_22_MainViewModel_AdminChangeVacationDaysBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeSickDaysBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeSickDaysBox", "String");
+                xamlMember.Getter = get_23_MainViewModel_AdminChangeSickDaysBox;
+                xamlMember.Setter = set_23_MainViewModel_AdminChangeSickDaysBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeWorkedDaysBox":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeWorkedDaysBox", "String");
+                xamlMember.Getter = get_24_MainViewModel_AdminChangeWorkedDaysBox;
+                xamlMember.Setter = set_24_MainViewModel_AdminChangeWorkedDaysBox;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.LoginOrLogoutCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "LoginOrLogoutCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_25_MainViewModel_LoginOrLogoutCommand;
+                xamlMember.Setter = set_25_MainViewModel_LoginOrLogoutCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.CompleteEmployeeListCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "CompleteEmployeeListCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_26_MainViewModel_CompleteEmployeeListCommand;
+                xamlMember.Setter = set_26_MainViewModel_CompleteEmployeeListCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.PersonalEntryListCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "PersonalEntryListCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_27_MainViewModel_PersonalEntryListCommand;
+                xamlMember.Setter = set_27_MainViewModel_PersonalEntryListCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.OwnDepartmentListCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "OwnDepartmentListCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_28_MainViewModel_OwnDepartmentListCommand;
+                xamlMember.Setter = set_28_MainViewModel_OwnDepartmentListCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AddSickOrVacationdaysCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AddSickOrVacationdaysCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_29_MainViewModel_AddSickOrVacationdaysCommand;
+                xamlMember.Setter = set_29_MainViewModel_AddSickOrVacationdaysCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangePersonalInfoCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangePersonalInfoCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_30_MainViewModel_AdminChangePersonalInfoCommand;
+                xamlMember.Setter = set_30_MainViewModel_AdminChangePersonalInfoCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AdminChangeSalaryInfoCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AdminChangeSalaryInfoCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_31_MainViewModel_AdminChangeSalaryInfoCommand;
+                xamlMember.Setter = set_31_MainViewModel_AdminChangeSalaryInfoCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.AgeList":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AgeList", "System.Collections.Generic.List`1<Int32>");
+                xamlMember.Getter = get_32_MainViewModel_AgeList;
+                xamlMember.Setter = set_32_MainViewModel_AgeList;
+                break;
+            }
             return xamlMember;
         }
     }

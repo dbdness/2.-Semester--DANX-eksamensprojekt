@@ -23,7 +23,7 @@
   <Applications>
     <Application Id="App" Executable="DanxExamProject.exe" EntryPoint="DanxExamProject.App">
       <m2:VisualElements DisplayName="DanxExamProject" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="DanxExamProject" ForegroundText="light" BackgroundColor="#464646">
-        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:SplashScreen Image="Assets\SplashScreen.jpg" BackgroundColor="white" />
       </m2:VisualElements>
     </Application>
   </Applications>
