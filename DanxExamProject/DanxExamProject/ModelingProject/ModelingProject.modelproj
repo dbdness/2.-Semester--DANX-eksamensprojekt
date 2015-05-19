@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2f5ca7b3-443e-4049-aaec-3cf467d5a8d4}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingProject</Name>
+    <RootNamespace>ModelingProject</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Design + Analyse\LoginSD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Design + Analyse\LoginSD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Design + Analyse\LoginSD.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Design + Analyse\LogoutSD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Design + Analyse\LogoutSD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Design + Analyse\LogoutSD.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Design + Analyse\UpdateDataSD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Design + Analyse\UpdateDataSD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Design + Analyse\UpdateDataSD.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1127.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1217.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1127.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1216.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1217.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1227.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Requirements\SSD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Requirements\SSD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Requirements\SSD.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Requirements\UseCaseDiagram.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Requirements\UseCaseDiagram.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Requirements\UseCaseDiagram.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="Design + Analyse" />
+    <Folder Include="ModelDefinition\" />
+    <Content Include="BusinessModeling\DomainModel.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BusinessModeling\DomainModel.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BusinessModeling\DomainModel.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Design + Analyse\DCD.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Design + Analyse\DCD.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Design + Analyse\DCD.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\ModelingProject.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="BusinessModeling" />
+    <Folder Include="Requirements" />
+  </ItemGroup>
+</Project>

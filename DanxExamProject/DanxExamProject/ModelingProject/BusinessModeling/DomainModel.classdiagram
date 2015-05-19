@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="20b78282-9048-42e2-aeaa-54fabe424dad" name="DomainModel" linkedPackageId="b9bbb896-7180-4d11-8e76-bb17758196e2" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a495a3b0-0f45-4579-b803-a82af58e0883" name="Employee" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ec9ebfd8-7545-4bd3-8b08-530ee8f08eb9" />
+        <ownedAttributesInternal>
+          <property Id="ececb413-8de9-4825-9a8e-4cd5e56ba122" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c267a7c6-ff15-4272-8f6e-1cad5e6f0768" />
+          </property>
+          <property Id="27611bb4-9a04-4932-baae-377d47c9e4a2" name="EmployeeId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="494542d2-4d0d-4643-b0e1-ebfe5d9b56fd" />
+          </property>
+          <property Id="9cfee7be-9b8b-432b-b6f1-1042b9dab07c" name="Location" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2bdf18ae-e384-4070-82ed-4f90b985195f" />
+          </property>
+          <property Id="2afdc812-740f-441d-85ee-259562b5d841" name="SalaryNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5bc483f0-aab7-45c0-99c1-df3b69a0f39a" />
+          </property>
+          <property Id="15a14913-3f26-4ff5-8867-f4891e39ca15" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="22fc61f2-cb56-4a2a-9031-f15e148d8be3" />
+          </property>
+          <property Id="74bc7d37-b0f0-4dd9-ba31-4cefe24d5795" name="LastLogin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c20d78ec-7a54-42d1-8a1b-42e996910f39" />
+          </property>
+          <property Id="0c8da323-b4da-4962-9362-4424afeb0db0" name="LastLogout" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f0fb7b37-a52f-4518-b15c-f3b6fe30c27b" />
+          </property>
+          <property Id="795436a8-754d-41cb-9804-ee628b59bbfa" name="SickDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e978fd64-6f0a-437c-bd9d-5dbf1f86ee29" />
+          </property>
+          <property Id="2334f452-1df5-4072-abc6-144163e37526" name="StdHours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="825da833-087e-4385-89c5-8318c2c75d36" />
+          </property>
+          <property Id="0a856105-c57d-4935-9819-09e1578d5169" name="WatchHours" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e062e71-c315-429f-9d11-9f60a26102c6" />
+          </property>
+          <property Id="93f4200e-2a4a-48d6-8a17-f21e8dc4a3d1" name="VacationDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ea636a5b-3f4a-46ad-9637-d6411974470c" />
+          </property>
+          <property Id="988b2410-9a1d-45e4-bec2-df96c46d47fa" name="WorkedDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5e4fab90-c83c-4289-acb2-a59953618237" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b289afba-cea6-48d2-9587-f417aa40a1a3" name="StandardEmp" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4ed6bba-8b95-4072-970a-e1f50fbe98dc" />
+        <generalsInternal>
+          <generalization Id="97e526e7-0ca7-4c77-ade8-505e96f855e4" isSubstitutable="false">
+            <classMoniker Id="a495a3b0-0f45-4579-b803-a82af58e0883" LastKnownName="Employee" />
+            <elementDefinition Id="2e097eea-01c7-40bf-92ae-b38c183c2702" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="24ed85b8-c9be-470d-ab3a-4992f6ce5a24" name="AdminEmp" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1c5a6df5-c07c-4d67-bb77-2572f4356cdb" />
+        <generalsInternal>
+          <generalization Id="4c8b428d-9af7-43dd-b0c7-011f9aa2958d" isSubstitutable="false">
+            <classMoniker Id="a495a3b0-0f45-4579-b803-a82af58e0883" LastKnownName="Employee" />
+            <elementDefinition Id="fcd048e1-e141-42d8-bc44-6897dcdf1369" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="7e7355b9-a884-4722-9055-0ffed0acd831" name="AdminLvl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="66858f35-27fc-4d7a-b2ee-ceca5d5d91e1" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="b9bbb896-7180-4d11-8e76-bb17758196e2" name="ModelingProject">
+    <elementDefinition Id="36e04b60-98d4-4ba2-95ea-da3661aa3d7e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b3d4ed38-473b-4067-af6f-e8687900d70c">
+        <profileInstance Id="f0354267-bdb9-4fbd-9ad5-319c690afea5" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="aebda68c-f533-4f95-8a77-c3a15a757a8f">
+        <profileInstance Id="75dfc17a-a9ab-4250-8bb0-2d1404d24e05" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
