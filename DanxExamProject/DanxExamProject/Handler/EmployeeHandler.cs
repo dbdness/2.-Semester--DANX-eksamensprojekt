@@ -199,6 +199,7 @@ namespace DanxExamProject.Handler
             //    Total_hours = CalculateTimeWorked()
             //};
             _employeeToLogout.TotalHours = CalculateTimeWorked();
+            _employeeToLogout.WorkedDays += 1; 
             PersistencyService.PutData(_employeeToLogout);
             //PersistencyService.PutDataForLoggedin(updatedEmployee);
         }
