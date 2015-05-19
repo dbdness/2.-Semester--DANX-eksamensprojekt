@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DanxExamProject.Model
 {
-    class StandardEmp: Employee
+   public class StandardEmp: Employee
     {
         public override string ToString()
         {

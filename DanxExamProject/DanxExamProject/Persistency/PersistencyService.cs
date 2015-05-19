@@ -12,7 +12,7 @@ using DanxExamProject.Model;
 
 namespace DanxExamProject.Persistency
 {
-    class PersistencyService
+  public class PersistencyService
     {
         private const string ServerUri = "http://localhost:2000";
         private static HttpClient _client;
@@ -119,14 +119,25 @@ namespace DanxExamProject.Persistency
         {
                 try
                 {
-                    var response = _client.GetAsync("api/loggedInEmployees").Result;
-
-                    collection.Clear();
-                    if (response.IsSuccessStatusCode)
+                    try
                     {
-                        var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
-                        collection.AddRange(dbData);
+                        var response = _client.GetAsync("api/loggedInEmployees").Result;
+                        collection.Clear();
+                        if (response.IsSuccessStatusCode)
+                        {
+
+                            var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
+                            collection.AddRange(dbData);
+
+
+                        }
                     }
+                    catch (NullReferenceException)
+                    {
+                        
+                    }
+                
+                    
                 }
                 catch (HttpRequestException)
                 {

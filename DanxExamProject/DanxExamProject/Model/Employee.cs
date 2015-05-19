@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DanxExamProject.Model
 {
-    abstract class Employee
+   public abstract class Employee
     {
         public int EmployeeId { get; set; }
         public int? SalaryNumber {get;set;}

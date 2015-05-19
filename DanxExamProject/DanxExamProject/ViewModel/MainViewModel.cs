@@ -14,7 +14,7 @@ using DanxExamProject.Persistency;
 
 namespace DanxExamProject.ViewModel
 {
-    class MainViewModel
+   public class MainViewModel
     {
         public ObservableCollection<Employee> EmployeesInDb { get; set; }
         public EmployeeHandler EmployeeHandler { get; set; }
@@ -38,6 +38,9 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
 
         public List<int> AgeList { get; set; } 
+
+        //For unittesting purposes
+       public static bool OpenDbConnection = true;
         
 
        
@@ -45,14 +48,17 @@ namespace DanxExamProject.ViewModel
         {
 
             EmployeeHandler = new EmployeeHandler(this);
-            PersistencyService.OpenApiConnection();
+           if(OpenDbConnection) {PersistencyService.OpenApiConnection();}
 
             EmployeesInDb = new ObservableCollection<Employee>();
             LoggedInEmployees = new List<Employee>();
             DatabaseTable = new ObservableCollection<Employee>();
-            
-            PersistencyService.GetData(EmployeesInDb);
-            PersistencyService.GetDataLoggedIn(LoggedInEmployees);
+
+            if (OpenDbConnection)
+            {
+                PersistencyService.GetData(EmployeesInDb);
+                PersistencyService.GetDataLoggedIn(LoggedInEmployees);
+            }
 
             LoginOrLogoutCommand = new RelayCommand(EmployeeHandler.LoginOrLogout);
             CompleteEmployeeListCommand = new RelayCommand(EmployeeHandler.CompleteEmployeeList);

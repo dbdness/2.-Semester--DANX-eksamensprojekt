@@ -15,7 +15,7 @@ using DanxExamProject.ViewModel;
 
 namespace DanxExamProject.Handler
 {
-    class EmployeeHandler: INotifyPropertyChanged
+   public class EmployeeHandler: INotifyPropertyChanged
     {
         private readonly MainViewModel _viewModel;
         private static Employee _selectedEmployee;
@@ -56,6 +56,7 @@ namespace DanxExamProject.Handler
 
             var matchingLoggedInEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
+
             //If user IS NOT logged in, he will be logged in:
             if (matcingEmloyee != null && matchingLoggedInEmployee == null)
             {
@@ -90,8 +91,16 @@ namespace DanxExamProject.Handler
                 //If a wrong user id is entered:
             else
             {
-                var errorMsg = new MessageDialog("Please enter a valid employee id.", "Error");
-                errorMsg.ShowAsync();
+                try
+                {
+                    throw new ArgumentException("Please enter a valid employee id.");
+                }
+                catch (ArgumentException)
+                {
+                    var errorMsg = new MessageDialog("Please enter a valid employee id.", "Error");
+                   if(MainViewModel.OpenDbConnection) errorMsg.ShowAsync(); //Unittest purposes
+                }
+                
             }
 
         }
