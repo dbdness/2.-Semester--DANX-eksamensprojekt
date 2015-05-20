@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="36e04b60-98d4-4ba2-95ea-da3661aa3d7e"
   name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1998,7 +1998,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2008,7 +2008,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2046,7 +2046,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2056,7 +2056,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </coveredLifelines>
             <finish>
@@ -2092,7 +2092,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2102,7 +2102,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2120,7 +2120,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2190,7 +2190,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2200,7 +2200,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2300,7 +2300,7 @@
             <covered>
               <lifelineMoniker
                 Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2608,22 +2608,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="d04639a5-0680-4da4-894a-c5fb5e2f7f1c"
-            name="MessageOccurrenceSpecification19">
-            <covered>
-              <lifelineMoniker
-                Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-                LastKnownName="EmployeeHandler"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="079ae843-c81e-4383-9e8d-3f356fbd3a07"
             name="MessageOccurrenceSpecification20">
             <covered>
               <lifelineMoniker
                 Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
                 LastKnownName="PersistencyService"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d04639a5-0680-4da4-894a-c5fb5e2f7f1c"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
+                LastKnownName=": EmployeeHandler"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2763,16 +2763,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="71c04c5c-0dcc-47b4-aefd-d9de042f746f"
-            name="MessageOccurrenceSpecification21">
-            <covered>
-              <lifelineMoniker
-                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
-                LastKnownName="PersistencyService"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="fc9769c3-6e8b-4352-97f5-2c17ad40d0e0"
             name="MessageOccurrenceSpecification22">
             <covered>
@@ -2783,12 +2773,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="e3eeb8ee-20c2-4f46-8739-2fe03e45cb1a"
-            name="MessageOccurrenceSpecification23">
+            Id="71c04c5c-0dcc-47b4-aefd-d9de042f746f"
+            name="MessageOccurrenceSpecification21">
             <covered>
               <lifelineMoniker
-                Id="944c57e3-0733-4365-8bc6-ee18de971df0"
-                LastKnownName=": _loggedInEmployees"
+                Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
+                LastKnownName="PersistencyService"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2799,6 +2789,16 @@
               <lifelineMoniker
                 Id="80fb1d1d-e1ea-4aa9-a74d-c7b09c1911f1"
                 LastKnownName="PersistencyService"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e3eeb8ee-20c2-4f46-8739-2fe03e45cb1a"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="944c57e3-0733-4365-8bc6-ee18de971df0"
+                LastKnownName=": _loggedInEmployees"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2861,10 +2861,15 @@
         </fragments>
         <lifelines>
           <lifeline
+            Id="67e71486-d40d-4d7b-8a03-bd6949e9d7dc"
+            name="Actor"
+            isActor="true"
+            lifelineDisplayName="Actor" />
+          <lifeline
             Id="fa3c0c2c-0001-4be2-b9fe-64fbbf5b3db8"
-            name="EmployeeHandler"
+            name=": EmployeeHandler"
             isActor="false"
-            lifelineDisplayName="EmployeeHandler">
+            lifelineDisplayName=": EmployeeHandler">
             <topLevelOccurrences>
               <messageOccurrenceSpecificationMoniker
                 Id="08cf1715-9a6e-4bd1-a794-f598b96fb0a9"
@@ -4193,22 +4198,22 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="6f3cacc9-a790-4266-ad0f-bd9d70987d72"
-            name="OperandOccurrenceSpecification9">
-            <covered>
-              <lifelineMoniker
-                Id="87a53112-663f-4ab7-92b0-0c27c55e644a"
-                LastKnownName=": _loggedInEmployees"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="ddd77da4-5b6c-41bc-9092-4a2a7c89f358"
             name="OperandOccurrenceSpecification11">
             <covered>
               <lifelineMoniker
                 Id="f652de49-5a36-4274-a761-90ac1b2d15b6"
                 LastKnownName="PersistencyService"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="6f3cacc9-a790-4266-ad0f-bd9d70987d72"
+            name="OperandOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="87a53112-663f-4ab7-92b0-0c27c55e644a"
+                LastKnownName=": _loggedInEmployees"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4339,22 +4344,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="01507d30-ce80-4b64-aa31-ab9b998b71ce"
-            name="OperandOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="87a53112-663f-4ab7-92b0-0c27c55e644a"
-                LastKnownName=": _loggedInEmployees"
-                LastKnownLocation="ModelingProject.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="5e92a0f8-455c-42c5-9155-5cc64610abaf"
             name="OperandOccurrenceSpecification12">
             <covered>
               <lifelineMoniker
                 Id="f652de49-5a36-4274-a761-90ac1b2d15b6"
                 LastKnownName="PersistencyService"
+                LastKnownLocation="ModelingProject.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="01507d30-ce80-4b64-aa31-ab9b998b71ce"
+            name="OperandOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="87a53112-663f-4ab7-92b0-0c27c55e644a"
+                LastKnownName=": _loggedInEmployees"
                 LastKnownLocation="ModelingProject.uml" />
             </covered>
           </operandOccurrenceSpecification>
