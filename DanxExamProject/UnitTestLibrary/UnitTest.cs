@@ -17,8 +17,10 @@ namespace UnitTestLibrary
     {
         private MainViewModel _mainViewModel;
         private EmployeeHandler _employeeHandler;
-        private StandardEmp _testEmployee = new StandardEmp() { EmployeeId = 22, Name = "TestEmployee" };
-        private StandardEmp _testEmployee2 = new StandardEmp(){EmployeeId = 50, Name = "TestEmployee2"};
+        private StandardEmp _testEmployee;
+        private StandardEmp _testEmployee2;
+        private AdminEmp _testAdminEmp;
+        private AdminEmp _testAdminEmp2;
 
         [TestInitialize]
         public void BeforeTest()
@@ -29,9 +31,20 @@ namespace UnitTestLibrary
             _mainViewModel = new MainViewModel();
             _employeeHandler = new EmployeeHandler(_mainViewModel);
             
+            _testEmployee = new StandardEmp() { EmployeeId = 22, Name = "TestEmployee", SickDays = 0, VacationDays = 0, Manager = "NotAdminTestEmployee", SalaryNumber = 1};
+            _testEmployee2 = new StandardEmp(){EmployeeId = 50, Name = "TestEmployee2"};
+            _testAdminEmp = new AdminEmp(){EmployeeId = 75, Name = "AdminTestEmployee", AdminLvl = 1};
+            _testAdminEmp2 = new AdminEmp(){EmployeeId = 15, AdminLvl = 2, Name = "AdminLvl2TestEmployee"};
+
+            
+
             
             _mainViewModel.EmployeesInDb.Add(_testEmployee);
             _mainViewModel.EmployeesInDb.Add(_testEmployee2);
+
+            _mainViewModel.EmployeesInDb.Add(_testAdminEmp);
+            _mainViewModel.EmployeesInDb.Add(_testAdminEmp2);
+
             _mainViewModel.LoggedInEmployees.Add(_testEmployee2);
 
 
@@ -138,19 +151,104 @@ namespace UnitTestLibrary
             //Testcase 2.1
             _mainViewModel.LoginOrLogoutBox = "22";
             Assert.AreEqual("22", _mainViewModel.LoginOrLogoutBox);
-
-            Assert.AreEqual(_testEmployee2.SickDays, null);
-            Assert.AreEqual(_testEmployee.VacationDays, null);
+            
+            Assert.AreEqual(_testEmployee.SickDays, 0);
 
             _employeeHandler.LoginOrLogout(); //Employee logs in
 
-            _mainViewModel.StandardSickDays = 1;
-            _mainViewModel.StandardVacationDays = 5; //Employee adds 1 sick day and 5 vacation days.
+            _mainViewModel.StandardSickDays = 5; //Employee sets number of sickdays
             
             _employeeHandler.ChangeVacationOrSickdays();
 
-            Assert.AreEqual(_employeeHandler.LastLoggedIn.SickDays, 1);
-            Assert.AreEqual(_employeeHandler.LastLoggedIn.VacationDays, 5);
+            Assert.AreEqual(_employeeHandler.LastLoggedIn.SickDays, 5);
+
+
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            //Testcase 2.2
+            _mainViewModel.LoginOrLogoutBox = "22";
+            Assert.AreEqual("22", _mainViewModel.LoginOrLogoutBox);
+
+            Assert.AreEqual(_testEmployee.VacationDays, 0);
+
+            _employeeHandler.LoginOrLogout(); //Employee logs in
+
+            _mainViewModel.StandardVacationDays = 4; //Employee sets number of sickdays
+
+            _employeeHandler.ChangeVacationOrSickdays();
+
+            Assert.AreEqual(_employeeHandler.LastLoggedIn.VacationDays, 4);
+        }
+
+
+        [TestMethod]
+        public void TestMethod9()
+        {
+            //Testcase 3.1
+            _employeeHandler.SelectedEmployee = null; //No employee has been selected from the list.
+
+            try
+            {
+                _employeeHandler.AdminChangePersonalInfo();
+            }
+            catch (NullReferenceException ex)
+            {
+                Assert.AreEqual(ex.Message, "Please select an employee to edit.");
+            }
+            
+        }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            //Testcase 3.2
+            _mainViewModel.LoginOrLogoutBox = "75";
+            Assert.AreEqual(_mainViewModel.LoginOrLogoutBox, "75");
+
+            _employeeHandler.LoginOrLogout(); //Admin level 1 logs in
+
+            _employeeHandler.SelectedEmployee = _testEmployee; //Admin lvl 1 selects an employee outside of his department.
+
+            try
+            {
+                _employeeHandler.AdminChangePersonalInfo();
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual(ex.Message, "Error! You can only change data for your own employees.");
+            }
+
+        }
+
+
+        [TestMethod]
+        public void TestMethod11()
+        {
+            //Testcase 3.3
+            _mainViewModel.LoginOrLogoutBox = "15";
+            Assert.AreEqual(_mainViewModel.LoginOrLogoutBox, "15");
+
+            _employeeHandler.LoginOrLogout(); //Admin level 2 logs in
+
+            _employeeHandler.SelectedEmployee = _testEmployee; //Admin lvl 2 selects an employee outside of his department. 
+
+            _employeeHandler.AdminChangePersonalInfo(); //Success
+        }
+
+        [TestMethod]
+        public void TestMethod12()
+        {
+            //Testcase 3.4
+            _employeeHandler.SelectedEmployee = _testEmployee;
+
+            _mainViewModel.AdminChangeSalaryNumberBox = "notAnInt";
+
+            _employeeHandler.AdminChangeSalaryInfo();
+
+            //The FormatException gets caught in the code. 
 
 
         }

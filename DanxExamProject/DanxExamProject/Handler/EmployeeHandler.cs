@@ -260,7 +260,11 @@ namespace DanxExamProject.Handler
 
         public void AdminChangePersonalInfo()
         {
-            if (SelectedEmployee == null) return;
+            if (SelectedEmployee == null)
+            {
+                if (MainViewModel.OpenDbConnection == false) throw new NullReferenceException("Please select an employee to edit.");
+                return;
+            }
 
             //Admin level 1 and 2 privileges check
             var admin = (AdminEmp) LastLoggedIn;
@@ -268,16 +272,18 @@ namespace DanxExamProject.Handler
             {
                 if (SelectedEmployee.Manager != LastLoggedIn.Name)
                 {
-                 var errorMsg = new MessageDialog("You can only change data for your own employees.", "Error");
+                    if(MainViewModel.OpenDbConnection == false) throw new ArgumentException("Error! You can only change data for your own employees.");
+                    var errorMsg = new MessageDialog("You can only change data for your own employees.", "Error");
                     errorMsg.ShowAsync();
                     return;
                 }
 
             }
             
-            
             if (_viewModel.AdminChangeNameBox != null) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
             if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
+
+            if(MainViewModel.OpenDbConnection == false) return;
 
             PersistencyService.PutData(SelectedEmployee);
             if(admin.AdminLvl != 2) OwnDepartmentList();
@@ -317,6 +323,7 @@ namespace DanxExamProject.Handler
                 if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeWorkedDaysBox))
                     SelectedEmployee.WorkedDays = int.Parse(_viewModel.AdminChangeWorkedDaysBox);
 
+                if(MainViewModel.OpenDbConnection == false) return;
 
                 PersistencyService.PutData(SelectedEmployee);
                 if(admin.AdminLvl != 2) OwnDepartmentList();
@@ -325,7 +332,7 @@ namespace DanxExamProject.Handler
             catch (FormatException)
             {
                 var errorMsg = new MessageDialog("Only integer values are allowed.", "Error");
-                errorMsg.ShowAsync();
+               if(MainViewModel.OpenDbConnection) errorMsg.ShowAsync();
             }
         }
 
