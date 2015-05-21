@@ -780,12 +780,12 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private object get_32_MainViewModel_AgeList(object instance)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
-            return that.AgeList;
+            return that.DayList;
         }
         private void set_32_MainViewModel_AgeList(object instance, object Value)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
-            that.AgeList = (global::System.Collections.Generic.List<global::System.Int32>)Value;
+            that.DayList = (global::System.Collections.Generic.List<global::System.Int32>)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)

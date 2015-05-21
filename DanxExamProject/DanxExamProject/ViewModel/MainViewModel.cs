@@ -37,9 +37,11 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AdminChangePersonalInfoCommand { get; set; }
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
 
-        public List<int> AgeList { get; set; } 
+        public List<int> DayList { get; set; } 
 
-        //For unittesting purposes
+        /// <summary>
+        /// For unittest purposes. The unittest does not work if the Database connection is open. 
+        /// </summary>
        public static bool OpenDbConnection = true;
         
 
@@ -68,15 +70,19 @@ namespace DanxExamProject.ViewModel
             AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
 
-            AgeList = Ages();
+            DayList = Days();
 
         }
 
-        private List<int> Ages()
+       /// <summary>
+       /// Days 1-30 For the ComboBox control.
+       /// </summary>
+       /// <returns></returns>
+        private List<int> Days()
         {
-            var ages = new List<int>();
-            for (int i = 1; i < 30; i++) ages.Add(i);
-            return ages;
+            var days = new List<int>();
+            for (int i = 1; i < 30; i++) days.Add(i);
+            return days;
         } 
 
     }

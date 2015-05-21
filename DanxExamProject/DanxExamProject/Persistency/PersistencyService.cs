@@ -17,6 +17,9 @@ namespace DanxExamProject.Persistency
         private const string ServerUri = "http://localhost:2000";
         private static HttpClient _client;
 
+      /// <summary>
+      /// Opens the Database connection.
+      /// </summary>
         public static void OpenApiConnection()
         {
             try
@@ -61,7 +64,9 @@ namespace DanxExamProject.Persistency
                 }
                 catch (HttpRequestException)
                 {
-
+                    var errorMsg = new MessageDialog("There was a problem recieving the list of employees from the database. Try again",
+                    "Error");
+                    errorMsg.ShowAsync();
                 }
             
         }
@@ -69,7 +74,7 @@ namespace DanxExamProject.Persistency
         /// <summary>
         /// Changes the login- and logout time for the employee.
         /// </summary>
-        /// <param name="employee"></param>
+        /// <param name="employee">Employee to </param>
         public static void PutData(Employee employee)
         {  
                 try
@@ -87,34 +92,20 @@ namespace DanxExamProject.Persistency
                 }
                 catch (HttpRequestException)
                 {
-
+                    var errorMsg = new MessageDialog("There was a problem changing this employees data.",
+                    "Error");
+                    errorMsg.ShowAsync();
                 }
             
         }
 
 
 
-        /// <summary>
-        /// Changes the login-time for the logged in Employee
-        /// </summary>
-        /// <param name="employee"></param>
-        public static void PutDataLoggedin(Employee employee)
-        {
-                try
-                {
-                    var response = _client.PutAsJsonAsync("api/loggedInEmployees/" + employee.EmployeeId, employee).Result;
-                }
-                catch (HttpRequestException)
-                {
-
-                }
-            
-        }
-
+       
         /// <summary>
         /// Get the list of logged in employees.
         /// </summary>
-        /// <param name="collection"></param>
+        /// <param name="collection">The List<Employee> collection add to.</Employee></param>
         public static void GetDataLoggedIn(List<Employee> collection)
         {
                 try
@@ -134,14 +125,18 @@ namespace DanxExamProject.Persistency
                     }
                     catch (NullReferenceException)
                     {
-                        
+                        var errorMsg = new MessageDialog("No logged in employees could be found.",
+                    "Error");
+                        errorMsg.ShowAsync();
                     }
                 
                     
                 }
                 catch (HttpRequestException)
                 {
-
+                    var errorMsg = new MessageDialog("There was a problem recieving the list of logged in employees.",
+                    "Error");
+                    errorMsg.ShowAsync();
                 }
             
         }
@@ -149,7 +144,7 @@ namespace DanxExamProject.Persistency
         /// <summary>
         /// Add an employee to the database for logged in employees.
         /// </summary>
-        /// <param name="employee"></param>
+        /// <param name="employee">Employee to post to logged in table.</param>
         public static void PostDataLoggedIn(Employee employee)
         {
                 try
@@ -158,7 +153,9 @@ namespace DanxExamProject.Persistency
                 }
                 catch (HttpRequestException)
                 {
-
+                    var errorMsg = new MessageDialog("There was a problem adding the employee to the logged in database.",
+                    "Error");
+                    errorMsg.ShowAsync();
                 }
             
         }
@@ -166,7 +163,7 @@ namespace DanxExamProject.Persistency
         /// <summary>
         /// Remove logged in employee from database when he logs out. 
         /// </summary>
-        /// <param name="employee"></param>
+        /// <param name="employee">Employee to remove from logged in table.</param>
         public static void DeleteDataLoggedIn(Employee employee)
         {
                 try
@@ -175,7 +172,9 @@ namespace DanxExamProject.Persistency
                 }
                 catch (HttpRequestException)
                 {
-
+                    var errorMsg = new MessageDialog("There was a problem deleting the employee from the logged in database.",
+                    "Error");
+                    errorMsg.ShowAsync();
                 }
             
         }
