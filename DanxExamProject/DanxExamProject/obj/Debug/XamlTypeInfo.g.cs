@@ -285,7 +285,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 userType.AddMemberName("AddSickOrVacationdaysCommand");
                 userType.AddMemberName("AdminChangePersonalInfoCommand");
                 userType.AddMemberName("AdminChangeSalaryInfoCommand");
-                userType.AddMemberName("AgeList");
+                userType.AddMemberName("DayList");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -777,12 +777,12 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
             that.AdminChangeSalaryInfoCommand = (global::DanxExamProject.Common.RelayCommand)Value;
         }
-        private object get_32_MainViewModel_AgeList(object instance)
+        private object get_32_MainViewModel_DayList(object instance)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
             return that.DayList;
         }
-        private void set_32_MainViewModel_AgeList(object instance, object Value)
+        private void set_32_MainViewModel_DayList(object instance, object Value)
         {
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
             that.DayList = (global::System.Collections.Generic.List<global::System.Int32>)Value;
@@ -987,11 +987,11 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 xamlMember.Getter = get_31_MainViewModel_AdminChangeSalaryInfoCommand;
                 xamlMember.Setter = set_31_MainViewModel_AdminChangeSalaryInfoCommand;
                 break;
-            case "DanxExamProject.ViewModel.MainViewModel.AgeList":
+            case "DanxExamProject.ViewModel.MainViewModel.DayList":
                 userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
-                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "AgeList", "System.Collections.Generic.List`1<Int32>");
-                xamlMember.Getter = get_32_MainViewModel_AgeList;
-                xamlMember.Setter = set_32_MainViewModel_AgeList;
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "DayList", "System.Collections.Generic.List`1<Int32>");
+                xamlMember.Getter = get_32_MainViewModel_DayList;
+                xamlMember.Setter = set_32_MainViewModel_DayList;
                 break;
             }
             return xamlMember;

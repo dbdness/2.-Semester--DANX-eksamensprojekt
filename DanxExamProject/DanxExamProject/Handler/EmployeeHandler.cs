@@ -56,27 +56,27 @@ namespace DanxExamProject.Handler
           if(MainViewModel.OpenDbConnection) PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
 
             var employees = _viewModel.EmployeesInDb.ToList();
-            var matcingEmloyee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
+            var matcingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
             var matchingLoggedInEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
 
             //If user IS NOT logged in, he will be logged in:
-            if (matcingEmloyee != null && matchingLoggedInEmployee == null)
+            if (matcingEmployee != null && matchingLoggedInEmployee == null)    
             {
-                matcingEmloyee.LastLogin = DateTime.Now;
-                LastLoggedIn = matcingEmloyee;
+                matcingEmployee.LastLogin = DateTime.Now;
+                LastLoggedIn = matcingEmployee;
                 _viewModel.DatabaseTable.Clear();
                 _viewModel.DatabaseTable.Add(LastLoggedIn);
                 if (MainViewModel.OpenDbConnection)
                 {
-                    PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
+                    PersistencyService.PostDataLoggedIn(matcingEmployee); //Posted to logged in employees database.
 
-                    PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
+                    PersistencyService.PutData(matcingEmployee); //Updates logintime for the employee on the shown employee list. 
 
                     MainPage.CloseCanvases();
                     MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
-                    if (matcingEmloyee.GetType() == typeof (AdminEmp))
+                    if (matcingEmployee.GetType() == typeof (AdminEmp))
                         MainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
                     else MainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
                 }
