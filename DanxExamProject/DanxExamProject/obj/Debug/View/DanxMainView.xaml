@@ -160,7 +160,7 @@
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <Canvas x:Name="MainCanvas" Visibility="Collapsed" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas x:Name="MainCanvas" Visibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -178,7 +178,7 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -243,7 +243,7 @@
                 </AppBarButton>
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
-            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours.Hours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
+            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
             <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1137" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
                 <AppBarButton.Icon>
                     <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>

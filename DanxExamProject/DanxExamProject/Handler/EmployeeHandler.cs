@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
@@ -66,6 +67,7 @@ namespace DanxExamProject.Handler
             {
                 matcingEmployee.LastLogin = DateTime.Now;
                 LastLoggedIn = matcingEmployee;
+                if (LastLoggedIn.TotalHours > new TimeSpan(24, 59, 59)) LastLoggedIn.TotalHours = new TimeSpan(10, 35, 28); //Due to unknown unresponsiveness if the employees TotalHours-property is above 24 hours. 
                 _viewModel.DatabaseTable.Clear();
                 _viewModel.DatabaseTable.Add(LastLoggedIn);
                 if (MainViewModel.OpenDbConnection)

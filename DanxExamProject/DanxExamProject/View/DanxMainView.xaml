@@ -243,7 +243,7 @@
                 </AppBarButton>
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
-            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours.Hours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
+            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
             <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1137" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
                 <AppBarButton.Icon>
                     <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>

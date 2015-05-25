@@ -22,7 +22,6 @@
     <RootPropertyPathName Name="LoginOrLogoutBox" />
     <RootPropertyPathName Name="LastLoggedIn" />
     <RootPropertyPathName Name="TotalHours" />
-    <RootPropertyPathName Name="Hours" />
     <RootPropertyPathName Name="CompleteEmployeeListCommand" />
     <RootPropertyPathName Name="OwnDepartmentListCommand" />
     <RootPropertyPathName Name="PersonalEntryListCommand" />
