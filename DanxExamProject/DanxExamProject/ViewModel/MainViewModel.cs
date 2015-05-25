@@ -36,7 +36,7 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AddSickOrVacationdaysCommand { get; set; }
         public RelayCommand AdminChangePersonalInfoCommand { get; set; }
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
-
+        
         public List<int> DayList { get; set; } 
 
         /// <summary>

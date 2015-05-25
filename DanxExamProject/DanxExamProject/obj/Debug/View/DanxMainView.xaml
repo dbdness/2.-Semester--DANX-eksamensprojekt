@@ -134,12 +134,12 @@
             </Grid>
         </Flyout>
         <Flyout x:Key="FlyoutBase3" Placement="Bottom">
-            <StackPanel>
-                <TextBlock Text="Add vacation or sick days&#x0a;" FontWeight="Bold"/>
-                <TextBlock Text="Vacation days this month:"/>
-                <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardVacationDays, Mode=TwoWay}" Width="23" />
-                <TextBlock Text="Sick days this month:"/>
-                <ComboBox ItemsSource="{Binding AgeList}" SelectedItem="{Binding StandardSickDays, Mode=TwoWay}" Width="38"/>
+            <StackPanel Height="158" Width="282">
+                <TextBlock Text="Add vacation or sickdays&#x0a;" HorizontalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="Vacation or sickday(s)" HorizontalAlignment="Center" Width="110" Height="15"/>
+                <DatePicker x:Name="DatePicker"/>
+                <RadioButton x:Name="SickDayRadioButton" IsChecked="True" Content="Sick day" Margin="-3,0,182,0"/>
+                <RadioButton x:Name="VacationDayRadioButton" Content="Vacation day" Margin="167,-30,0,0"/>
                 <AppBarButton Command="{Binding AddSickOrVacationdaysCommand}" IsCompact="True" Icon="Accept" Foreground="#FF0D5AFF" RequestedTheme="Light" HorizontalAlignment="Center"/>
             </StackPanel>
         </Flyout>
@@ -160,7 +160,7 @@
         <Grid.DataContext>
             <ViewModel:MainViewModel/>
         </Grid.DataContext>
-        <Canvas x:Name="MainCanvas" Visibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Canvas x:Name="MainCanvas" Visibility="Collapsed" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D5AFF" Offset="0"/>
@@ -178,7 +178,7 @@
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXlogo.jpg" Canvas.Left="592" Canvas.Top="484"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -226,7 +226,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Canvas x:Name="AdminTools" Visibility="Visible" Height="79" Canvas.Left="1382" Width="171" Margin="0" Canvas.Top="40" >
+            <Canvas x:Name="AdminTools" Visibility="Visible" Height="79" Canvas.Left="1166" Width="171" Margin="0" Canvas.Top="40" >
                 <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
                     <AppBarButton.Resources>
                         <MenuFlyout x:Name="DatabaseViews" Placement="Bottom" x:Key="FlyoutBase1">
@@ -243,8 +243,8 @@
                 </AppBarButton>
                 <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
             </Canvas>
-            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
-            <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1332" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
+            <TextBlock Canvas.Left="832" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours.Hours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontSize="20" Canvas.Top="173" Height="18" Width="50"/>
+            <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1137" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
                 <AppBarButton.Icon>
                     <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>
                 </AppBarButton.Icon>

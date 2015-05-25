@@ -181,8 +181,10 @@ namespace DanxExamProject.Handler
        /// </summary>
         public void ChangeVacationOrSickdays()
         {
-            if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
-            if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
+            //if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
+            //if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
+           if (MainPage.SickDayRButton.IsChecked == true) LastLoggedIn.SickDays += 1;
+           else if (MainPage.VacationDayRButton.IsChecked == true) LastLoggedIn.VacationDays += 1;
            
             if(MainViewModel.OpenDbConnection == false) return;
             PersistencyService.PutData(LastLoggedIn);

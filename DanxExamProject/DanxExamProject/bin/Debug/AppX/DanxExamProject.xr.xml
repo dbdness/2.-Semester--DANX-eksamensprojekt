@@ -2,9 +2,6 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="AddSickOrVacationdaysCommand" />
-    <RootPropertyPathName Name="AgeList" />
-    <RootPropertyPathName Name="StandardSickDays" />
-    <RootPropertyPathName Name="StandardVacationDays" />
     <RootPropertyPathName Name="AdminChangeSalaryInfoCommand" />
     <RootPropertyPathName Name="AdminChangeWorkedDaysBox" />
     <RootPropertyPathName Name="EmployeeHandler" />
@@ -25,6 +22,7 @@
     <RootPropertyPathName Name="LoginOrLogoutBox" />
     <RootPropertyPathName Name="LastLoggedIn" />
     <RootPropertyPathName Name="TotalHours" />
+    <RootPropertyPathName Name="Hours" />
     <RootPropertyPathName Name="CompleteEmployeeListCommand" />
     <RootPropertyPathName Name="OwnDepartmentListCommand" />
     <RootPropertyPathName Name="PersonalEntryListCommand" />
@@ -74,33 +72,36 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Width" />
       <RootProperty Name="SelectionHighlightColor" />
       <RootProperty Name="FontStyle" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="UseLayoutRounding" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="RenderTransform" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="SelectedItem" />
-      <RootProperty Name="Width" />
+    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="IsChecked" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />

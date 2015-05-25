@@ -37,6 +37,9 @@ namespace DanxExamProject
         public static Canvas MainScreenCanvas = new Canvas();
         public static Canvas MainScreenLoginCanvas = new Canvas();
         public static Canvas AdminToolsCanvas = new Canvas();
+        public static RadioButton SickDayRButton = new RadioButton();
+        public static RadioButton VacationDayRButton = new RadioButton();
+        public static DatePicker SickVacationDatePicker = new DatePicker();
 
       
 
@@ -47,6 +50,9 @@ namespace DanxExamProject
             MainScreenCanvas = MainCanvas;
             MainScreenLoginCanvas = LoginCanvas;
             AdminToolsCanvas = AdminTools;
+            SickDayRButton = SickDayRadioButton;
+            VacationDayRButton = VacationDayRadioButton;
+            SickVacationDatePicker = DatePicker;
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");
