@@ -164,7 +164,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             _typeNameTable[12] = "System.Collections.Generic.List`1<DanxExamProject.Model.Employee>";
             _typeNameTable[13] = "DanxExamProject.Common.RelayCommand";
             _typeNameTable[14] = "System.Collections.Generic.List`1<Int32>";
-            _typeNameTable[15] = "DanxExamProject.MainPage";
+            _typeNameTable[15] = "DanxExamProject.DanxMainPage";
             _typeNameTable[16] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[17] = "Windows.UI.Xaml.Controls.UserControl";
 
@@ -184,7 +184,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             _typeTable[12] = typeof(global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>);
             _typeTable[13] = typeof(global::DanxExamProject.Common.RelayCommand);
             _typeTable[14] = typeof(global::System.Collections.Generic.List<global::System.Int32>);
-            _typeTable[15] = typeof(global::DanxExamProject.MainPage);
+            _typeTable[15] = typeof(global::DanxExamProject.DanxMainPage);
             _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
@@ -226,7 +226,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
         private object Activate_3_Collection() { return new global::System.Collections.ObjectModel.Collection<global::DanxExamProject.Model.Employee>(); }
         private object Activate_12_List() { return new global::System.Collections.Generic.List<global::DanxExamProject.Model.Employee>(); }
         private object Activate_14_List() { return new global::System.Collections.Generic.List<global::System.Int32>(); }
-        private object Activate_15_MainPage() { return new global::DanxExamProject.MainPage(); }
+        private object Activate_15_DanxMainPage() { return new global::DanxExamProject.DanxMainPage(); }
         private void VectorAdd_2_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::DanxExamProject.Model.Employee>)instance;
@@ -385,9 +385,9 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 15:   //  DanxExamProject.MainPage
+            case 15:   //  DanxExamProject.DanxMainPage
                 userType = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_MainPage;
+                userType.Activator = Activate_15_DanxMainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -76,11 +76,11 @@ namespace DanxExamProject.Handler
 
                     PersistencyService.PutData(matcingEmployee); //Updates logintime for the employee on the shown employee list. 
 
-                    MainPage.CloseCanvases();
-                    MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
+                    DanxMainPage.CloseCanvases();
+                    DanxMainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
                     if (matcingEmployee.GetType() == typeof (AdminEmp))
-                        MainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
-                    else MainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
+                        DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
+                    else DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
                 }
             }
             //If user IS logged in, he will be logged out:
@@ -97,8 +97,8 @@ namespace DanxExamProject.Handler
 
                     var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
                     goodbyeMsg.ShowAsync();
-                    MainPage.CloseCanvases();
-                    MainPage.MainScreenCanvas.Visibility = Visibility.Visible;
+                    DanxMainPage.CloseCanvases();
+                    DanxMainPage.MainScreenCanvas.Visibility = Visibility.Visible;
                 }
             }
                 
@@ -185,8 +185,8 @@ namespace DanxExamProject.Handler
         {
             //if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
             //if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
-           if (MainPage.SickDayRButton.IsChecked == true) LastLoggedIn.SickDays += 1;
-           else if (MainPage.VacationDayRButton.IsChecked == true) LastLoggedIn.VacationDays += 1;
+           if (DanxMainPage.SickDayRButton.IsChecked == true) LastLoggedIn.SickDays += 1;
+           else if (DanxMainPage.VacationDayRButton.IsChecked == true) LastLoggedIn.VacationDays += 1;
            
             if(MainViewModel.OpenDbConnection == false) return;
             PersistencyService.PutData(LastLoggedIn);

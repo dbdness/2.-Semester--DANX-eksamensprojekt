@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace DanxExamProject
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class DanxMainPage : Page
     {
         DispatcherTimer t = new DispatcherTimer();
         DispatcherTimer v = new DispatcherTimer();
@@ -39,11 +39,10 @@ namespace DanxExamProject
         public static Canvas AdminToolsCanvas = new Canvas();
         public static RadioButton SickDayRButton = new RadioButton();
         public static RadioButton VacationDayRButton = new RadioButton();
-        public static DatePicker SickVacationDatePicker = new DatePicker();
 
       
 
-        public MainPage()
+        public DanxMainPage()
         {
             this.InitializeComponent();
             _canvasList = new List<Canvas>(){MainCanvas, LoginCanvas};
@@ -52,7 +51,8 @@ namespace DanxExamProject
             AdminToolsCanvas = AdminTools;
             SickDayRButton = SickDayRadioButton;
             VacationDayRButton = VacationDayRadioButton;
-            SickVacationDatePicker = DatePicker;
+
+            DatePicker.MinYear = new DateTimeOffset(new DateTime(2014, 01, 01));
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");

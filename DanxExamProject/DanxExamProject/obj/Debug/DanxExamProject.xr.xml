@@ -336,6 +336,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="DanxExamProject.MainPage" />
+    <RootType FullName="DanxExamProject.DanxMainPage" />
   </Roots.RootTypes>
 </Roots>

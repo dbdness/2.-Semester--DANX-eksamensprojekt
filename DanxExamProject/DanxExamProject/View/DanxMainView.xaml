@@ -4,7 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:DanxExamProject.ViewModel"
-    x:Class="DanxExamProject.MainPage"
+    x:Class="DanxExamProject.DanxMainPage"
     mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="GG" TargetType="AppBarButton">
