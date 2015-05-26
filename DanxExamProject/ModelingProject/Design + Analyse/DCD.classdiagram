@@ -233,18 +233,6 @@
                     <referencedTypeMoniker Id="bbd83483-cf6c-46be-8d67-459b0121c1a9" LastKnownName="ObservableCollection&lt;Employee&gt;" />
                   </type_NamedElement>
                 </property>
-                <property Id="3cedb835-bbbb-413b-be80-0453e8610d59" name="StandardVacationDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="85b49698-6332-432a-98fd-e1413c2c6b33" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="583e5fad-cb6c-42e3-ad3f-fa4059736932" LastKnownName="int" />
-                  </type_NamedElement>
-                </property>
-                <property Id="bd912dc0-4138-493a-b966-ec493ec664de" name="StandardSickDays" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="2224c3d9-3d93-4651-bc99-14264d791aa2" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="58438e65-6d74-475a-b7a4-d2f02b55a820" LastKnownName="int" />
-                  </type_NamedElement>
-                </property>
                 <property Id="4ebf9024-e669-4acb-816a-dce89c5c03cc" name="AdminChangeNameBox" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="a7e1fd6c-e98a-46ea-929a-90df732877bd" />
                   <type_NamedElement>
@@ -324,11 +312,6 @@
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
-              <ownedOperationsInternal>
-                <operation Id="d86d7ec6-f51a-4012-b1d8-8d0040063a42" name="Ages" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="c4ecfc94-ff71-4fee-9839-41fb80cc288e" />
-                </operation>
-              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
@@ -673,11 +656,6 @@
     <packageHasNamedElement>
       <referencedType Id="60922385-8373-45d3-88b8-f88ecaf1b8fc" name="Employee" isAbstract="false" isLeaf="false" cachedFullName="Employee">
         <elementDefinition Id="35bad876-3112-41e2-aad5-b6c30f2dc93c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="583e5fad-cb6c-42e3-ad3f-fa4059736932" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
-        <elementDefinition Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>

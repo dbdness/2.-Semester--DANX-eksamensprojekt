@@ -21,8 +21,6 @@ namespace DanxExamProject.ViewModel
         public List<Employee> LoggedInEmployees { get; set; }
         public ObservableCollection<Employee> DatabaseTable { get; set; } 
         public string LoginOrLogoutBox { get; set; }
-        public int StandardVacationDays { get; set; }
-        public int StandardSickDays { get; set; }
         public string AdminChangeNameBox { get; set; }
         public string AdminChangeManagerBox { get; set; }
         public string AdminChangeSalaryNumberBox { get; set; }
@@ -37,7 +35,7 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AdminChangePersonalInfoCommand { get; set; }
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
         
-        public List<int> DayList { get; set; } 
+       
 
         /// <summary>
         /// For unittest purposes. The unittest does not work if the Database connection is open. 
@@ -70,20 +68,10 @@ namespace DanxExamProject.ViewModel
             AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
 
-            DayList = Days();
 
         }
 
-       /// <summary>
-       /// Days 1-30 For the ComboBox control.
-       /// </summary>
-       /// <returns></returns>
-        private List<int> Days()
-        {
-            var days = new List<int>();
-            for (int i = 1; i < 30; i++) days.Add(i);
-            return days;
-        } 
+      
 
     }
 }

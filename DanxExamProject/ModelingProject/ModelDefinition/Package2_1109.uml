@@ -212,42 +212,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="85b49698-6332-432a-98fd-e1413c2c6b33"
-            name="StandardVacationDays"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
-                LastKnownName="int"
-                LastKnownLocation="Package_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="2224c3d9-3d93-4651-bc99-14264d791aa2"
-            name="StandardSickDays"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="3aab0e11-92d4-45bf-8f74-c427c6b47a88"
-                LastKnownName="int"
-                LastKnownLocation="Package_1109.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="a7e1fd6c-e98a-46ea-929a-90df732877bd"
             name="AdminChangeNameBox"
             isLeaf="false"
@@ -482,17 +446,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="c4ecfc94-ff71-4fee-9839-41fb80cc288e"
-            name="Ages"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
