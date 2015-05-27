@@ -50,6 +50,7 @@ namespace DanxExamProject.Common
 
                 // If applicable, include a method for positioning a progress control.
                 PositionRing();
+
             }
 
             // Create a Frame to act as the navigation context 
@@ -57,6 +58,8 @@ namespace DanxExamProject.Common
 
             // Restore the saved session state if necessary
             RestoreStateAsync(loadState);
+
+            
         }
 
         void PositionImage()
@@ -80,7 +83,7 @@ namespace DanxExamProject.Common
             // Complete app setup operations here...
         }
 
-        void DismissExtendedSplash()
+       public void DismissExtendedSplash()
         {
             // Navigate to mainpage
             rootFrame.Navigate(typeof(DanxMainPage));
