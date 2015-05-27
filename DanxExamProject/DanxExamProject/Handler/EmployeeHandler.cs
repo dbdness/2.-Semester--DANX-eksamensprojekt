@@ -4,12 +4,15 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using DanxExamProject.Annotations;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
@@ -33,6 +36,7 @@ namespace DanxExamProject.Handler
         }
         private static Employee _employeeToLogout;
         private static Employee _lastLoggedIn;
+       private static TimeSpan _hoursWorked;
 
         public Employee LastLoggedIn
         {
@@ -49,12 +53,13 @@ namespace DanxExamProject.Handler
             _viewModel = viewModel;
         }
 
+
        
        /// <summary>
        /// Will log the matching employee in if he isn't already, and start the time management.
        /// If the matching employee is logged in, he will be logged out, and the total hours will be updated thereafter.
        /// </summary>
-        public void LoginOrLogout()
+        public async void LoginOrLogout()
         {
           if(MainViewModel.OpenDbConnection) PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
 
@@ -96,11 +101,19 @@ namespace DanxExamProject.Handler
                 {
                     PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
 
-
-                    var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
-                    goodbyeMsg.ShowAsync();
                     DanxMainPage.CloseCanvases();
                     DanxMainPage.MainScreenCanvas.Visibility = Visibility.Visible;
+
+                    var hoursWorkedFormat = String.Format(_hoursWorked.Hours + ":" + _hoursWorked.Minutes + ":" + _hoursWorked.Seconds);
+
+                    //Goodbye message
+                    DanxMainPage.UiWelcomeMessage.Text =
+                        "                            Goodbye!\n          You have worked for " + hoursWorkedFormat + " today.";
+                    await Task.Delay(8000);
+                    DanxMainPage.UiWelcomeMessage.Text =
+                        "                            Welcome!\nInsert worker-id in one of the boxes above.";
+
+
                 }
             }
                 
@@ -139,6 +152,8 @@ namespace DanxExamProject.Handler
         {
 
             var hoursWorked = _employeeToLogout.LastLogout.Subtract(_employeeToLogout.LastLogin);
+
+            _hoursWorked = hoursWorked;
 
             return _employeeToLogout.TotalHours += hoursWorked;
 

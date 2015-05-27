@@ -26,9 +26,9 @@ namespace DanxExamProject
     /// </summary>
     public sealed partial class DanxMainPage : Page
     {
-        DispatcherTimer t = new DispatcherTimer();
+       public static DispatcherTimer t = new DispatcherTimer();
         DispatcherTimer v = new DispatcherTimer();
-        List<string> Newlist = new List<string>();
+        public static List<string> Newlist = new List<string>();
         List<string> ValueList = new List<string>();
         List<string> ValueTextList = new List<string>(); 
         private int _i = 0;
@@ -40,6 +40,7 @@ namespace DanxExamProject
         public static Canvas AdminToolsCanvas = new Canvas();
         public static RadioButton SickDayRButton = new RadioButton();
         public static RadioButton VacationDayRButton = new RadioButton();
+        public static TextBlock UiWelcomeMessage = new TextBlock();
 
       
 
@@ -52,6 +53,7 @@ namespace DanxExamProject
             AdminToolsCanvas = AdminTools;
             SickDayRButton = SickDayRadioButton;
             VacationDayRButton = VacationDayRadioButton;
+            UiWelcomeMessage = WelcomeMessage;
 
             DatePicker.MinYear = new DateTimeOffset(new DateTime(2014, 01, 01));
 
@@ -77,11 +79,13 @@ We treat our customers, partners and colleagues with the same respect that we wa
             t.Interval = new TimeSpan(0,0,3);
             t.Start();
             t.Tick += DanxTick;
+            
 
             v.Interval = new TimeSpan(0,0,5);
             v.Start();
             v.Tick += ValueTick;
             v.Tick += ValueTextTick;
+
 
 
 
