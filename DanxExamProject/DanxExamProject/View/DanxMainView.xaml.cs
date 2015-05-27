@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using Windows.Foundation;
+    using System.Xml;
+    using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -56,8 +57,8 @@ namespace DanxExamProject
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");
-            Newlist.Add("CSR AT DANX");
-            Newlist.Add("HYUNDAI MOBIS");
+            Newlist.Add("CSR AT DANX - Knæk cancer, Unicef, Danske Hospitalsklovne");
+            Newlist.Add("HYUNDAI MOBIS - The Service & Logistic organization for Kia and Hyundai Automotive parts extends the cooperation with DANX ");
             ValueList.Add("EQUALITY");
             ValueList.Add("QUALITY");
             ValueList.Add("FLEXIBILITY");
@@ -73,11 +74,11 @@ We treat our customers, partners and colleagues with the same respect that we wa
             ValueTextList.Add("We are proud of our customers, our company and our people - we take pride in everything we do.");
 
 
-            t.Interval = new TimeSpan(0,0,15);
+            t.Interval = new TimeSpan(0,0,3);
             t.Start();
             t.Tick += DanxTick;
 
-            v.Interval = new TimeSpan(0,0,10);
+            v.Interval = new TimeSpan(0,0,5);
             v.Start();
             v.Tick += ValueTick;
             v.Tick += ValueTextTick;
@@ -100,6 +101,7 @@ We treat our customers, partners and colleagues with the same respect that we wa
             if (_v != ValueList.Count - 1) _v++;
             else _v = 0;
         }
+
         private void DanxTick(object sender, object e)
         {
             NewsBlock.Text = Newlist[_i];
@@ -114,41 +116,7 @@ We treat our customers, partners and colleagues with the same respect that we wa
            
         }
 
-        private async void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            //await Task.Delay(50);
-            //if (EmployeeHandler.IsLoggedIn)
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    StandardLoginCanvas.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    MainCanvas.Visibility = Visibility.Visible;
-            //}
-
-            
-            
-            
-
-
-            //MainCanvas.Visibility = Visibility.Collapsed;
-            //StandardLoginCanvas.Visibility = Visibility.Visible;
-        }
-
-        private async void ManageButton_Click(object sender, RoutedEventArgs e)
-        {
-            //await Task.Delay(50);
-            //if (EmployeeHandler.AdminLoggedIn)
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    AdminManageCanvas.Visibility = Visibility.Visible;
-            //}
-            
-            
-
-        }
+        
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {

@@ -271,7 +271,7 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <TextBlock Canvas.Left="456" TextWrapping="Wrap" Text="Confirm" Canvas.Top="69" FontFamily="Segoe UI" FontSize="10" Foreground="#FF555151"/>
-            <Button Command="{Binding LoginOrLogoutCommand}" x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Click="LoginButton_Click">
+            <Button Command="{Binding LoginOrLogoutCommand}" x:Name="LoginButton" Canvas.Left="445.874" Canvas.Top="60.75" BorderBrush="#FF768FFF" Background="Transparent" Height="28.25" Width="56.148" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                 <Button.RenderTransform>
                     <CompositeTransform SkewX="-10"/>
                 </Button.RenderTransform>

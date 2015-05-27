@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using DanxExamProject.Annotations;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
@@ -48,6 +49,7 @@ namespace DanxExamProject.Handler
             _viewModel = viewModel;
         }
 
+       
        /// <summary>
        /// Will log the matching employee in if he isn't already, and start the time management.
        /// If the matching employee is logged in, he will be logged out, and the total hours will be updated thereafter.
@@ -182,13 +184,12 @@ namespace DanxExamProject.Handler
        /// The standard- and admin employee's method of adding own vacation or sickdays.
        /// </summary>
         public void ChangeVacationOrSickdays()
-        {
-            //if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
-            //if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
+       {
+            
            if (DanxMainPage.SickDayRButton.IsChecked == true) LastLoggedIn.SickDays += 1;
            else if (DanxMainPage.VacationDayRButton.IsChecked == true) LastLoggedIn.VacationDays += 1;
-           
-            if(MainViewModel.OpenDbConnection == false) return;
+
+            if (MainViewModel.OpenDbConnection == false) return;
             PersistencyService.PutData(LastLoggedIn);
 
             PersistencyService.GetData(_viewModel.EmployeesInDb);
