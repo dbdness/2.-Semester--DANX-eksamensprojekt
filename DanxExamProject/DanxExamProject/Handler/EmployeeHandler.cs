@@ -195,6 +195,23 @@ namespace DanxExamProject.Handler
             foreach (var e in ownDepartment) _viewModel.DatabaseTable.Add(e);
         }
 
+       public void SortByName()
+       {
+           var sort = from e in _viewModel.DatabaseTable orderby e.Name select e;
+           var sortList = sort.ToList();
+           _viewModel.DatabaseTable.Clear();
+           foreach (var e in sortList) _viewModel.DatabaseTable.Add(e);
+
+       }
+
+       public void SortByEmployeeId()
+       {
+           var sort = from e in _viewModel.DatabaseTable orderby e.EmployeeId select e;
+           var sortList = sort.ToList();
+           _viewModel.DatabaseTable.Clear();
+           foreach (var e in sortList) _viewModel.DatabaseTable.Add(e);
+       }
+
        /// <summary>
        /// The standard- and admin employee's method of adding own vacation or sickdays.
        /// </summary>

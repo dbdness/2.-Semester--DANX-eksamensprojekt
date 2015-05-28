@@ -34,6 +34,8 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AddSickOrVacationdaysCommand { get; set; }
         public RelayCommand AdminChangePersonalInfoCommand { get; set; }
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
+        public RelayCommand SortByNameCommand { get; set; }
+        public RelayCommand SortByEmployeeIdCommand { get; set; }
         
        
 
@@ -67,7 +69,8 @@ namespace DanxExamProject.ViewModel
             AddSickOrVacationdaysCommand = new RelayCommand(EmployeeHandler.ChangeVacationOrSickdays);
             AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
-
+            SortByNameCommand = new RelayCommand(EmployeeHandler.SortByName);
+            SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
 
         }
 

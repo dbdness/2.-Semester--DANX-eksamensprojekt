@@ -206,6 +206,8 @@
                     <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="912"/>
                     <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="1028"/>
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="1112"/>
+                    <Button Command="{Binding SortByNameCommand}" BorderBrush="Transparent" Foreground="Transparent" Background="Transparent" Canvas.Left="243" Canvas.Top="-3" Height="19" Width="49"/>
+                    <Button Command="{Binding SortByEmployeeIdCommand}" BorderBrush="Transparent" Foreground="Transparent" Background="Transparent" Canvas.Left="-7" Canvas.Top="-3" Height="18" Width="70"/>
                 </Canvas>
             </Border>
             <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1235" Canvas.Left="297" Canvas.Top="318">
@@ -214,7 +216,7 @@
                         <Canvas>
                             <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
-                            <TextBlock Text="{Binding Manager}" Canvas.Left="122"/>
+                            <TextBlock Text="{Binding Manager}" Canvas.Left="141"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
                             <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="129"/>
                             <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="129"/>

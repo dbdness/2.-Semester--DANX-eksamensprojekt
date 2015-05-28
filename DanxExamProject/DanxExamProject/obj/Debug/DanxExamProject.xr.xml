@@ -31,6 +31,8 @@
     <RootPropertyPathName Name="LastLogout" />
     <RootPropertyPathName Name="LastLogin" />
     <RootPropertyPathName Name="EmployeeId" />
+    <RootPropertyPathName Name="SortByEmployeeIdCommand" />
+    <RootPropertyPathName Name="SortByNameCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />

@@ -311,6 +311,18 @@
                     <referencedTypeMoniker Id="73cd6ed7-b0e6-4de0-a82c-319aca506b8e" LastKnownName="List&lt;int&gt;" />
                   </type_NamedElement>
                 </property>
+                <property Id="a9daf89a-0409-44f8-8f23-20487f504a8e" name="SortByNameCommand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="64e5fee4-45c4-47d4-8bc3-5ca1f3b5a7d8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ee9673d6-e966-47a0-913a-304bd22cfd0e" LastKnownName="RelayCommand" />
+                  </type_NamedElement>
+                </property>
+                <property Id="860d199a-b887-4bfb-9064-6d8384c27e35" name="SortByEmployeeIdCommand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="19f77d19-944f-44fe-8447-78455707b561" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ee9673d6-e966-47a0-913a-304bd22cfd0e" LastKnownName="RelayCommand" />
+                  </type_NamedElement>
+                </property>
               </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
@@ -468,6 +480,12 @@
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
+                </operation>
+                <operation Id="3790c895-0d44-4274-8a15-72aabfe7b281" name="SortByEmployeeId" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4662fd83-1e4a-421b-9159-7e6acafba2f7" />
+                </operation>
+                <operation Id="0caae461-9516-4654-a82f-995ed39fd5a1" name="SortByName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="035e4df4-8712-4437-8d1b-bed693fb935c" />
                 </operation>
               </ownedOperationsInternal>
             </class>
