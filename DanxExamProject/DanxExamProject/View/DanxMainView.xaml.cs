@@ -81,7 +81,7 @@ We treat our customers, partners and colleagues with the same respect that we wa
             t.Tick += DanxTick;
             
 
-            v.Interval = new TimeSpan(0,0,5);
+            v.Interval = new TimeSpan(0,0,7);
             v.Start();
             v.Tick += ValueTick;
             v.Tick += ValueTextTick;
