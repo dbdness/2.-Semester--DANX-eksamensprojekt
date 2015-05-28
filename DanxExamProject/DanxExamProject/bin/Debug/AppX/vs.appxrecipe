@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.exe">
       <PackagePath>DanxExamProject.exe</PackagePath>
-      <Modified>2015-05-27T18:34:42.697</Modified>
+      <Modified>2015-05-28T10:10:09.326</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -94,11 +94,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\View\DanxMainView.xbf">
       <PackagePath>View\DanxMainView.xbf</PackagePath>
-      <Modified>2015-05-27T18:09:54.645</Modified>
+      <Modified>2015-05-28T10:10:09.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\DanxExamProject.xr.xml">
       <PackagePath>DanxExamProject.xr.xml</PackagePath>
-      <Modified>2015-05-27T18:09:54.617</Modified>
+      <Modified>2015-05-28T09:19:45.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\packages\WinRTXamlToolkit.Controls.Calendar.Windows.1.8.1.0\lib\netcore451\WinRTXamlToolkit.Controls.Calendar\WinRTXamlToolkit.Controls.Calendar.xr.xml">
       <PackagePath>WinRTXamlToolkit.Controls.Calendar\WinRTXamlToolkit.Controls.Calendar.xr.xml</PackagePath>
@@ -126,7 +126,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Danny\Documents\GitHub\2.-Semester--DANX-eksamensprojekt\DanxExamProject\DanxExamProject\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-27T18:34:20.719</Modified>
+      <Modified>2015-05-28T10:10:09.481</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

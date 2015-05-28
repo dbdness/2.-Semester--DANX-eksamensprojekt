@@ -99,9 +99,9 @@
         <Flyout x:Name="InformationToolFlyout" x:Key="InformationTool" Placement="Left" >
             <Grid AllowDrop="True" UseLayoutRounding="True" Height="171">
                 <TextBlock TextWrapping="Wrap" Text="Name" Height="26" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding AdminChangeNameBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,0" Height="44" VerticalAlignment="Top"/>
+                <TextBox x:Name="InsertNameBox" Text="{Binding AdminChangeNameBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,0" Height="44" VerticalAlignment="Top"/>
                 <TextBlock TextWrapping="Wrap" Text="Manager" Margin="0,58,0,0" Height="26" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding AdminChangeManagerBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Manager, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="-1,68,1,0" Height="36" VerticalAlignment="Top"/>
+                <TextBox x:Name="InsertManagerBox" Text="{Binding AdminChangeManagerBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Manager, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="-1,68,1,0" Height="36" VerticalAlignment="Top"/>
                 <AppBarButton Command="{Binding AdminChangePersonalInfoCommand}" HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="0,117,50,0" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
                 <AppBarButton x:ConnectionId='2' HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="50,117,-1,0" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0"                           />
             </Grid>
@@ -109,13 +109,13 @@
         <Flyout x:Name="SalaryToolFlyout" x:Key="FlyoutBase1" Placement="Left">
             <StackPanel>
                 <TextBlock Text="Salary Number"/>
-                <TextBox Text="{Binding AdminChangeSalaryNumberBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SalaryNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="InsertSalaryNumberBox" Text="{Binding AdminChangeSalaryNumberBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SalaryNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Vacation Days"/>
-                <TextBox Text="{Binding AdminChangeVacationDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.VacationDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="InsertVacationDaysBox" Text="{Binding AdminChangeVacationDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.VacationDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Sick Days"/>
-                <TextBox Text="{Binding AdminChangeSickDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SickDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="InsertSickDaysBox" Text="{Binding AdminChangeSickDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SickDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Worked Days"/>
-                <TextBox Text="{Binding AdminChangeWorkedDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.WorkedDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="InsertWorkedDaysBox" Text="{Binding AdminChangeWorkedDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.WorkedDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <AppBarButton Command="{Binding AdminChangeSalaryInfoCommand}" IsCompact="True" Icon="Accept"/>
                 <AppBarButton x:ConnectionId='1' Margin="50,-72,0,0" IsCompact="True" Icon="Cancel"                             />
             </StackPanel>
@@ -168,7 +168,7 @@
                 </LinearGradientBrush>
             </Canvas.Background>
 
-            <HyperlinkButton x:Name="DanxWebsite" Content="" Canvas.Left="672" Canvas.Top="76" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="720"/>
+            <HyperlinkButton x:Name="DanxWebsite" Canvas.Left="672" Canvas.Top="76" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="720"/>
             <TextBlock x:Name="NewsBlock"  Canvas.Left="668.796" TextWrapping="Wrap" Canvas.Top="85.958" Height="51.448" Width="711.66" FontSize="18.667" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" FontWeight="SemiBold"  UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015" Foreground="#FF0017FF" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock.RenderTransform>
                     <CompositeTransform SkewX="-25"/>
@@ -180,7 +180,7 @@
             <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -191,8 +191,8 @@
             <TextBlock Canvas.Left="742" TextWrapping="Wrap" Text="Welcome" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="106" Height="57" Width="177"/>
             <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
             <TextBlock Canvas.Left="564" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked            hours this week." Canvas.Top="187" Foreground="#FF0D5AFF" Height="35" Width="691" FontSize="20"/>
-            <TextBlock Canvas.Left="924" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="40" FontWeight="Bold" Foreground="#FF4253F9" Canvas.Top="106" Height="57" Width="177"/>
-            <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="297" Canvas.Top="272" Width="1210" Height="46">
+            <TextBlock Canvas.Left="924" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="106" Height="57" Width="177"/>
+            <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="297" Canvas.Top="272" Width="1235" Height="46">
                 <Canvas>
                     <TextBlock Text="EmployeeId" FontWeight="Bold"/>
                     <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="76"/>
@@ -208,7 +208,7 @@
                     <TextBlock Text="Worked days" FontWeight="Bold" Canvas.Left="1112"/>
                 </Canvas>
             </Border>
-            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1210" Canvas.Left="297" Canvas.Top="318">
+            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1235" Canvas.Left="297" Canvas.Top="318">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
@@ -216,8 +216,8 @@
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="122"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="118"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="118"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="129"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="129"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="621"/>
                             <TextBlock Text="{Binding WatchHours}" Canvas.Left="714"/>
                             <TextBlock Text="{Binding}" Canvas.Left="828"/>
@@ -266,7 +266,7 @@
                 </TextBox.Projection>
             </TextBox>
             <TextBlock x:Name="ValueBlock" Canvas.Left="790" TextWrapping="Wrap" Canvas.Top="27" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
-            <TextBlock x:Name="ValueText" Canvas.Left="731" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="75" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
+            <TextBlock x:Name="ValueText" Canvas.Left="747" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="75" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
             <Grid Height="30" Canvas.Left="556" Canvas.Top="65" Width="56">
                 <Rectangle Fill="#FFD1CDCD" Stroke="Transparent" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Margin="5.891,3.16,2.653,7.34">
                     <Rectangle.RenderTransform>

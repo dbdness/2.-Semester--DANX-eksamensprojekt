@@ -240,8 +240,8 @@ namespace DanxExamProject.Handler
 
             }
             
-            if (_viewModel.AdminChangeNameBox != null) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
-            if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
+            if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeNameBox)) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
+            if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeManagerBox)) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
 
             if(MainViewModel.OpenDbConnection == false) return;
 

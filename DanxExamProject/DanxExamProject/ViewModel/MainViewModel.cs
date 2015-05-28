@@ -68,7 +68,6 @@ namespace DanxExamProject.ViewModel
             AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
 
-            
 
         }
 

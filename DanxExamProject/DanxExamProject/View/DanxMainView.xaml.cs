@@ -125,11 +125,17 @@ We treat our customers, partners and colleagues with the same respect that we wa
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.InformationToolFlyout.Hide();
+            InsertNameBox.Text = String.Empty;
+            InsertManagerBox.Text = String.Empty;
         }
 
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
             this.SalaryToolFlyout.Hide();
+            InsertSalaryNumberBox.Text = String.Empty;
+            InsertVacationDaysBox.Text = String.Empty;
+            InsertSickDaysBox.Text = String.Empty;
+            InsertWorkedDaysBox.Text = String.Empty;
         }
 
         

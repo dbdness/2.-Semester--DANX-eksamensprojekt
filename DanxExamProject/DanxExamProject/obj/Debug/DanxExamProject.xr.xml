@@ -333,7 +333,6 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
-      <RootProperty Name="Content" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="NavigateUri" />
