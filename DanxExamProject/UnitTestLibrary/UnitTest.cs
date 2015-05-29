@@ -30,7 +30,7 @@ namespace UnitTestLibrary
         public void BeforeTest()
         {
             MainViewModel.OpenDbConnection = false;
-            Assert.IsFalse(MainViewModel.OpenDbConnection); //Making sure that the Database API connection is closed. 
+            Assert.IsFalse(MainViewModel.OpenDbConnection); //Making sure that the Database API connection is closed during unit testing. 
 
             _mainViewModel = new MainViewModel();
             _employeeHandler = new EmployeeHandler(_mainViewModel);
