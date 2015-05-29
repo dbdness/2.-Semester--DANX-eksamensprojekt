@@ -12,6 +12,7 @@ using DanxExamProject.Handler;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
 
+
 namespace DanxExamProject.ViewModel
 {
    public class MainViewModel
@@ -36,11 +37,12 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
         public RelayCommand SortByNameCommand { get; set; }
         public RelayCommand SortByEmployeeIdCommand { get; set; }
+        public RelayCommand SpreadSheetCommand { get; set; }
         
        
 
         /// <summary>
-        /// For unittest purposes. The unittest does not work if the Database connection is open. 
+        /// For unittest purposes. The unittest does not run properly if the Database connection is open. 
         /// </summary>
        public static bool OpenDbConnection = true;
         
@@ -73,6 +75,8 @@ namespace DanxExamProject.ViewModel
             SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
 
         }
+
+       
 
       
 

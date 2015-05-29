@@ -292,6 +292,7 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 userType.AddMemberName("AdminChangeSalaryInfoCommand");
                 userType.AddMemberName("SortByNameCommand");
                 userType.AddMemberName("SortByEmployeeIdCommand");
+                userType.AddMemberName("SpreadSheetCommand");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -768,6 +769,16 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
             var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
             that.SortByEmployeeIdCommand = (global::DanxExamProject.Common.RelayCommand)Value;
         }
+        private object get_32_MainViewModel_SpreadSheetCommand(object instance)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            return that.SpreadSheetCommand;
+        }
+        private void set_32_MainViewModel_SpreadSheetCommand(object instance, object Value)
+        {
+            var that = (global::DanxExamProject.ViewModel.MainViewModel)instance;
+            that.SpreadSheetCommand = (global::DanxExamProject.Common.RelayCommand)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -967,6 +978,12 @@ namespace DanxExamProject.DanxExamProject_XamlTypeInfo
                 xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "SortByEmployeeIdCommand", "DanxExamProject.Common.RelayCommand");
                 xamlMember.Getter = get_31_MainViewModel_SortByEmployeeIdCommand;
                 xamlMember.Setter = set_31_MainViewModel_SortByEmployeeIdCommand;
+                break;
+            case "DanxExamProject.ViewModel.MainViewModel.SpreadSheetCommand":
+                userType = (global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DanxExamProject.ViewModel.MainViewModel");
+                xamlMember = new global::DanxExamProject.DanxExamProject_XamlTypeInfo.XamlMember(this, "SpreadSheetCommand", "DanxExamProject.Common.RelayCommand");
+                xamlMember.Getter = get_32_MainViewModel_SpreadSheetCommand;
+                xamlMember.Setter = set_32_MainViewModel_SpreadSheetCommand;
                 break;
             }
             return xamlMember;
