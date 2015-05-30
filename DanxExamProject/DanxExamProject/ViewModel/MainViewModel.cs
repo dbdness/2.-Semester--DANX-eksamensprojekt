@@ -38,7 +38,7 @@ namespace DanxExamProject.ViewModel
         public RelayCommand SortByNameCommand { get; set; }
         public RelayCommand SortByEmployeeIdCommand { get; set; }
         public RelayCommand SpreadSheetCommand { get; set; }
-        
+        public RelayCommand ExportAsCsvCommand { get; set; }
        
 
         /// <summary>
@@ -73,9 +73,22 @@ namespace DanxExamProject.ViewModel
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
             SortByNameCommand = new RelayCommand(EmployeeHandler.SortByName);
             SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
+            ExportAsCsvCommand = new RelayCommand(ExportEmployeesToCsvFile);
+
+                         
+       
+           
+           
 
         }
 
+       private void ExportEmployeesToCsvFile()
+       {
+           var csv = new CsvExport<Employee>(EmployeesInDb.ToList());
+           csv.ExportToFile("DanxEmployees.csv");
+       }
+
+      
        
 
       

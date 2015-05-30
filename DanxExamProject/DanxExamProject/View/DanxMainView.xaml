@@ -253,6 +253,11 @@
                     <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>
                 </AppBarButton.Icon>
             </AppBarButton>
+            <AppBarButton Command="{Binding ExportAsCsvCommand}" Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1723" Canvas.Top="44">
+                <AppBarButton.Icon>
+                    <SymbolIcon Height="40" Symbol="SaveLocal" VerticalAlignment="Bottom"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </Canvas>
 
         <Canvas x:Name="TopCanvas" Grid.Row="0" Height="152" VerticalAlignment="Top" RequestedTheme="Dark" Grid.ColumnSpan="3">
