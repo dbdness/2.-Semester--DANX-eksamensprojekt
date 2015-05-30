@@ -32,7 +32,7 @@ namespace DanxExamProject.Persistency
             }
             catch (HttpRequestException)
             {
-                var errorMsg = new MessageDialog("There was a problem in establishing connection to the database.",
+                var errorMsg = new MessageDialog("There was a problem establishing connection to the database.",
                     "Error");
                 errorMsg.ShowAsync();
             }

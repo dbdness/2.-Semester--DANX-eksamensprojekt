@@ -174,7 +174,7 @@
                     <CompositeTransform SkewX="-25"/>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="WelcomeMessage" Canvas.Left="548" TextWrapping="Wrap" Text="                            Welcome!&#xA;Insert worker-id in one of the boxes above." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="238" Height="206" Width="797"/>
+            <TextBlock x:Name="WelcomeMessage" Canvas.Left="548" TextWrapping="Wrap" Text="                            Welcome!&#xA;       Insert employee-id in the box above." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="238" Height="206" Width="797"/>
             <Canvas Height="100" Canvas.Left="448" Canvas.Top="315" Width="100"/>
             <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXBiglogo.jpg" Canvas.Left="754" Canvas.Top="634"/>
             <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
