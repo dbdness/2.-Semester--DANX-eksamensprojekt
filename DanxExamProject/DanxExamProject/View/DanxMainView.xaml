@@ -134,7 +134,7 @@
             </Grid>
         </Flyout>
         <Flyout x:Key="FlyoutBase3" Placement="Bottom">
-            <StackPanel Height="158" Width="282">
+            <StackPanel>
                 <TextBlock Text="Add vacation or sickdays&#x0a;" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <TextBlock Text="Vacation or sickday(s)" HorizontalAlignment="Center" Width="110" Height="15"/>
                 <DatePicker x:Name="DatePicker"/>
@@ -180,7 +180,7 @@
             <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -218,8 +218,8 @@
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="141"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="129"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="129"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="122"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="122"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="621"/>
                             <TextBlock Text="{Binding WatchHours}" Canvas.Left="714"/>
                             <TextBlock Text="{Binding}" Canvas.Left="828"/>
@@ -230,8 +230,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Canvas x:Name="AdminTools" Visibility="Visible" Height="79" Canvas.Left="1507" Width="171" Margin="0" Canvas.Top="40" >
-                <AppBarButton IsCompact="True" Icon="ContactInfo" Label="AppBarButton" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="41">
+            <Canvas x:Name="AdminTools" Visibility="Visible" Height="80" Canvas.Left="1480" Width="264" Margin="0" Canvas.Top="40" >
+                <AppBarButton x:Name="AdminTableViewAppBarButton" IsCompact="False" Icon="ContactInfo" Label="" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="29" PointerEntered="AdminTableViewAppBarButton_PointerEntered" PointerExited="AdminTableViewAppBarButton_PointerExited">
                     <AppBarButton.Resources>
                         <MenuFlyout x:Name="DatabaseViews" Placement="Bottom" x:Key="FlyoutBase1">
                             <MenuFlyoutItem Text="Personal entry" Command="{Binding PersonalEntryListCommand}"/>
@@ -245,17 +245,17 @@
                         <StaticResource ResourceKey="FlyoutBase1"/>
                     </AppBarButton.Flyout>
                 </AppBarButton>
-                <AppBarButton IsCompact="True" Icon="Edit" Label="AppBarButton" Canvas.Left="110" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}"/>
+                <AppBarButton x:Name="AdminEditAppBarButton" IsCompact="False" Icon="Edit" Label="" Canvas.Left="101" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Style="{StaticResource GG}" Flyout="{StaticResource EditTools}" PointerEntered="AdminEditAppBarButton_PointerEntered" PointerExited="AdminEditAppBarButton_PointerExited"/>
+                <AppBarButton x:Name="ExportToExcelAppBarButton" Command="{Binding ExportAsCsvCommand}" Label="" IsCompact="False" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="172" Canvas.Top="4" PointerEntered="ExportToExcelAppBarButton_PointerEntered" PointerExited="ExportToExcelAppBarButton_PointerExited">
+                    <AppBarButton.Icon>
+                        <SymbolIcon Height="40" Symbol="SaveLocal" VerticalAlignment="Bottom"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
             </Canvas>
             <TextBlock Canvas.Left="1034" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontWeight="Bold" FontSize="20" Canvas.Top="187" Height="18" Width="55"/>
-            <AppBarButton Label="AppBarButton" IsCompact="True" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1457" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}">
+            <AppBarButton x:Name="AddVacationSickDayAppBarButton" Label="" IsCompact="False" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1434" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}" PointerEntered="AddVacationSickDayAppBarButton_PointerEntered" PointerExited="AddVacationSickDayAppBarButton_PointerExited">
                 <AppBarButton.Icon>
-                    <SymbolIcon Height="40" Symbol="Setting" VerticalAlignment="Bottom"/>
-                </AppBarButton.Icon>
-            </AppBarButton>
-            <AppBarButton Command="{Binding ExportAsCsvCommand}" Label="Export to Excel" IsCompact="False" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1695" Canvas.Top="44">
-                <AppBarButton.Icon>
-                    <SymbolIcon Height="40" Symbol="SaveLocal" VerticalAlignment="Bottom"/>
+                    <SymbolIcon Height="40" VerticalAlignment="Bottom" Symbol="Calendar"/>
                 </AppBarButton.Icon>
             </AppBarButton>
         </Canvas>

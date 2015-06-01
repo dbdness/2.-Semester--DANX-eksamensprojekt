@@ -47,6 +47,7 @@ namespace DanxExamProject
         public DanxMainPage()
         {
             this.InitializeComponent();
+
             _canvasList = new List<Canvas>(){MainCanvas, LoginCanvas};
             MainScreenCanvas = MainCanvas;
             MainScreenLoginCanvas = LoginCanvas;
@@ -56,6 +57,7 @@ namespace DanxExamProject
             UiWelcomeMessage = WelcomeMessage;
 
             DatePicker.MinYear = new DateTimeOffset(new DateTime(2014, 01, 01));
+            DatePicker.MaxYear = new DateTimeOffset(new DateTime(2020, 01, 01));
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");
@@ -137,6 +139,48 @@ We treat our customers, partners and colleagues with the same respect that we wa
             InsertSickDaysBox.Text = String.Empty;
             InsertWorkedDaysBox.Text = String.Empty;
         }
+
+        private void ExportToExcelAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            ExportToExcelAppBarButton.Label = "Export to Excel";
+        }
+
+        private void ExportToExcelAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            ExportToExcelAppBarButton.Label = String.Empty;
+        }
+
+        private void AdminEditAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AdminEditAppBarButton.Label = "Edit selected employee";
+        }
+
+        private void AdminEditAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AdminEditAppBarButton.Label = String.Empty;
+        }
+
+        private void AdminTableViewAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AdminTableViewAppBarButton.Label = "Employees";
+        }
+
+        private void AdminTableViewAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AdminTableViewAppBarButton.Label = String.Empty;
+        }
+
+        private void AddVacationSickDayAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AddVacationSickDayAppBarButton.Label = "Add vacation- or sickdays";
+        }
+
+        private void AddVacationSickDayAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AddVacationSickDayAppBarButton.Label = String.Empty;
+        }
+
+       
 
         
             
