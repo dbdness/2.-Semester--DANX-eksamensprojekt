@@ -50,7 +50,6 @@ namespace DanxExamProject.ViewModel
        
         public MainViewModel()
         {
-
             EmployeeHandler = new EmployeeHandler(this);
            if(OpenDbConnection) {PersistencyService.OpenApiConnection();}
 
@@ -75,7 +74,6 @@ namespace DanxExamProject.ViewModel
             SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
             ExportAsCsvCommand = new RelayCommand(ExportEmployeesToCsvFile);
 
-                   
         }
 
        private void ExportEmployeesToCsvFile()

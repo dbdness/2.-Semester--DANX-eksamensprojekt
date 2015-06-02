@@ -180,7 +180,7 @@
             <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -218,8 +218,8 @@
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="141"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="122"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="122"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="114"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="114"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="621"/>
                             <TextBlock Text="{Binding WatchHours}" Canvas.Left="714"/>
                             <TextBlock Text="{Binding}" Canvas.Left="828"/>
