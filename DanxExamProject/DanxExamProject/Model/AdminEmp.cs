@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace DanxExamProject.Model
 {
    public class AdminEmp: Employee
-   {
-       public int AdminLvl;
+    {
+        public int AdminLvl;
 
         public override string ToString()
         {

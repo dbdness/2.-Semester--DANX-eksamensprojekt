@@ -180,24 +180,6 @@ We treat our customers, partners and colleagues with the same respect that we wa
             AddVacationSickDayAppBarButton.Label = String.Empty;
         }
 
-        private async void AppBarButton_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.InformationToolFlyout.Hide();
-            await Task.Delay(2500);
-            InsertNameBox.Text = String.Empty;
-            InsertManagerBox.Text = String.Empty;
-        }
-
-        private async void AppBarButton_Click_3(object sender, RoutedEventArgs e)
-        {
-            this.SalaryToolFlyout.Hide();
-            await Task.Delay(2500);
-            InsertSalaryNumberBox.Text = String.Empty;
-            InsertVacationDaysBox.Text = String.Empty;
-            InsertSickDaysBox.Text = String.Empty;
-            InsertWorkedDaysBox.Text = String.Empty;
-        }
-
        
 
         
