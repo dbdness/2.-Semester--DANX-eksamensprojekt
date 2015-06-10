@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using DanxExamProject.Model;
+using WinRTXamlToolkit.Common;
 
 namespace DanxExamProject.Persistency
 {
@@ -32,7 +34,7 @@ namespace DanxExamProject.Persistency
             }
             catch (HttpRequestException)
             {
-                var errorMsg = new MessageDialog("There was a problem in establishing connection to the database.",
+                var errorMsg = new MessageDialog("There was a problem establishing connection to the database.",
                     "Error");
                 errorMsg.ShowAsync();
             }
@@ -54,11 +56,12 @@ namespace DanxExamProject.Persistency
                         var stdEmpData = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
                         var adminEmpData = adminEmpResponse.Content.ReadAsAsync<IEnumerable<AdminEmp>>().Result;
 
+                      
                         collection.Clear();
 
-                        foreach (var e in stdEmpData) collection.Add(e);
 
-                        foreach (var e in adminEmpData) collection.Add(e);
+                        foreach (var e in stdEmpData) collection.Add(e);
+                        foreach (var a in adminEmpData) collection.Add(a);
                         
                     }
                 }

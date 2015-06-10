@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="ab3a549a-46ae-4ac6-8c02-1a34bbb946a5" name="UseCaseDiagram" linkedPackageId="2bd98399-8a68-40e6-81f0-aed07e2a67bf" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ab3a549a-46ae-4ac6-8c02-1a34bbb946a5" name="UseCaseDiagram" linkedPackageId="2bd98399-8a68-40e6-81f0-aed07e2a67bf" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="2bec6a63-f627-4505-8d2f-eadc7c00acdc" name="Std Employee" isAbstract="false" isLeaf="false">
@@ -22,7 +22,7 @@
             <elementDefinition Id="2851196d-58b8-4bc9-8437-28b1fff8310d" />
           </association>
           <association Id="efdcd34d-bf35-48c5-b594-23b84212e7f7" isDerived="false" sourceEndRoleName="Std Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Ændrer sine ikke-registrerede dage" />
+            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="622a85b0-47c4-4b90-a45a-1513dd167acf" name="Std Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -109,7 +109,7 @@
             <elementDefinition Id="3bab0b45-799a-4c19-a4c9-5f3f20e3380e" />
           </association>
           <association Id="1a3343eb-b65f-4698-af6a-de7187a0012e" isDerived="false" sourceEndRoleName="Admin lvl 1 Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Ændrer sine ikke-registrerede dage" />
+            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="dad2984b-4ab4-4ea8-806b-7d2102972ea9" name="Admin lvl 1 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -180,7 +180,7 @@
             <elementDefinition Id="48c05879-8068-47af-94b7-77acfc769db3" />
           </association>
           <association Id="3d3de081-890d-4718-9352-77cfcf4102b4" isDerived="false" sourceEndRoleName="Admin lvl 2 Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Ændrer sine ikke-registrerede dage" />
+            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="f5521e8e-3532-406a-971a-7597bd4e64bf" name="Admin lvl 2 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -204,7 +204,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="279c9b1e-6e88-4727-9467-c46282d7637f" name="Ændrer sine ikke-registrerede dage" isAbstract="false" isLeaf="false">
+      <useCase Id="279c9b1e-6e88-4727-9467-c46282d7637f" name="Tilføjer syge/feriedage" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2bcf61a2-e25a-4df4-abe9-a29e5e59db79" />
       </useCase>
     </useCaseModelRootHasTypes>

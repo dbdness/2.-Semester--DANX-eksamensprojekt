@@ -1,10 +1,11 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using Windows.Foundation;
+    using System.Xml;
+    using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -23,11 +24,11 @@ namespace DanxExamProject
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class DanxMainPage : Page
     {
-        DispatcherTimer t = new DispatcherTimer();
+       public static DispatcherTimer t = new DispatcherTimer();
         DispatcherTimer v = new DispatcherTimer();
-        List<string> Newlist = new List<string>();
+        public static List<string> Newlist = new List<string>();
         List<string> ValueList = new List<string>();
         List<string> ValueTextList = new List<string>(); 
         private int _i = 0;
@@ -37,21 +38,31 @@ namespace DanxExamProject
         public static Canvas MainScreenCanvas = new Canvas();
         public static Canvas MainScreenLoginCanvas = new Canvas();
         public static Canvas AdminToolsCanvas = new Canvas();
+        public static RadioButton SickDayRButton = new RadioButton();
+        public static RadioButton VacationDayRButton = new RadioButton();
+        public static TextBlock UiWelcomeMessage = new TextBlock();
 
       
 
-        public MainPage()
+        public DanxMainPage()
         {
             this.InitializeComponent();
+
             _canvasList = new List<Canvas>(){MainCanvas, LoginCanvas};
             MainScreenCanvas = MainCanvas;
             MainScreenLoginCanvas = LoginCanvas;
             AdminToolsCanvas = AdminTools;
+            SickDayRButton = SickDayRadioButton;
+            VacationDayRButton = VacationDayRadioButton;
+            UiWelcomeMessage = WelcomeMessage;
+
+            DatePicker.MinYear = new DateTimeOffset(new DateTime(2014, 01, 01));
+            DatePicker.MaxYear = new DateTimeOffset(new DateTime(2020, 01, 01));
 
             Newlist.Add("DANX WINS TENDER OF NORDIC WAREHOUSE FOR BSH");
             Newlist.Add("DANX GROUP EXPANDS INTO THE BALTIC COUNTRIES");
-            Newlist.Add("CSR AT DANX");
-            Newlist.Add("HYUNDAI MOBIS");
+            Newlist.Add("CSR AT DANX - Knæk cancer, Unicef, Danske Hospitalsklovne");
+            Newlist.Add("HYUNDAI MOBIS - The Service & Logistic organization for Kia and Hyundai Automotive parts extends the cooperation with DANX ");
             ValueList.Add("EQUALITY");
             ValueList.Add("QUALITY");
             ValueList.Add("FLEXIBILITY");
@@ -67,14 +78,16 @@ We treat our customers, partners and colleagues with the same respect that we wa
             ValueTextList.Add("We are proud of our customers, our company and our people - we take pride in everything we do.");
 
 
-            t.Interval = new TimeSpan(0,0,15);
+            t.Interval = new TimeSpan(0,0,3);
             t.Start();
             t.Tick += DanxTick;
+            
 
-            v.Interval = new TimeSpan(0,0,10);
+            v.Interval = new TimeSpan(0,0,7);
             v.Start();
             v.Tick += ValueTick;
             v.Tick += ValueTextTick;
+
 
 
 
@@ -94,6 +107,7 @@ We treat our customers, partners and colleagues with the same respect that we wa
             if (_v != ValueList.Count - 1) _v++;
             else _v = 0;
         }
+
         private void DanxTick(object sender, object e)
         {
             NewsBlock.Text = Newlist[_i];
@@ -108,51 +122,65 @@ We treat our customers, partners and colleagues with the same respect that we wa
            
         }
 
-        private async void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            //await Task.Delay(50);
-            //if (EmployeeHandler.IsLoggedIn)
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    StandardLoginCanvas.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    MainCanvas.Visibility = Visibility.Visible;
-            //}
-
-            
-            
-            
-
-
-            //MainCanvas.Visibility = Visibility.Collapsed;
-            //StandardLoginCanvas.Visibility = Visibility.Visible;
-        }
-
-        private async void ManageButton_Click(object sender, RoutedEventArgs e)
-        {
-            //await Task.Delay(50);
-            //if (EmployeeHandler.AdminLoggedIn)
-            //{
-            //    foreach (var c in _canvasList) c.Visibility = Visibility.Collapsed;
-            //    AdminManageCanvas.Visibility = Visibility.Visible;
-            //}
-            
-            
-
-        }
+        
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.InformationToolFlyout.Hide();
+            InsertNameBox.Text = String.Empty;
+            InsertManagerBox.Text = String.Empty;
         }
 
         private void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
             this.SalaryToolFlyout.Hide();
+            InsertSalaryNumberBox.Text = String.Empty;
+            InsertVacationDaysBox.Text = String.Empty;
+            InsertSickDaysBox.Text = String.Empty;
+            InsertWorkedDaysBox.Text = String.Empty;
         }
+
+        private void ExportToExcelAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            ExportToExcelAppBarButton.Label = "Export to Excel";
+        }
+
+        private void ExportToExcelAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            ExportToExcelAppBarButton.Label = String.Empty;
+        }
+
+        private void AdminEditAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AdminEditAppBarButton.Label = "Edit selected employee";
+        }
+
+        private void AdminEditAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AdminEditAppBarButton.Label = String.Empty;
+        }
+
+        private void AdminTableViewAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AdminTableViewAppBarButton.Label = "Employees";
+        }
+
+        private void AdminTableViewAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AdminTableViewAppBarButton.Label = String.Empty;
+        }
+
+        private void AddVacationSickDayAppBarButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AddVacationSickDayAppBarButton.Label = "Add vacation- or sickdays";
+        }
+
+        private void AddVacationSickDayAppBarButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AddVacationSickDayAppBarButton.Label = String.Empty;
+        }
+
+       
 
         
             

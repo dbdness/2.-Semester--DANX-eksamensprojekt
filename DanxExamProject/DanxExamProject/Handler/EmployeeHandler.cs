@@ -4,10 +4,15 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using DanxExamProject.Annotations;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
@@ -31,6 +36,7 @@ namespace DanxExamProject.Handler
         }
         private static Employee _employeeToLogout;
         private static Employee _lastLoggedIn;
+       private static TimeSpan _hoursWorked;
 
         public Employee LastLoggedIn
         {
@@ -47,38 +53,41 @@ namespace DanxExamProject.Handler
             _viewModel = viewModel;
         }
 
+
+       
        /// <summary>
        /// Will log the matching employee in if he isn't already, and start the time management.
        /// If the matching employee is logged in, he will be logged out, and the total hours will be updated thereafter.
        /// </summary>
-        public void LoginOrLogout()
+        public async void LoginOrLogout()
         {
           if(MainViewModel.OpenDbConnection) PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
 
             var employees = _viewModel.EmployeesInDb.ToList();
-            var matcingEmloyee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
+            var matcingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
             var matchingLoggedInEmployee = _viewModel.LoggedInEmployees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
 
 
             //If user IS NOT logged in, he will be logged in:
-            if (matcingEmloyee != null && matchingLoggedInEmployee == null)
+            if (matcingEmployee != null && matchingLoggedInEmployee == null)    
             {
-                matcingEmloyee.LastLogin = DateTime.Now;
-                LastLoggedIn = matcingEmloyee;
+                matcingEmployee.LastLogin = DateTime.Now;
+                LastLoggedIn = matcingEmployee;
+                if (LastLoggedIn.TotalHours > new TimeSpan(24, 59, 59)) LastLoggedIn.TotalHours = new TimeSpan(10, 35, 28); //Due to unknown unresponsiveness if the employees TotalHours-property is above 24 hours. 
                 _viewModel.DatabaseTable.Clear();
                 _viewModel.DatabaseTable.Add(LastLoggedIn);
                 if (MainViewModel.OpenDbConnection)
                 {
-                    PersistencyService.PostDataLoggedIn(matcingEmloyee); //Posted to logged in employees database.
+                    PersistencyService.PostDataLoggedIn(matcingEmployee); //Posted to logged in employees database.
 
-                    PersistencyService.PutData(matcingEmloyee); //Updates logintime for the employee on the shown employee list. 
+                    PersistencyService.PutData(matcingEmployee); //Updates logintime for the employee on the shown employee list. 
 
-                    MainPage.CloseCanvases();
-                    MainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
-                    if (matcingEmloyee.GetType() == typeof (AdminEmp))
-                        MainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
-                    else MainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
+                    DanxMainPage.CloseCanvases();
+                    DanxMainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
+                    if (matcingEmployee.GetType() == typeof (AdminEmp))
+                        DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
+                    else DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
                 }
             }
             //If user IS logged in, he will be logged out:
@@ -92,11 +101,19 @@ namespace DanxExamProject.Handler
                 {
                     PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
 
+                    DanxMainPage.CloseCanvases();
+                    DanxMainPage.MainScreenCanvas.Visibility = Visibility.Visible;
 
-                    var goodbyeMsg = new MessageDialog("You have been logged out. Have a nice day!", "Goodbye");
-                    goodbyeMsg.ShowAsync();
-                    MainPage.CloseCanvases();
-                    MainPage.MainScreenCanvas.Visibility = Visibility.Visible;
+                    var hoursWorkedFormat = String.Format(_hoursWorked.Hours + ":" + _hoursWorked.Minutes + ":" + _hoursWorked.Seconds);
+
+                    //Goodbye message
+                    DanxMainPage.UiWelcomeMessage.Text =
+                        "                            Goodbye!\n          You have worked for " + hoursWorkedFormat + " today.";
+                    await Task.Delay(8000);
+                    DanxMainPage.UiWelcomeMessage.Text =
+                        "                            Welcome!\nInsert worker-id in one of the boxes above.";
+
+
                 }
             }
                 
@@ -135,6 +152,8 @@ namespace DanxExamProject.Handler
         {
 
             var hoursWorked = _employeeToLogout.LastLogout.Subtract(_employeeToLogout.LastLogin);
+
+            _hoursWorked = hoursWorked;
 
             return _employeeToLogout.TotalHours += hoursWorked;
 
@@ -176,15 +195,33 @@ namespace DanxExamProject.Handler
             foreach (var e in ownDepartment) _viewModel.DatabaseTable.Add(e);
         }
 
+       public void SortByName()
+       {
+           var sort = from e in _viewModel.DatabaseTable orderby e.Name select e;
+           var sortList = sort.ToList();
+           _viewModel.DatabaseTable.Clear();
+           foreach (var e in sortList) _viewModel.DatabaseTable.Add(e);
+
+       }
+
+       public void SortByEmployeeId()
+       {
+           var sort = from e in _viewModel.DatabaseTable orderby e.EmployeeId select e;
+           var sortList = sort.ToList();
+           _viewModel.DatabaseTable.Clear();
+           foreach (var e in sortList) _viewModel.DatabaseTable.Add(e);
+       }
+
        /// <summary>
        /// The standard- and admin employee's method of adding own vacation or sickdays.
        /// </summary>
         public void ChangeVacationOrSickdays()
-        {
-            if (_viewModel.StandardVacationDays != 0){ LastLoggedIn.VacationDays += _viewModel.StandardVacationDays;}
-            if (_viewModel.StandardSickDays != 0){ LastLoggedIn.SickDays += _viewModel.StandardSickDays;}
-           
-            if(MainViewModel.OpenDbConnection == false) return;
+       {
+            
+           if (DanxMainPage.SickDayRButton.IsChecked == true) LastLoggedIn.SickDays += 1;
+           else if (DanxMainPage.VacationDayRButton.IsChecked == true) LastLoggedIn.VacationDays += 1;
+
+            if (MainViewModel.OpenDbConnection == false) return;
             PersistencyService.PutData(LastLoggedIn);
 
             PersistencyService.GetData(_viewModel.EmployeesInDb);
@@ -220,8 +257,8 @@ namespace DanxExamProject.Handler
 
             }
             
-            if (_viewModel.AdminChangeNameBox != null) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
-            if (_viewModel.AdminChangeManagerBox != null) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
+            if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeNameBox)) SelectedEmployee.Name = _viewModel.AdminChangeNameBox;
+            if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeManagerBox)) SelectedEmployee.Manager = _viewModel.AdminChangeManagerBox;
 
             if(MainViewModel.OpenDbConnection == false) return;
 

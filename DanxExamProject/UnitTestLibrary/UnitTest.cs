@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 using DanxExamProject.Handler;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
 using DanxExamProject.ViewModel;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using DanxExamProject;
+using Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer;
+using Assert = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.Assert;
 
 namespace UnitTestLibrary
 {
@@ -26,7 +30,7 @@ namespace UnitTestLibrary
         public void BeforeTest()
         {
             MainViewModel.OpenDbConnection = false;
-            Assert.IsFalse(MainViewModel.OpenDbConnection); //Making sure that the Database API connection is closed. 
+            Assert.IsFalse(MainViewModel.OpenDbConnection); //Making sure that the Database API connection is closed during unit testing. 
 
             _mainViewModel = new MainViewModel();
             _employeeHandler = new EmployeeHandler(_mainViewModel);
@@ -36,7 +40,6 @@ namespace UnitTestLibrary
             _testAdminEmp = new AdminEmp(){EmployeeId = 75, Name = "AdminTestEmployee", AdminLvl = 1};
             _testAdminEmp2 = new AdminEmp(){EmployeeId = 15, AdminLvl = 2, Name = "AdminLvl2TestEmployee"};
 
-            
 
             
             _mainViewModel.EmployeesInDb.Add(_testEmployee);
@@ -46,7 +49,6 @@ namespace UnitTestLibrary
             _mainViewModel.EmployeesInDb.Add(_testAdminEmp2);
 
             _mainViewModel.LoggedInEmployees.Add(_testEmployee2);
-
 
 
 
@@ -145,7 +147,7 @@ namespace UnitTestLibrary
                 
         }
 
-        [TestMethod]
+        [UITestMethod]
         public void TestMethod7()
         {
             //Testcase 2.1
@@ -156,16 +158,16 @@ namespace UnitTestLibrary
 
             _employeeHandler.LoginOrLogout(); //Employee logs in
 
-            _mainViewModel.StandardSickDays = 5; //Employee sets number of sickdays
-            
+            DanxMainPage.SickDayRButton.IsChecked = true;
+
             _employeeHandler.ChangeVacationOrSickdays();
 
-            Assert.AreEqual(_employeeHandler.LastLoggedIn.SickDays, 5);
+            Assert.AreEqual(_employeeHandler.LastLoggedIn.SickDays, 1);
 
 
         }
 
-        [TestMethod]
+        [UITestMethod]
         public void TestMethod8()
         {
             //Testcase 2.2
@@ -176,11 +178,11 @@ namespace UnitTestLibrary
 
             _employeeHandler.LoginOrLogout(); //Employee logs in
 
-            _mainViewModel.StandardVacationDays = 4; //Employee sets number of sickdays
+            DanxMainPage.VacationDayRButton.IsChecked = true;
 
             _employeeHandler.ChangeVacationOrSickdays();
 
-            Assert.AreEqual(_employeeHandler.LastLoggedIn.VacationDays, 4);
+            Assert.AreEqual(_employeeHandler.LastLoggedIn.VacationDays, 1);
         }
 
 
@@ -252,6 +254,22 @@ namespace UnitTestLibrary
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,6 +12,7 @@ using DanxExamProject.Handler;
 using DanxExamProject.Model;
 using DanxExamProject.Persistency;
 
+
 namespace DanxExamProject.ViewModel
 {
    public class MainViewModel
@@ -21,8 +22,6 @@ namespace DanxExamProject.ViewModel
         public List<Employee> LoggedInEmployees { get; set; }
         public ObservableCollection<Employee> DatabaseTable { get; set; } 
         public string LoginOrLogoutBox { get; set; }
-        public int StandardVacationDays { get; set; }
-        public int StandardSickDays { get; set; }
         public string AdminChangeNameBox { get; set; }
         public string AdminChangeManagerBox { get; set; }
         public string AdminChangeSalaryNumberBox { get; set; }
@@ -36,11 +35,14 @@ namespace DanxExamProject.ViewModel
         public RelayCommand AddSickOrVacationdaysCommand { get; set; }
         public RelayCommand AdminChangePersonalInfoCommand { get; set; }
         public RelayCommand AdminChangeSalaryInfoCommand { get; set; }
-
-        public List<int> DayList { get; set; } 
+        public RelayCommand SortByNameCommand { get; set; }
+        public RelayCommand SortByEmployeeIdCommand { get; set; }
+        public RelayCommand SpreadSheetCommand { get; set; }
+        public RelayCommand ExportAsCsvCommand { get; set; }
+       
 
         /// <summary>
-        /// For unittest purposes. The unittest does not work if the Database connection is open. 
+        /// For unittest purposes. The unittest does not run properly if the Database connection is open. 
         /// </summary>
        public static bool OpenDbConnection = true;
         
@@ -69,21 +71,23 @@ namespace DanxExamProject.ViewModel
             AddSickOrVacationdaysCommand = new RelayCommand(EmployeeHandler.ChangeVacationOrSickdays);
             AdminChangePersonalInfoCommand = new RelayCommand(EmployeeHandler.AdminChangePersonalInfo);
             AdminChangeSalaryInfoCommand = new RelayCommand(EmployeeHandler.AdminChangeSalaryInfo);
+            SortByNameCommand = new RelayCommand(EmployeeHandler.SortByName);
+            SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
+            ExportAsCsvCommand = new RelayCommand(ExportEmployeesToCsvFile);
 
-            DayList = Days();
-
+                   
         }
 
-       /// <summary>
-       /// Days 1-30 For the ComboBox control.
-       /// </summary>
-       /// <returns></returns>
-        private List<int> Days()
-        {
-            var days = new List<int>();
-            for (int i = 1; i < 30; i++) days.Add(i);
-            return days;
-        } 
+       private void ExportEmployeesToCsvFile()
+       {
+           var csv = new CsvExport<Employee>(DatabaseTable.ToList());
+           csv.ExportToFile("DanxEmployees.csv");
+       }
+
+      
+       
+
+      
 
     }
 }
