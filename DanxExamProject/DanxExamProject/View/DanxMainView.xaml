@@ -168,19 +168,19 @@
                 </LinearGradientBrush>
             </Canvas.Background>
 
-            <HyperlinkButton x:Name="DanxWebsite" Canvas.Left="672" Canvas.Top="76" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="720"/>
-            <TextBlock x:Name="NewsBlock"  Canvas.Left="668.796" TextWrapping="Wrap" Canvas.Top="85.958" Height="51.448" Width="711.66" FontSize="18.667" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" FontWeight="SemiBold"  UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015" Foreground="#FF0017FF" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <HyperlinkButton x:Name="DanxWebsite" Canvas.Left="524" Canvas.Top="95" Foreground="#FFFDFDFD" BorderThickness="0" NavigateUri="http://www.danx.com/News" Height="49" Width="720"/>
+            <TextBlock x:Name="NewsBlock"  Canvas.Left="521.277" TextWrapping="Wrap" Canvas.Top="105.186" Height="51.448" Width="711.66" FontSize="18.667" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" FontWeight="SemiBold"  UseLayoutRounding="False" d:LayoutRounding="Auto" Text="DANX PARTICIPATES AT THE TRANSPORT LOGISTIC FAIR IN MUNICH 5 – 8 MAY 2015" Foreground="#FF0017FF" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock.RenderTransform>
                     <CompositeTransform SkewX="-25"/>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="WelcomeMessage" Canvas.Left="548" TextWrapping="Wrap" Text="                            Welcome!&#xA;       Insert employee-id in the box above." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="238" Height="206" Width="797"/>
+            <TextBlock x:Name="WelcomeMessage" Canvas.Left="378" TextWrapping="Wrap" Text="                            Welcome!&#xA;       Insert employee-id in the box above." FontSize="40" FontWeight="SemiBold" Foreground="Black" Canvas.Top="279" Height="206" Width="797"/>
             <Canvas Height="100" Canvas.Left="448" Canvas.Top="315" Width="100"/>
-            <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXBiglogo.jpg" Canvas.Left="754" Canvas.Top="634"/>
-            <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
+            <Image HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="343" Source="ms-appx:///Assets/DANXBiglogo.jpg" Canvas.Left="621" Canvas.Top="646"/>
+            <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="473" Canvas.Top="96" Width="40"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -188,11 +188,11 @@
                     <GradientStop Color="White" Offset="0.049"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <TextBlock Canvas.Left="742" TextWrapping="Wrap" Text="Welcome" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="106" Height="57" Width="177"/>
-            <TextBlock Canvas.Left="485" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="283"/>
-            <TextBlock Canvas.Left="564" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked            hours this week." Canvas.Top="187" Foreground="#FF0D5AFF" Height="35" Width="691" FontSize="20"/>
-            <TextBlock Canvas.Left="924" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="106" Height="57" Width="177"/>
-            <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="297" Canvas.Top="272" Width="1235" Height="46">
+            <TextBlock Canvas.Left="598" TextWrapping="Wrap" Text="Welcome" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="93" Height="57" Width="177"/>
+            <TextBlock Canvas.Left="341" TextWrapping="Wrap" Text="**Database snippet - past registrations**" FontSize="25" FontWeight="SemiLight" Canvas.Top="270"/>
+            <TextBlock Canvas.Left="420" TextWrapping="Wrap" Text="Have a good day at work! You have currently worked            hours this week." Canvas.Top="174" Foreground="#FF0D5AFF" Height="35" Width="691" FontSize="20"/>
+            <TextBlock Canvas.Left="780" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="40" FontWeight="SemiBold" Foreground="#FF4253F9" Canvas.Top="93" Height="57" Width="177"/>
+            <Border BorderBrush="#FF0D5AFF" Background="#FF0D5AFF" BorderThickness="10" Canvas.Left="130" Canvas.Top="275" Width="1212" Height="46">
                 <Canvas>
                     <TextBlock Text="EmployeeId" FontWeight="Bold"/>
                     <TextBlock Text="Salary#" FontWeight="Bold" Canvas.Left="76"/>
@@ -210,7 +210,7 @@
                     <Button Command="{Binding SortByEmployeeIdCommand}" BorderBrush="Transparent" Foreground="Transparent" Background="Transparent" Canvas.Left="-7" Canvas.Top="-3" Height="18" Width="70"/>
                 </Canvas>
             </Border>
-            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1235" Canvas.Left="297" Canvas.Top="318">
+            <ListView x:Name="DatabaseListView" SelectedItem="{Binding EmployeeHandler.SelectedEmployee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding DatabaseTable, UpdateSourceTrigger=PropertyChanged}" Background="#FF0752F3" BorderBrush="#FF0D5AFF" BorderThickness="5" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="1212" Canvas.Left="130" Canvas.Top="321">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
@@ -230,7 +230,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Canvas x:Name="AdminTools" Visibility="Visible" Height="80" Canvas.Left="1480" Width="264" Margin="0" Canvas.Top="40" >
+            <Canvas x:Name="AdminTools" Visibility="Visible" Height="80" Canvas.Left="1275" Width="264" Margin="0" Canvas.Top="47" >
                 <AppBarButton x:Name="AdminTableViewAppBarButton" IsCompact="False" Icon="ContactInfo" Label="" Canvas.Top="4" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="29" PointerEntered="AdminTableViewAppBarButton_PointerEntered" PointerExited="AdminTableViewAppBarButton_PointerExited">
                     <AppBarButton.Resources>
                         <MenuFlyout x:Name="DatabaseViews" Placement="Bottom" x:Key="FlyoutBase1">
@@ -252,8 +252,8 @@
                     </AppBarButton.Icon>
                 </AppBarButton>
             </Canvas>
-            <TextBlock Canvas.Left="1034" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontWeight="Bold" FontSize="20" Canvas.Top="187" Height="18" Width="55"/>
-            <AppBarButton x:Name="AddVacationSickDayAppBarButton" Label="" IsCompact="False" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1434" Canvas.Top="44" Flyout="{StaticResource FlyoutBase3}" PointerEntered="AddVacationSickDayAppBarButton_PointerEntered" PointerExited="AddVacationSickDayAppBarButton_PointerExited">
+            <TextBlock Canvas.Left="890" TextWrapping="Wrap" Text="{Binding EmployeeHandler.LastLoggedIn.TotalHours, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF0D5AFF" FontWeight="Bold" FontSize="20" Canvas.Top="174" Height="18" Width="55"/>
+            <AppBarButton x:Name="AddVacationSickDayAppBarButton" Label="" IsCompact="False" Foreground="#FF0D5AFF" RequestedTheme="Light" Canvas.Left="1245" Canvas.Top="51" Flyout="{StaticResource FlyoutBase3}" PointerEntered="AddVacationSickDayAppBarButton_PointerEntered" PointerExited="AddVacationSickDayAppBarButton_PointerExited">
                 <AppBarButton.Icon>
                     <SymbolIcon Height="40" VerticalAlignment="Bottom" Symbol="Calendar"/>
                 </AppBarButton.Icon>
@@ -267,14 +267,14 @@
                     <GradientStop Color="#FF4253F9" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <TextBox x:Name="LoginBox" Text="{Binding LoginOrLogoutBox, Mode=TwoWay}" Canvas.Left="440" TextWrapping="Wrap" Canvas.Top="61" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth" Foreground="Gray">
+            <TextBox x:Name="LoginBox" Text="{Binding LoginOrLogoutBox, Mode=TwoWay}" Canvas.Left="305" TextWrapping="Wrap" Canvas.Top="66" Width="121" PlaceholderText="Login / Logout" Height="34" BorderThickness="3" RequestedTheme="Dark" BorderBrush="#FF768FFF" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="KatakanaHalfWidth" Foreground="Gray">
                 <TextBox.Projection>
                     <PlaneProjection RotationX="50" GlobalOffsetZ="15"/>
                 </TextBox.Projection>
             </TextBox>
-            <TextBlock x:Name="ValueBlock" Canvas.Left="790" TextWrapping="Wrap" Canvas.Top="27" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
-            <TextBlock x:Name="ValueText" Canvas.Left="747" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="75" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
-            <Grid Height="30" Canvas.Left="556" Canvas.Top="65" Width="56">
+            <TextBlock x:Name="ValueBlock" Canvas.Left="655" TextWrapping="Wrap" Canvas.Top="30" Height="61" Width="381" SelectionHighlightColor="#FFFBFBFB" Foreground="#FFE2EBF9"  FontSize="50" FontFamily="Franklin Gothic Heavy" Text="RELIABILITY"/>
+            <TextBlock x:Name="ValueText" Canvas.Left="644" TextWrapping="Wrap" Text="We have the integrity to keep our promises, to correct mistakes and proactively inform our customers." Canvas.Top="87" Height="76" Width="392" FontStyle="Italic" Foreground="#FFE2EBF9" FontSize="14"/>
+            <Grid Height="30" Canvas.Left="421" Canvas.Top="70" Width="56">
                 <Rectangle Fill="#FFD1CDCD" Stroke="Transparent" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Margin="5.891,3.16,2.653,7.34">
                     <Rectangle.RenderTransform>
                         <CompositeTransform SkewX="-10"/>
