@@ -102,7 +102,7 @@
                 <TextBox x:Name="InsertNameBox" Text="{Binding AdminChangeNameBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" HorizontalAlignment="Right" Width="101" Margin="-1,14,0,0" Height="44" VerticalAlignment="Top"/>
                 <TextBlock TextWrapping="Wrap" Text="Manager" Margin="0,58,0,0" Height="26" VerticalAlignment="Top"/>
                 <TextBox x:Name="InsertManagerBox" Text="{Binding AdminChangeManagerBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.Manager, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="-1,68,1,0" Height="36" VerticalAlignment="Top"/>
-                <AppBarButton Command="{Binding AdminChangePersonalInfoCommand}" HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="0,117,50,0" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67"/>
+                <AppBarButton Command="{Binding AdminChangePersonalInfoCommand}" HorizontalAlignment="Right" Icon="Accept" Label="Accept" Margin="0,117,50,0" VerticalAlignment="Top" Width="50" IsCompact="True" BorderThickness="0" Height="67" Click="AppBarButton_Click_2"/>
                 <AppBarButton HorizontalAlignment="Left" Icon="Cancel" Label="Cancel" Margin="50,117,-1,0" VerticalAlignment="Top" Height="67" Width="51" IsCompact="True" BorderThickness="0" Click="AppBarButton_Click"/>
             </Grid>
         </Flyout>
@@ -116,7 +116,7 @@
                 <TextBox x:Name="InsertSickDaysBox" Text="{Binding AdminChangeSickDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.SickDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Worked Days"/>
                 <TextBox x:Name="InsertWorkedDaysBox" Text="{Binding AdminChangeWorkedDaysBox, Mode=TwoWay}" PlaceholderText="{Binding EmployeeHandler.SelectedEmployee.WorkedDays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <AppBarButton Command="{Binding AdminChangeSalaryInfoCommand}" IsCompact="True" Icon="Accept"/>
+                <AppBarButton Command="{Binding AdminChangeSalaryInfoCommand}" IsCompact="True" Icon="Accept" Click="AppBarButton_Click_3"/>
                 <AppBarButton Margin="50,-72,0,0" IsCompact="True" Icon="Cancel" Click="AppBarButton_Click_1"/>
             </StackPanel>
         </Flyout>
@@ -180,7 +180,7 @@
             <Image Source="../Assets/mini logo.png" Height="40" Canvas.Left="621" Canvas.Top="77" Width="40"/>
 
         </Canvas>
-        <Canvas x:Name="LoginCanvas" Visibility="Visible"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
+        <Canvas x:Name="LoginCanvas" Visibility="Collapsed"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0"
                 Grid.RowSpan="2">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -218,8 +218,8 @@
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
                             <TextBlock Text="{Binding Manager}" Canvas.Left="141"/>
                             <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="122"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="122"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="114"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="114"/>
                             <TextBlock Text="{Binding StdHours}" Canvas.Left="621"/>
                             <TextBlock Text="{Binding WatchHours}" Canvas.Left="714"/>
                             <TextBlock Text="{Binding}" Canvas.Left="828"/>
