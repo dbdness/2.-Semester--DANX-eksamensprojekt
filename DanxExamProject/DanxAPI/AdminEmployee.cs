@@ -23,8 +23,10 @@ namespace DanxAPI
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime? LastLogin { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime? LastLogout { get; set; }
 
         public TimeSpan? StdHours { get; set; }
@@ -33,9 +35,9 @@ namespace DanxAPI
 
         public TimeSpan? TotalHours { get; set; }
 
-        public int? VacationDays { get; set; }
+        public int? Vacationdays { get; set; }
 
-        public int? SickDays { get; set; }
+        public int? Sickdays { get; set; }
 
         public int? WorkedDays { get; set; }
     }

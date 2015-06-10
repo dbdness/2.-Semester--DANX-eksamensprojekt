@@ -17,16 +17,16 @@ namespace DanxAPI.Controllers
         private DanxDbContext db = new DanxDbContext();
 
         // GET: api/LoggedInEmployees
-        public IQueryable<LoggedInEmployee> GetLoggedInEmployees()
+        public IQueryable<LoggedInEmployee> GetLoggedInEmployee()
         {
-            return db.LoggedInEmployees;
+            return db.LoggedInEmployee;
         }
 
         // GET: api/LoggedInEmployees/5
         [ResponseType(typeof(LoggedInEmployee))]
         public IHttpActionResult GetLoggedInEmployee(int id)
         {
-            LoggedInEmployee loggedInEmployee = db.LoggedInEmployees.Find(id);
+            LoggedInEmployee loggedInEmployee = db.LoggedInEmployee.Find(id);
             if (loggedInEmployee == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace DanxAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.LoggedInEmployees.Add(loggedInEmployee);
+            db.LoggedInEmployee.Add(loggedInEmployee);
 
             try
             {
@@ -104,13 +104,13 @@ namespace DanxAPI.Controllers
         [ResponseType(typeof(LoggedInEmployee))]
         public IHttpActionResult DeleteLoggedInEmployee(int id)
         {
-            LoggedInEmployee loggedInEmployee = db.LoggedInEmployees.Find(id);
+            LoggedInEmployee loggedInEmployee = db.LoggedInEmployee.Find(id);
             if (loggedInEmployee == null)
             {
                 return NotFound();
             }
 
-            db.LoggedInEmployees.Remove(loggedInEmployee);
+            db.LoggedInEmployee.Remove(loggedInEmployee);
             db.SaveChanges();
 
             return Ok(loggedInEmployee);
@@ -127,7 +127,7 @@ namespace DanxAPI.Controllers
 
         private bool LoggedInEmployeeExists(int id)
         {
-            return db.LoggedInEmployees.Count(e => e.EmployeeId == id) > 0;
+            return db.LoggedInEmployee.Count(e => e.EmployeeId == id) > 0;
         }
     }
 }

@@ -17,16 +17,16 @@ namespace DanxAPI.Controllers
         private DanxDbContext db = new DanxDbContext();
 
         // GET: api/StandardEmployees
-        public IQueryable<StandardEmployee> GetStandardEmployees()
+        public IQueryable<StandardEmployee> GetStandardEmployee()
         {
-            return db.StandardEmployees;
+            return db.StandardEmployee;
         }
 
         // GET: api/StandardEmployees/5
         [ResponseType(typeof(StandardEmployee))]
         public IHttpActionResult GetStandardEmployee(int id)
         {
-            StandardEmployee standardEmployee = db.StandardEmployees.Find(id);
+            StandardEmployee standardEmployee = db.StandardEmployee.Find(id);
             if (standardEmployee == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace DanxAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.StandardEmployees.Add(standardEmployee);
+            db.StandardEmployee.Add(standardEmployee);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = standardEmployee.EmployeeId }, standardEmployee);
@@ -89,13 +89,13 @@ namespace DanxAPI.Controllers
         [ResponseType(typeof(StandardEmployee))]
         public IHttpActionResult DeleteStandardEmployee(int id)
         {
-            StandardEmployee standardEmployee = db.StandardEmployees.Find(id);
+            StandardEmployee standardEmployee = db.StandardEmployee.Find(id);
             if (standardEmployee == null)
             {
                 return NotFound();
             }
 
-            db.StandardEmployees.Remove(standardEmployee);
+            db.StandardEmployee.Remove(standardEmployee);
             db.SaveChanges();
 
             return Ok(standardEmployee);
@@ -112,7 +112,7 @@ namespace DanxAPI.Controllers
 
         private bool StandardEmployeeExists(int id)
         {
-            return db.StandardEmployees.Count(e => e.EmployeeId == id) > 0;
+            return db.StandardEmployee.Count(e => e.EmployeeId == id) > 0;
         }
     }
 }

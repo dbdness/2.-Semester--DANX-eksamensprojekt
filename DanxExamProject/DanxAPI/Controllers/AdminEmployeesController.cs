@@ -17,16 +17,16 @@ namespace DanxAPI.Controllers
         private DanxDbContext db = new DanxDbContext();
 
         // GET: api/AdminEmployees
-        public IQueryable<AdminEmployee> GetAdminEmployees()
+        public IQueryable<AdminEmployee> GetAdminEmployee()
         {
-            return db.AdminEmployees;
+            return db.AdminEmployee;
         }
 
         // GET: api/AdminEmployees/5
         [ResponseType(typeof(AdminEmployee))]
         public IHttpActionResult GetAdminEmployee(int id)
         {
-            AdminEmployee adminEmployee = db.AdminEmployees.Find(id);
+            AdminEmployee adminEmployee = db.AdminEmployee.Find(id);
             if (adminEmployee == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace DanxAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.AdminEmployees.Add(adminEmployee);
+            db.AdminEmployee.Add(adminEmployee);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = adminEmployee.EmployeeId }, adminEmployee);
@@ -89,13 +89,13 @@ namespace DanxAPI.Controllers
         [ResponseType(typeof(AdminEmployee))]
         public IHttpActionResult DeleteAdminEmployee(int id)
         {
-            AdminEmployee adminEmployee = db.AdminEmployees.Find(id);
+            AdminEmployee adminEmployee = db.AdminEmployee.Find(id);
             if (adminEmployee == null)
             {
                 return NotFound();
             }
 
-            db.AdminEmployees.Remove(adminEmployee);
+            db.AdminEmployee.Remove(adminEmployee);
             db.SaveChanges();
 
             return Ok(adminEmployee);
@@ -112,7 +112,7 @@ namespace DanxAPI.Controllers
 
         private bool AdminEmployeeExists(int id)
         {
-            return db.AdminEmployees.Count(e => e.EmployeeId == id) > 0;
+            return db.AdminEmployee.Count(e => e.EmployeeId == id) > 0;
         }
     }
 }

@@ -17,8 +17,10 @@ namespace DanxAPI
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime? LastLogin { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime? LastLogout { get; set; }
 
         public TimeSpan? TotalHours { get; set; }
