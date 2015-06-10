@@ -263,6 +263,7 @@ namespace DanxExamProject.Handler
             if(MainViewModel.OpenDbConnection == false) return;
 
             PersistencyService.PutData(SelectedEmployee);
+            PersistencyService.GetData(_viewModel.EmployeesInDb);
             if(admin.AdminLvl != 2) OwnDepartmentList();
             else PersistencyService.GetData(_viewModel.DatabaseTable);
             
@@ -306,6 +307,7 @@ namespace DanxExamProject.Handler
                 if(MainViewModel.OpenDbConnection == false) return;
 
                 PersistencyService.PutData(SelectedEmployee);
+                PersistencyService.GetData(_viewModel.EmployeesInDb);
                 if(admin.AdminLvl != 2) OwnDepartmentList();
                 else PersistencyService.GetData(_viewModel.DatabaseTable);
             }
