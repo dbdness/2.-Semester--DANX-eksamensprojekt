@@ -7,6 +7,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace DanxExamProject.Common
 {
@@ -59,7 +60,7 @@ namespace DanxExamProject.Common
         }
 
         //export to a file.
-        public async void ExportToFile(string filename)
+        public async Task ExportToFile(string filename)
         {
             try
             {

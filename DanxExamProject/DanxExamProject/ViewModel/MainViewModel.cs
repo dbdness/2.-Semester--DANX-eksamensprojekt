@@ -76,10 +76,10 @@ namespace DanxExamProject.ViewModel
 
         }
 
-       private void ExportEmployeesToCsvFile()
+       private async void ExportEmployeesToCsvFile()
        {
            var csv = new CsvExport<Employee>(DatabaseTable.ToList());
-           csv.ExportToFile("DanxEmployees.csv");
+           await csv.ExportToFile("DanxEmployees.csv");
        }
 
       
