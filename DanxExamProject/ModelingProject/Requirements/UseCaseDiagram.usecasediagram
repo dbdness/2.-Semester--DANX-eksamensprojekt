@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ab3a549a-46ae-4ac6-8c02-1a34bbb946a5" name="UseCaseDiagram" linkedPackageId="2bd98399-8a68-40e6-81f0-aed07e2a67bf" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ab3a549a-46ae-4ac6-8c02-1a34bbb946a5" name="UseCaseDiagram" linkedPackageId="2bd98399-8a68-40e6-81f0-aed07e2a67bf" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="2bec6a63-f627-4505-8d2f-eadc7c00acdc" name="Std Employee" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2d3ab990-94a9-4300-b58f-9c41f7edc2db" />
         <targetEnds>
           <association Id="f49fcf10-6484-4711-a471-512b8042acab" isDerived="false" sourceEndRoleName="Std Employee" targetEndRoleName="Logger ind" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Logger ind - tidsregistrering starter" />
+            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Aktør logger ind/ud" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="0247121f-cefd-487a-ae2c-c7b76c551bfd" name="Std Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -21,38 +21,6 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="2851196d-58b8-4bc9-8437-28b1fff8310d" />
           </association>
-          <association Id="efdcd34d-bf35-48c5-b594-23b84212e7f7" isDerived="false" sourceEndRoleName="Std Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="622a85b0-47c4-4b90-a45a-1513dd167acf" name="Std Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="db2eee1a-aefe-4931-bb3a-b43f60bba3db" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="2f8744e1-9ef3-4f8a-94aa-f32700252965" name="Ændrer sine ikke-registrerede dage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="28c7cd8f-cd95-4c80-8611-4bef016bb14c" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="5b1c2467-b809-4387-9d5b-414b0fa113e6" />
-          </association>
-          <association Id="93215b44-ccf9-4028-abd4-d22d8c4be241" isDerived="false" sourceEndRoleName="Std Employee" targetEndRoleName="Logger ud - tidsregistrering slutter" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="544a0d80-5f9b-429a-9991-372db62f8c1d" LastKnownName="Logger ud - tidsregistrering slutter" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="52c493c8-146f-4e44-94b1-f67510bdef58" name="Std Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="afc9a739-0315-4b2e-aa96-fef85aa5215e" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="19d9b356-1b2b-4d38-80b4-76abef00bbd5" name="Logger ud - tidsregistrering slutter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7b57ef2d-9357-4986-92b9-52f9eff05aa3" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="fe15dd2e-3210-48fd-84cd-c4b2f907a7f3" />
-          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -61,7 +29,7 @@
         <elementDefinition Id="dc940f39-1634-4b0c-980b-81ef677e85ba" />
         <targetEnds>
           <association Id="15d92301-14ea-4c17-8dc5-85647fe5b254" isDerived="false" sourceEndRoleName="Admin lvl 1 Employee" targetEndRoleName="Logger ind" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Logger ind - tidsregistrering starter" />
+            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Aktør logger ind/ud" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="ac637236-6b94-40d7-b9bb-8c5b06d1fe70" name="Admin lvl 1 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -77,7 +45,7 @@
             <elementDefinition Id="179acf90-1588-4575-a5b4-4ce6909e6044" />
           </association>
           <association Id="ed1eaff2-3c8b-4eac-9ca0-2c3eab4ec656" isDerived="false" sourceEndRoleName="Admin lvl 1 Employee" targetEndRoleName="Redigerer egen medarbejder database" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="4659b1f4-760a-4162-9d39-d784eddd5d7e" LastKnownName="Redigerer egen medarbejder database" />
+            <useCaseMoniker Id="4659b1f4-760a-4162-9d39-d784eddd5d7e" LastKnownName="Aktør logger ind og redigerer delvist" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="d7a5e67a-991e-42ea-8cf7-d5f2108fc82e" name="Admin lvl 1 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -92,38 +60,6 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="11618c4f-bcbe-4123-9a53-c210a177f30c" />
           </association>
-          <association Id="aeac6a0f-c447-479e-b8cf-a70066985842" isDerived="false" sourceEndRoleName="Admin lvl 1 Employee" targetEndRoleName="Logger ud - tidsregistrering slutter" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="544a0d80-5f9b-429a-9991-372db62f8c1d" LastKnownName="Logger ud - tidsregistrering slutter" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="bd6fdea9-f1ce-4e3a-bb1c-20e8455fb090" name="Admin lvl 1 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="f5886899-e587-42ac-9c65-27f157495401" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="d23f86a2-ea73-4529-851f-80cabb7d3dfc" name="Logger ud - tidsregistrering slutter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="240723b6-5ddb-4514-923a-b57695b48e79" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="3bab0b45-799a-4c19-a4c9-5f3f20e3380e" />
-          </association>
-          <association Id="1a3343eb-b65f-4698-af6a-de7187a0012e" isDerived="false" sourceEndRoleName="Admin lvl 1 Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="dad2984b-4ab4-4ea8-806b-7d2102972ea9" name="Admin lvl 1 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="b9d24378-9103-4e85-920e-c897357a87d6" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="12a3afd1-dfab-4fa7-82bc-efd65d52d130" name="Ændrer sine ikke-registrerede dage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="341f7d32-56c5-4e52-891d-c76146410ab0" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="f70c28cd-0dbb-45f9-8f48-518303e609fb" />
-          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -132,7 +68,7 @@
         <elementDefinition Id="5a6b4aa9-8c7e-473a-acad-e7922072b63a" />
         <targetEnds>
           <association Id="48a2e072-645f-46a6-ae72-f68fa41d1ad0" isDerived="false" sourceEndRoleName="Admin lvl 2 Employee" targetEndRoleName="Logger ind" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Logger ind - tidsregistrering starter" />
+            <useCaseMoniker Id="e250649c-3f48-40c6-8d62-22966bacb5b9" LastKnownName="Aktør logger ind/ud" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="16bf683b-e65c-41d1-b4fb-7430f58a113c" name="Admin lvl 2 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -148,7 +84,7 @@
             <elementDefinition Id="62e20805-6989-4c2e-a2f1-12368e3525cf" />
           </association>
           <association Id="9dcbaf7d-07e7-410c-9719-25c45764a14e" isDerived="false" sourceEndRoleName="Admin lvl 2 Employee" targetEndRoleName="Fuld redigering af alle medarbejder databaser" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="18bf0de3-d27f-4c44-91af-85ccda56b877" LastKnownName="Fuld redigering af alle medarbejder databaser" />
+            <useCaseMoniker Id="18bf0de3-d27f-4c44-91af-85ccda56b877" LastKnownName="Aktør logger ind og redigerer fuldt" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="fc7e6dd8-337f-4f0c-aec2-004bee1e63f0" name="Admin lvl 2 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -163,63 +99,21 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="3c7aabcb-7266-4823-b57b-f8e7d037281f" />
           </association>
-          <association Id="e227e481-3509-49f9-8e92-ce1ae620a3f7" isDerived="false" sourceEndRoleName="Admin lvl 2 Employee" targetEndRoleName="Logger ud - tidsregistrering slutter" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="544a0d80-5f9b-429a-9991-372db62f8c1d" LastKnownName="Logger ud - tidsregistrering slutter" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="441c0c24-73e5-4cb5-b9fd-c2f81380e909" name="Admin lvl 2 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="1b80e24c-1c40-49c3-bcc9-6671f07d879a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="3b463836-e8cd-4592-be21-1f000535de6b" name="Logger ud - tidsregistrering slutter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="61959e2c-3b7d-4038-912c-0c0be4657ccb" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="48c05879-8068-47af-94b7-77acfc769db3" />
-          </association>
-          <association Id="3d3de081-890d-4718-9352-77cfcf4102b4" isDerived="false" sourceEndRoleName="Admin lvl 2 Employee" targetEndRoleName="Ændrer sine ikke-registrerede dage" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="279c9b1e-6e88-4727-9467-c46282d7637f" LastKnownName="Tilføjer syge/feriedage" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f5521e8e-3532-406a-971a-7597bd4e64bf" name="Admin lvl 2 Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="fe8dc623-1aa4-4191-8462-85b5173d8c01" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="c1d2c82c-1f00-4132-bc78-1aae927a413e" name="Ændrer sine ikke-registrerede dage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="5cdeb493-a941-479f-811f-e8fbc91d04ba" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="94715cc7-0853-45dc-8c65-df91de326d9c" />
-          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="e250649c-3f48-40c6-8d62-22966bacb5b9" name="Logger ind - tidsregistrering starter" isAbstract="false" isLeaf="false">
+      <useCase Id="e250649c-3f48-40c6-8d62-22966bacb5b9" name="Aktør logger ind/ud" isAbstract="false" isLeaf="false">
         <elementDefinition Id="8140a026-befc-4eab-a4ae-b0062e1c0ea1" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="279c9b1e-6e88-4727-9467-c46282d7637f" name="Tilføjer syge/feriedage" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="2bcf61a2-e25a-4df4-abe9-a29e5e59db79" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="544a0d80-5f9b-429a-9991-372db62f8c1d" name="Logger ud - tidsregistrering slutter" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="f7f9ac3b-08a6-419e-90a5-76211f06b1da" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="18bf0de3-d27f-4c44-91af-85ccda56b877" name="Fuld redigering af alle medarbejder databaser" isAbstract="false" isLeaf="false">
+      <useCase Id="18bf0de3-d27f-4c44-91af-85ccda56b877" name="Aktør logger ind og redigerer fuldt" isAbstract="false" isLeaf="false">
         <elementDefinition Id="53200e01-9f8f-4681-a6fd-df1a6603a47a" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="4659b1f4-760a-4162-9d39-d784eddd5d7e" name="Redigerer egen medarbejder database" isAbstract="false" isLeaf="false">
+      <useCase Id="4659b1f4-760a-4162-9d39-d784eddd5d7e" name="Aktør logger ind og redigerer delvist" isAbstract="false" isLeaf="false">
         <elementDefinition Id="0a16d262-ef99-4293-920e-76531ae38f2b" />
       </useCase>
     </useCaseModelRootHasTypes>

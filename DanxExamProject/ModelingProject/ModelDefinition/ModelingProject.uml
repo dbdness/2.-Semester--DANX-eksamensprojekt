@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="36e04b60-98d4-4ba2-95ea-da3661aa3d7e"
   name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1318,7 +1318,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="8140a026-befc-4eab-a4ae-b0062e1c0ea1"
-              LastKnownName="Logger ind - tidsregistrering starter"
+              LastKnownName="Aktør logger ind/ud"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1445,7 +1445,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="8140a026-befc-4eab-a4ae-b0062e1c0ea1"
-              LastKnownName="Logger ind - tidsregistrering starter"
+              LastKnownName="Aktør logger ind/ud"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1484,7 +1484,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="0a16d262-ef99-4293-920e-76531ae38f2b"
-              LastKnownName="Redigerer egen medarbejder database"
+              LastKnownName="Aktør logger ind og redigerer delvist"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1611,7 +1611,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="8140a026-befc-4eab-a4ae-b0062e1c0ea1"
-              LastKnownName="Logger ind - tidsregistrering starter"
+              LastKnownName="Aktør logger ind/ud"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1650,7 +1650,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="53200e01-9f8f-4681-a6fd-df1a6603a47a"
-              LastKnownName="Fuld redigering af alle medarbejder databaser"
+              LastKnownName="Aktør logger ind og redigerer fuldt"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1764,7 +1764,7 @@
     <packageHasNamedElement>
       <useCase
         Id="8140a026-befc-4eab-a4ae-b0062e1c0ea1"
-        name="Logger ind - tidsregistrering starter"
+        name="Aktør logger ind/ud"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -1904,14 +1904,14 @@
     <packageHasNamedElement>
       <useCase
         Id="53200e01-9f8f-4681-a6fd-df1a6603a47a"
-        name="Fuld redigering af alle medarbejder databaser"
+        name="Aktør logger ind og redigerer fuldt"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="0a16d262-ef99-4293-920e-76531ae38f2b"
-        name="Redigerer egen medarbejder database"
+        name="Aktør logger ind og redigerer delvist"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
