@@ -61,7 +61,7 @@ namespace DanxExamProject.Handler
        /// </summary>
         public async void LoginOrLogout()
         {
-          if(MainViewModel.OpenDbConnection) PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
+            if(MainViewModel.OpenDbConnection) PersistencyService.GetDataLoggedIn(_viewModel.LoggedInEmployees);
 
             var employees = _viewModel.EmployeesInDb.ToList();
             var matcingEmployee = employees.Find(e => e.EmployeeId.ToString() == _viewModel.LoginOrLogoutBox);
@@ -77,18 +77,18 @@ namespace DanxExamProject.Handler
                 if (LastLoggedIn.TotalHours > new TimeSpan(24, 59, 59)) LastLoggedIn.TotalHours = new TimeSpan(10, 35, 28); //Due to unknown unresponsiveness if the employees TotalHours-property is above 24 hours. 
                 _viewModel.DatabaseTable.Clear();
                 _viewModel.DatabaseTable.Add(LastLoggedIn);
-                if (MainViewModel.OpenDbConnection)
-                {
-                    PersistencyService.PostDataLoggedIn(matcingEmployee); //Posted to logged in employees database.
 
-                    PersistencyService.PutData(matcingEmployee); //Updates logintime for the employee on the shown employee list. 
+                if (!MainViewModel.OpenDbConnection) return;
 
-                    DanxMainPage.CloseCanvases();
-                    DanxMainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
-                    if (matcingEmployee.GetType() == typeof (AdminEmp))
-                        DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
-                    else DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
-                }
+                PersistencyService.PostDataLoggedIn(matcingEmployee); //Posted to logged in employees database.
+
+                PersistencyService.PutData(matcingEmployee); //Updates logintime for the employee on the shown employee list. 
+
+                DanxMainPage.CloseCanvases();
+                DanxMainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
+                if (matcingEmployee.GetType() == typeof (AdminEmp))
+                    DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
+                else DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
             }
             //If user IS logged in, he will be logged out:
             else if (matchingLoggedInEmployee != null)
@@ -97,24 +97,21 @@ namespace DanxExamProject.Handler
                 UpdateLogoutTime();
                 UpdateTotalHours();
                 _employeeToLogout = null;
-                if (MainViewModel.OpenDbConnection)
-                {
-                    PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
+                if (!MainViewModel.OpenDbConnection) return;
 
-                    DanxMainPage.CloseCanvases();
-                    DanxMainPage.MainScreenCanvas.Visibility = Visibility.Visible;
+                PersistencyService.DeleteDataLoggedIn(matchingLoggedInEmployee); //Removing logged out employee from logged in table.
+                
+                DanxMainPage.CloseCanvases();
+                DanxMainPage.MainScreenCanvas.Visibility = Visibility.Visible;
 
-                    var hoursWorkedFormat = String.Format(_hoursWorked.Hours + ":" + _hoursWorked.Minutes + ":" + _hoursWorked.Seconds);
+                var hoursWorkedFormat = String.Format(_hoursWorked.Hours + ":" + _hoursWorked.Minutes + ":" + _hoursWorked.Seconds);
 
-                    //Goodbye message
-                    DanxMainPage.UiWelcomeMessage.Text =
-                        "                            Goodbye!\n          You have worked for " + hoursWorkedFormat + " today.";
-                    await Task.Delay(8000);
-                    DanxMainPage.UiWelcomeMessage.Text =
-                        "                            Welcome!\nInsert worker-id in one of the boxes above.";
-
-
-                }
+                //Goodbye message
+                DanxMainPage.UiWelcomeMessage.Text =
+                    "                            Goodbye!\n          You have worked for " + hoursWorkedFormat + " today.";
+                await Task.Delay(8000);
+                DanxMainPage.UiWelcomeMessage.Text =
+                    "                            Welcome!\nInsert worker-id in one of the boxes above.";
             }
                 
             //If a wrong user id is entered:
@@ -122,7 +119,7 @@ namespace DanxExamProject.Handler
             {
                 try
                 {
-                    throw new ArgumentException("Please enter a valid employee id.");
+                    throw new ArgumentException("Please enter a valid employee id."); //Unittest purposes
                 }
                 catch (ArgumentException)
                 {
@@ -139,7 +136,7 @@ namespace DanxExamProject.Handler
         private void UpdateLogoutTime()
         {
             
-           if(MainViewModel.OpenDbConnection) PersistencyService.GetData(_viewModel.EmployeesInDb);
+           if(MainViewModel.OpenDbConnection) PersistencyService.GetData(_viewModel.EmployeesInDb); //Need updated LastLogin before updating LastLogout
             var employeeList = _viewModel.EmployeesInDb.ToList();
             var employeeToLogout = employeeList.Find(e => e.EmployeeId == _employeeToLogout.EmployeeId);
             _employeeToLogout = employeeToLogout;

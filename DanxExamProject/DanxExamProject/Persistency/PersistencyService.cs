@@ -51,19 +51,17 @@ namespace DanxExamProject.Persistency
                     var stdEmpResponse = _client.GetAsync("api/standardEmployees").Result;
                     var adminEmpResponse = _client.GetAsync("api/adminEmployees").Result;
 
-                    if (stdEmpResponse.IsSuccessStatusCode && adminEmpResponse.IsSuccessStatusCode)
-                    {
-                        var stdEmpData = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
-                        var adminEmpData = adminEmpResponse.Content.ReadAsAsync<IEnumerable<AdminEmp>>().Result;
+                    if (!stdEmpResponse.IsSuccessStatusCode || !adminEmpResponse.IsSuccessStatusCode) return;
 
-                      
-                        collection.Clear();
+                    var stdEmpData = stdEmpResponse.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
+                    var adminEmpData = adminEmpResponse.Content.ReadAsAsync<IEnumerable<AdminEmp>>().Result;
 
-
-                        foreach (var e in stdEmpData) collection.Add(e);
-                        foreach (var a in adminEmpData) collection.Add(a);
-                        
-                    }
+                    collection.Clear();
+                    
+                    foreach (var e in stdEmpData) collection.Add(e);
+                    foreach (var a in adminEmpData) collection.Add(a);
+                     
+                    
                 }
                 catch (HttpRequestException)
                 {
@@ -108,32 +106,21 @@ namespace DanxExamProject.Persistency
         /// <summary>
         /// Get the list of logged in employees.
         /// </summary>
-        /// <param name="collection">The List<Employee> collection add to.</Employee></param>
+        /// <param name="collection">The List<Employee> collection to add to.</Employee></param>
         public static void GetDataLoggedIn(List<Employee> collection)
         {
                 try
                 {
-                    try
-                    {
-                        var response = _client.GetAsync("api/loggedInEmployees").Result;
-                        collection.Clear();
-                        if (response.IsSuccessStatusCode)
-                        {
-
-                            var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
-                            collection.AddRange(dbData);
-
-
-                        }
-                    }
-                    catch (NullReferenceException)
-                    {
-                        var errorMsg = new MessageDialog("No logged in employees could be found.",
-                    "Error");
-                        errorMsg.ShowAsync();
-                    }
-                
                     
+                     var response = _client.GetAsync("api/loggedInEmployees").Result;
+
+                     collection.Clear();
+
+                     if (!response.IsSuccessStatusCode) return;
+                       
+                     var dbData = response.Content.ReadAsAsync<IEnumerable<StandardEmp>>().Result;
+                     collection.AddRange(dbData);
+                      
                 }
                 catch (HttpRequestException)
                 {
