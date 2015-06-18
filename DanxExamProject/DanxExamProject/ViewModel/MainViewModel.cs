@@ -73,8 +73,7 @@ namespace DanxExamProject.ViewModel
             SortByNameCommand = new RelayCommand(EmployeeHandler.SortByName);
             SortByEmployeeIdCommand = new RelayCommand(EmployeeHandler.SortByEmployeeId);
             ExportAsCsvCommand = new RelayCommand(() => ExportEmployeesToCsvFile());
-
-
+            
         }
 
 

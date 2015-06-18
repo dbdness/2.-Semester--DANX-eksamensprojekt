@@ -200,8 +200,8 @@
                     <TextBlock Text="Name" FontWeight="Bold" Canvas.Left="246"/>
                     <TextBlock Text="Last login" FontWeight="Bold" Canvas.Left="353"/>
                     <TextBlock Text="Last logout" FontWeight="Bold" Canvas.Left="500"/>
-                    <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="618"/>
-                    <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="709"/>
+                    <TextBlock Text="Std hours" FontWeight="Bold" Canvas.Left="639"/>
+                    <TextBlock Text="Watch hours" FontWeight="Bold" Canvas.Left="723"/>
                     <TextBlock Text="Total hours" FontWeight="Bold" Canvas.Left="820"/>
                     <TextBlock Text="Vacation days" FontWeight="Bold" Canvas.Left="912"/>
                     <TextBlock Text="Sick days" FontWeight="Bold" Canvas.Left="1028"/>
@@ -214,14 +214,14 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Canvas>
-                            <TextBlock Text="{Binding EmployeeId}" Canvas.Left="13"/>
+                            <TextBlock Text="{Binding EmployeeId}" FontWeight="Bold" Canvas.Left="13"/>
                             <TextBlock Text="{Binding SalaryNumber}" Canvas.Left="85"/>
-                            <TextBlock Text="{Binding Manager}" Canvas.Left="141"/>
-                            <TextBlock Text="{Binding Name}" Canvas.Left="236"/>
-                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="114"/>
-                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="470" Width="114"/>
-                            <TextBlock Text="{Binding StdHours}" Canvas.Left="621"/>
-                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="714"/>
+                            <TextBlock Text="{Binding Manager}" Canvas.Left="147"/>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"  Canvas.Left="240"/>
+                            <TextBlock Text="{Binding LastLogin}" Canvas.Left="322" Width="148"/>
+                            <TextBlock Text="{Binding LastLogout}" Canvas.Left="477" Width="150"/>
+                            <TextBlock Text="{Binding StdHours}" Canvas.Left="639"/>
+                            <TextBlock Text="{Binding WatchHours}" Canvas.Left="724"/>
                             <TextBlock Text="{Binding}" Canvas.Left="828"/>
                             <TextBlock Text="{Binding VacationDays}" Canvas.Left="948"/>
                             <TextBlock Text="{Binding SickDays}" Canvas.Left="1048"/>
