@@ -86,8 +86,7 @@ namespace DanxExamProject.Handler
 
                 DanxMainPage.CloseCanvases();
                 DanxMainPage.MainScreenLoginCanvas.Visibility = Visibility.Visible;
-                if (matcingEmployee.GetType() == typeof (AdminEmp))
-                    DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
+                if (matcingEmployee.GetType() == typeof (AdminEmp)) DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Visible;
                 else DanxMainPage.AdminToolsCanvas.Visibility = Visibility.Collapsed;
             }
             //If user IS logged in, he will be logged out:
@@ -135,7 +134,7 @@ namespace DanxExamProject.Handler
 
         private void UpdateLogoutTime()
         {
-            
+           
            if(MainViewModel.OpenDbConnection) PersistencyService.GetData(_viewModel.EmployeesInDb); //Need updated LastLogin before updating LastLogout
             var employeeList = _viewModel.EmployeesInDb.ToList();
             var employeeToLogout = employeeList.Find(e => e.EmployeeId == _employeeToLogout.EmployeeId);
@@ -185,8 +184,8 @@ namespace DanxExamProject.Handler
        /// </summary>
         public void OwnDepartmentList()
         {
-            var allEmployees = new ObservableCollection<Employee>();
-            PersistencyService.GetData(allEmployees);
+            PersistencyService.GetData(_viewModel.EmployeesInDb);
+           var allEmployees = _viewModel.EmployeesInDb.ToList();
             var ownDepartment = from e in allEmployees where e.Manager == LastLoggedIn.Name select e;
             _viewModel.DatabaseTable.Clear();
             foreach (var e in ownDepartment) _viewModel.DatabaseTable.Add(e);
@@ -241,7 +240,7 @@ namespace DanxExamProject.Handler
             }
 
             //Admin level 1 and 2 privileges check
-            var admin = (AdminEmp) LastLoggedIn;
+           var admin = (AdminEmp) LastLoggedIn;
             if (admin.AdminLvl != 2) //If admin is lvl 1
             {
                 if (SelectedEmployee.Manager != LastLoggedIn.Name)
@@ -288,7 +287,7 @@ namespace DanxExamProject.Handler
             try
             {
                 //The following needs parsing due to the fact that the TextBox controls are bound to string values. 
-
+                
                 if (!String.IsNullOrWhiteSpace(_viewModel.AdminChangeSalaryNumberBox))
                     SelectedEmployee.SalaryNumber = int.Parse(_viewModel.AdminChangeSalaryNumberBox);
 

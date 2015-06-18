@@ -46,6 +46,7 @@ namespace DanxExamProject.Persistency
         /// <param name="collection"></param>
         public static void GetData(ObservableCollection<Employee> collection)
         {
+         
                 try
                 {
                     var stdEmpResponse = _client.GetAsync("api/standardEmployees").Result;
