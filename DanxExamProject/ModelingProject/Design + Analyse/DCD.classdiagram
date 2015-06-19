@@ -362,27 +362,21 @@
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="8c1b14b6-d364-4870-8b51-a3a402b42545" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="f3d72933-5772-45b2-8039-35eca65e0083" name="Lower" value="1">
+                            <elementDefinition Id="6966ed43-c62e-475d-b31f-701d17e52afa" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="580023d5-f5cc-4fb0-b8e2-212aac57477c" name="Upper" value="*">
+                            <elementDefinition Id="5fad7a54-b52d-4400-aae3-ebfc783a36a0" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="0bc4c133-c75e-4751-916e-7c509a203f4c" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="325d86d0-42a7-4a67-b380-e464bafa5f92" />
-                </association>
-                <association Id="7b0dcbda-6da4-4c26-8036-f8e5247ce181" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="125c4d7c-38a4-4133-ab07-7aadba45a6eb" LastKnownName="PersistencyService" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="b21f1c35-233e-491d-a9e5-426734be83c8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="b52cbfcd-9e35-4e26-b21a-8375a2bd75b7" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="d813fdf8-de95-49b6-8c6c-cc5f8b05d98e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="2f0dcc24-4f80-4e3d-a90f-afa854ea9c5a" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="9b1d06e4-cb16-4eba-8701-628ca7f8e10d" />
                 </association>
                 <association Id="1fced7e6-5dd1-4451-9424-0fa10cea5826" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
                   <classMoniker Id="00a2254b-43fe-4bb2-bb9b-188463a0a67d" LastKnownName="MainViewModel" />
